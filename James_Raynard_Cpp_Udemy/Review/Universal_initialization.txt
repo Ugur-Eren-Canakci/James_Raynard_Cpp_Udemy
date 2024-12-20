@@ -1,0 +1,35 @@
+    // Universal Initialization
+    
+    // Curly brackets can be used with any type, especially objects and containers
+    // Kinda similar to set notation, but not always
+    
+    // int x {7.7}; is illegal
+    // int x = 7.7; x would be initialized to 7
+    
+    // Avoids inconsistency with different constructors of the same objects
+    // std::vector<int>(4); vector with one element
+    // std::vector<int>(4,2); vector with four 2's
+    // std::vector<int> {4}
+    // std::vector<int> {4,2}
+    
+    // Avoids ambiguity
+    // Test test(); is this a constructor or a function declaration? Compiler assumes it's a function declaration
+    // Test test{}; this is definitely a constructor
+
+    
+    
+    
+    // "using" keyword can be used to replace confusing notation
+    
+    using IntVec = std::vector<int>;
+    
+    std::vector<IntVec> vector_of_int_vectors { {1,2}, {3,4} };
+    std::cout << "Numbers: ";
+    for (auto& it: vector_of_int_vectors) {
+        for (auto& i: it) {
+            std::cout << i << " "; // 1 2 3 4
+        }
+    }
+    std::cout << std::endl;
+    
+    

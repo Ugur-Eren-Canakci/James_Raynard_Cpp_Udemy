@@ -1,0 +1,9 @@
+    // nullptr
+    
+    // literal, representing a null pointer
+    // it's a special type, convertible to any other pointer type, but cannot be converted to an int
+    // the traditional NULL has value 0
+    // the type of NULL is implementation defined
+    // func(NULL); calls func(int) with clang, calls func(int *) with VC++ and doesn't compile with gcc.
+    
+    

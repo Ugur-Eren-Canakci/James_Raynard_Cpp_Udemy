@@ -1,0 +1,42 @@
+
+A cast performs an explicit conversion
+
+Can serve several different purposes:
+    1) converting an expression to a different type
+    2) converting const variables to a non-const equivalent
+    3) converting data in a buffer to untyped binary data
+    4) converting pointer to base class object it points to
+    
+Casting is rarely necessary in well-written c++ code
+
+Implies that sth suspicious is going on
+
+C-style cast is done with (type_to_cast_into)
+
+Ex:
+char a = '1';
+std::cout << (int)a;
+
+*** Casting turns off some compiler checks that prevent bugs
+
+C++98 brought four new ways of casting:
+1) static_cast<int>(a) for converting an expression to a different type
+2) const_cast<type>(var) for converting a const expression to a non-const equivalent
+    Might be needed for functions that aren't "const-correct", i.e. not using const when it should
+    Ex:
+    
+    void print(char* str) {
+        std::cout << str << std::endl;
+    }
+    const char* msg = "Hello world!";
+    print(msg); // error - invalid conversion
+    print(const_cast<char*>(msg)); // cast to non-const
+    
+If print() were to change the argument, you would'nt get a compiler error because compiler assumed 
+that a mutable "const_cast<char*>(msg)" is passed into the function. It may be that the value that's
+pointed by msg is in read-only memory, and the changes inside print() would cause a memory violation
+
+3) reinterpret_cast used to convert data in a buffer to untyped binary data, mainly used in low-level work
+4) dynamic_cast used to convert "a pointer to a base class object" to "a pointer to a derived class object"
+    also applies to references
+    unlike other types, it is done at runtime (polymorphism)

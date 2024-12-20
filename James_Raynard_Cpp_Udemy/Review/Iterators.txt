@@ -1,0 +1,30 @@
+Ex:
+    const char[] str {'H','e', 'l', 'l', 'o'};
+
+    char* p = str;
+    char* pEnd = str+5;
+
+    while (p != pEnd) {
+        std::cout << *p;
+        ++p;
+    }
+
+Final value of p is not the address of any elements of the array. Don't use it or dereference.  
+With std::string we can use iterator in a similar way:
+    std::string str{"Hello"};
+    std::string::iterator it = str.begin();
+    while ( it != str.end() ) {
+        std::cout << *it;
+        it++;
+    }
+
+Each iterator that's defined as above is specific to the object they're defined on. Don't use one string's iterator with another.
+If the container is empty, begin() and end() return the same value, so the loop is not executed.
+
+Use const_iterator if you want to access the elements without changing them:
+    std::string::const_iterator cit;
+    for (cit = str.begin(); cit != str.end(); ++cit) {
+        std::cout << *cit;
+    }
+
+Reverse iterator ...

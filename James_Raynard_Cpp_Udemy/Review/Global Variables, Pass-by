@@ -1,0 +1,90 @@
+/* Local variables
+     * 
+     * Local variables exist in a scope
+     * A scope is defined by a pair of curly brackets {}.
+     * 
+     * A local var comes into existence where it is defined
+     * Memory is automatically allocated for it on the program's stack.
+     * It will then be initialized.
+     * If we don't specify an initial value, it is "default initialized".
+     * 
+     * It is destroyed at the end of the scope.
+     * */
+    
+    { // start of the scope
+        int i; // initialization of the local var
+        // ... 
+    } // end of the scope
+    
+    
+    /* Pass by value
+     * 
+     * 
+     * By default, a variable which is passed into a function is copied 
+     * 
+     * The copy is a local var. whose scope is the body of the function
+     * 
+     * By default, the returned variable from a function is also copied.
+     * 
+     * */
+
+    int x = 2;
+    int y = func(x); // x is copied, used in the function, and a return value is created.
+    // then a variable in this current scope is attained the copy of the return value.
+    std::cout << "value of y with pass-by-value declaration: " << y << std::endl;
+    
+    
+    // Pass by address
+    int* x_ptr = &x;
+    std::cout << "The value of x was " << x << " and it became " << func_2(x_ptr) << " after calling func_2 with the pointer x_ptr." << std::endl;
+    
+     
+    // Pass by reference
+    
+    // A reference behaves like a pointer which is automatically derefenced when used
+    std::cout << "The value of x was " << x;
+    int z = func_3(x);
+    std::cout << " and it became " << z << " after calling func_3 with x." << std::endl;
+    
+    
+    // Pass by const reference
+    // function is not allowed to alter the value held by the variable it dereferences.
+    
+    
+    
+    
+    // Reference semantics (Java, C#, Python, etc.)
+    // When an object is initialized from another object, or passed as a function arg, a reference is used
+    
+    // Instead of allocating memory for a new object and copying the data into it, 
+    // the new object shares the memory used by the original object.
+    
+    // The original variable cannot be destroyed until all the other objects which are using its memory have been destroyed
+    
+    // To manage the lifetime of the objects, the language provides a "garbage collector".
+    // The program periodically stops executing and goes through all the objects and 
+    // decides which memory allocations it is safe to release.
+    
+    // Avoids the overhead of copying an object's data
+    // Adds overhead for the garbage collection (which uses a lot of memory and processing)
+    // The program cannot run unless garbage collection is not running
+    // Memory not released immediately
+    // Cannot predict when, or in what order, objects are destroyed.
+    
+    
+    
+    // Value semantics (C/C++)
+    
+    // Arguments are passed by value
+    // Initialization creates a totally new object 
+    // Objects exist only within a scope
+    
+    // Reference semantics are possible since pass-by-reference exists
+    // Objects in the heap can exist beyond the scope in which the reference variables live
+    
+    // Copying objects creates overhead due to copying the objects' data
+    // Mitigated in modern cpp
+    
+    // Local variables are destroyed deterministically and synchronistically
+    // Objects are destroyed in the reverse order to creation (=> LIFO)
+    // After destruction the memory space is available for new objects immediately

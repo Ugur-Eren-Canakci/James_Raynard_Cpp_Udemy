@@ -1,0 +1,17 @@
+    // std::vector
+    // similar to std::string, but can store any type of data
+    // the type of the data is a parameter of the class
+    // vector<int> vec {1,2,3,4};
+    
+    // std::vector has a member that's a dynamic array
+    // class std::vector<int> {
+    //    int* data; points to the memory address where the int array starts
+    //    size_t n; Number of elements
+    //    ...; other content
+    // }
+    
+    // Supports subscript notation (i.e. []), elements are indexed starting from 0 up to n-1
+    // .push_back() member function adds a new element to the back of the vector
+    // vec.push_back(5); vec is now 1,2,3,4,5
+    
+    

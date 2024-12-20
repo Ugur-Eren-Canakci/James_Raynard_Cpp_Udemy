@@ -1,0 +1,61 @@
+    // Classes
+    
+    // A class is a compound data structure
+    // Member functions are called to perform operations on an object of that class
+    
+    // By default, access to class members is "private".
+    // Public members can be accessed by any code in the program
+    
+    // Public members provide the interface of the class, i.e. "what it does"
+    // Private members provide the implementation of the class, i.e. "how it does it"
+    
+    // A 'struct' is the same as a class, except members are public by default
+    
+    //*********IMPORTANT*********
+    // Member functions are implemented as GLOBAL functions. When a member function is called on an object, that object is 
+    // passed by address into the global function next to other arguments
+    // Ex: Assume Test class is defined with a member fn "void func(int)", and test is a Test object.
+    // test.func(1); this is actually called as Test::func(&test,1).
+
+    // The pointer to the object is available as "this" in the member functions.
+    // Dereferencing "this" gives access to the class members of that object
+    
+    
+    // Special methods
+    // Constructor, copy constructor, move constructor, assignment operator, destructor, overloads of these, etc. 
+    // These concern the management of objects 
+    // Their names are related to the class's name.
+    // The compiler will automatically insert calls to these functions when needed
+    // In some cases, the compiler will automatically create these functions
+    
+    // Copy constructor is similar to the constructor, but takes in only one argument, which is the 
+    // reference to the object that will be copied.
+    // Ex: Test::Test(const Test& other) : init_list {init commands}
+    
+    // If you don't pass the object to be copied by reference, then a copy of that initial object has to be created
+    // This creates an infinite loop of calling a copy constructor
+    
+    // Assignment Operator 
+    // Assigns an existing object from another
+    // Always takes in one argument, i.e. the const reference to the pre-existing object
+    // Returns a reference to the assigned object, i.e. the object on the left of the operator
+    // Ex: Test& operator=(const Test& other) {
+    //    sth;
+    //    sth;
+    //    return *this;
+    // } This return is useful for chain assignments
+    // say a = b = c is called. "b = c" returns a reference to b, and so "a = b" is 
+    // called with a const reference to b, to assign the "value" of b into a.
+    //*********IMPORTANT*********
+    // Built-in types have assignments that return non-const references. If you define your own operators, they should also return 
+    // non-const references, for a consistent codebase.
+    
+    // Destructor
+    // Called before the class members are released in memory
+    // Performs any tidying-up before the object disappears
+    // Ex: Test::~Test() {
+    //     release allocated memory
+    //     stop connection to the database
+    //     etc.
+    // }
+    

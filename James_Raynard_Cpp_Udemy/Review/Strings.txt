@@ -1,0 +1,32 @@
+// C-style string
+    
+    // Array of const char
+    // Each character of the string is stored in an element of the array 
+    // The array has an extra null character at the end, to detect the end of the string
+    // String literals are C-style strings
+    // Ex: const char* str = "Hello!"; -> equivalent to const char* str[] = {'H', 'e', 'l', 'l', 'o', '!', '\0'}
+    
+    
+    
+    // std::string
+    // This is a class
+    // It has a member which is a dynamic array
+    // It also has a member which stores the number of elements in the array
+    
+    // class std::string {
+    //    char* data; points to the memory where the char array starts
+    //    size_t n; Number of elements
+    //    ...; other content
+    // }
+    
+    // Not a procedural C-string, rather an object oriented string
+    // Behave like a dynamic array, but are used like a local variable
+    
+    // std::string text {"Hello"}; allocates memory on the heap and populates it
+    // Memory is released inside the destructor of std::string class. 
+    // Correctly handles copying and assigning, by allocating new blocks of memory
+    // Automatically reallocates the memory block when needed
+    
+    // Subscript notation (i.e. []) is supported
+    // Elements are indexed, starting from 0.
+    // .size() returns number of elements

@@ -1,0 +1,23 @@
+    // Arrays
+    
+    // An indexed block of contiguous memory
+    // Inherited from C
+    // Can be allocated on the program stack only if the number of elements is fixed and known at compile time
+    // int arr[variable] not allowed in standard c++ even if variable is const
+    
+    // Dynamic arrays
+    
+    // The array must be allocated on the heap if 1) we do not know the number of elements at compile time 
+    // or 2) we want to be able to vary the number of elements
+    // memory has to be explicitly released after the array is used.
+    // Ex: int* arr = new int[variable] allowed
+    
+    // 2D arrays
+    // Stored as a single memory block
+    // int arr[2][4] { {1,2,1,2}, {3,4,3,4} }; an array of two 4-element arrays
+    // int arr[2][4] { 1,2,1,2,3,4,3,4 }; same with above
+    // arr[1] is 3,4,3,4
+    // arr[0][2] is 1
+    
+    // 2D arrays can be flattened to 1D arrays, with the right offsetting of elements
+    // Useful when performance is more important than ease of notation

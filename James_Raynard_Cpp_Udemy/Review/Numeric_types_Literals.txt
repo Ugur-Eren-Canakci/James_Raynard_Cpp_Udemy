@@ -1,0 +1,49 @@
+    // Numeric types and literals
+    // size of c++ types depend on the implementation
+    
+    // char is the only type with fixed memory requirement, that is 8 bits
+    // int requires at least 16
+    // long requires at least 32
+    // long long is new in c++11, needs at least 64 bits
+    
+    // c++11 <cstdint> introduced fixed-width integers:
+    // int8_t, int16_t, int32_t, int64_t
+    // uint8_t, uint16_t, uint32_t, uint64_t
+    
+    // numeric literals are base 10
+    // hexadecimals have 0x or 0X at the front
+    // octals have the weird 0 in front
+    // binary numeric literals have 0b or 0B in front (C++14 onwards)
+    
+    // float usually is at 6 digits precision, regardless if numbers are before or after the decimal point
+    // double usually is at 15 digits precision
+    // long double usually is at 20 digits precision
+    
+    // you can use ' as the digit seperator (C++14 onwards)
+    // this can go anywhere except the front and the back of the number
+    
+    // floating-point literals are double by default
+    // integer literals are int by default, going up to long long if needed
+    //***********IMPORTANT*************
+    // We can add a suffix to change the type of a literal 
+    // C++11 onwards, you can define your own suffixes that work on objects of your type
+    
+    // string literals
+    // just a const array of chars
+    // const char* str = "Hello"; c-style string, null-terminated
+    // very limited range of operations
+    // only compatible with arrays of same length
+    
+    // C++14 onwards, std::string literals are a thing
+    //************IMPORTANT***************
+    // We add 's' at the back, i.e. after closing the double quote
+    // Supports all std::string operations 
+    // Can be used anywhere that expects a std::string object
+    
+    // Certain characters can be "escape" characters
+    // \n \t \b etc.
+    //*******IMPORTANT***********
+    // C++11's raw string literals avoid "backslashitis"
+    // String literal goes into R"(str literal here)" and this allows for type-specific 
+    // characters to be non-processed, i.e. preserving the nature of the string literal
+    // If the string contains )", we need to add a delimiter

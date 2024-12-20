@@ -1,0 +1,32 @@
+// Pointers and Memory
+    // A pointer is a variable whose value is a memory address, in stack or in heap
+    
+    // To init a pointer, you assign an address to it
+    // This address could be the address of a pre-initialized variable or some arbitrary address
+    
+    // The "new" operator allocates memory on the heap and returns the address of that allocated memory
+    // "new" will call the default constructor for the class if an object is created
+    // For a built-in data type, the data will be left uninitialized
+    // But, you can get it initialized
+    
+    // int* p1 = new int; 
+    // int* p2 = new int {5};
+    
+    // Memory from the heap will remain allocated to the program until it is released
+    // If the program does not explicitly release it, the memory will remain allocated until the program is terminated
+    // The operating system restricts the amount of memory a program can allocate
+    
+    // "delete" operator releases memory that was allocated by "new".
+    // "delete" will first call the destructor for the object(s) in the memory, then release the allocated memory.
+    
+    // "delete" doesn't delete the pointer that used to point to a memory in the heap. These pointers are called "dangling".
+    // Derefencing these pointers will result in an undefined behaviour, likely to crash the program.
+    
+    // For every "new" operation, there has to be a "delete" operation.
+    
+    // You can also allocate an array in the heap with a pointer pointing to the first element of the heap
+    // Test* ptr_test_array = new Test[10];
+    // In this case, we have to use a special form of "delete" to release the memory:
+    // delete [] ptr_test_array;
+    // Using the "normal" delete results in undefined behaviour again.
+    

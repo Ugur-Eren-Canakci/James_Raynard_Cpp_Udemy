@@ -1,0 +1,48 @@
+"auto"
+
+Was originally used in C to specify that a variable should be created on the stack
+
+In modern c++, it's used to indicate that the compiler should deduce the type from the variable's initial value.
+
+Ex:
+    auto s1 = "Hello"; // deduces const char s1[] = "Hello"
+    auto s2 = "Hello"s; // deduces std::string s2 {"Hello"s};
+    
+
+Will give only the underlying type 
+    const, reference, etc. are ignored
+    
+Ex:
+
+const int& x{6};
+auto y=x; //y is defined as an int, not const int&
+
+++y; // guess: value that's referenced by x is copied into y, and y is an int. hence, this should be allowed.
+// fact: my guess was true!
+=> If you need const, reference, or other stuff, you have to add it yourself.
+
+Ex: 
+const int& x{6};
+const auto& y=x; //y is defined as an int, not const int&
+
+++y; // since y is const, you can't increment it. this results in a compiler error.
+
+
+We can use auto also to capture the value returned by a function
+Ex:
+int func() {
+    return 5; // returns a reference to a const int
+}
+(Recall: return value is held in the memory to be copied into variables after the function is run)
+auto x = func();
+
+Use auto when
+    1) the type doesn't matter
+    2) the type doesn't provide useful info
+    3) when the code is clearer without the type
+    4) when the type is hard to discover
+    5) when the type is unknown (ex: compiler-generated classes such as lambda fn's)
+    
+Don't use auto if
+    1) you want a particular type
+    2) it makes the code less clear
