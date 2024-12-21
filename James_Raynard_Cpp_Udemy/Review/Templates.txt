@@ -1,0 +1,78 @@
+We often run into situations where we have several bits of code with the same purpose, defined for different data types
+    C++ templates allow us to write code that works with any type
+        This is called "generic programming".
+        
+When we use the template with data of a particular type, the compiler will generate the code needed for that type
+    vector<int> tells compiler to define a class that is vector of ints
+    then the compiler will insert the source code for the class definition into the translation unit
+        the translation unit is basically a source code file (.cc, .cpp), as it is seen by the compiler
+    this code will then be compiled as part of the program
+    
+    this is called an "instantiation" of the template, happening automatically when the compiler sees "vector<int>"
+    
+    for this to be possible, the compiler must be able to see the full definition of the vector template class in the translation unit
+
+We use a dummy type to show the compiler what the code looks like. This type is called the "template parameter"
+
+A template can be either a function template or a class template.
+Ex: (function template)
+    template<class T>
+    T Max(const T& t1, const T& t2) {
+        return (t1 > t2) : t1 ? t2;
+    }
+    
+    When Max() is called (with two objects of same type since the definition is as such), the compiler will 
+    instantiate the function from the template code, with T replaced by the type of the arguments.
+    
+    std::cout << Max<int>(3,4);
+    std::cout << Max(3,4);
+        both of these are valid. 
+            on the first one, we force the compiler to define Max for int, i.e. replace T with int
+            on the second command, compiler estimates the type T should be.
+        3 and 4 are integers. So, the compiler rewrites the definition of Max while replacing keyword "T" with the keyword "int":
+        int Max(const int& t1, const int& t2) {
+            return (t1 > t2) : t1 ? t2;
+        }
+    
+
+********************IMPORTANT********************
+The way you organize the code is quite important when you are using templates
+    
+    If you're using a normal function, you just need to give the declaration
+    => The compiler will need to know the name of the function, the number and type of its arguments, and the return type.
+    The compiler will check that the types are used correctly when the function is called ü.
+
+When we call a template function, the compiler must be able to see the full definition, including the function body
+    Most programmers write the template definition in the header file, so it's included in the program automatically  
+    Some programmers put all their template definitions in a separate ".inc" file and include that file separately
+    
+Ex: (class template)
+
+    template <class T>
+    class Test {
+        T data;
+        Test(const T& data) : data{data} {}
+    };
+
+    To create an instance of this class, we put the type in angle brackets:
+    Test<std::string> test {"Hello"s};
+    
+    Compiler creates a class definition for this test object to be instantiated:
+    class Test_sdfasd { // unique derived name, created by the compiler
+        std::string data;
+        Test(const std::string& data) : data{data} {}
+    };
+********************IMPORTANT********************
+    Type declaration is mandatory for class templates until C++17
+    Ex:
+        vector<int> vec {1,2,3}; // works normally
+        vector vec {1,2,3}; // C++17 onwards
+
+    This is called CTAD (Constructor Template Argument Deduction)
+        It means that we can call constructors the same way we call a templated function, without giving the type of the parameter
+        Obviously, the class template has to have a constructor that's well-defined for all possible type parameters to be inserted into the template
+********************IMPORTANT********************
+
+Originally, the "class" keyword had to be used for a template parameter.
+    The "typename" keyword was added in C++98, but many programmers still prefer to put "class" into angle brackets when defining a template fn/class
+

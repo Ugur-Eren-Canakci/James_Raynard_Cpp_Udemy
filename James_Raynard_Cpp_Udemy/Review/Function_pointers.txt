@@ -1,0 +1,41 @@
+A function's executable code is stored in the memory.
+    We can get a pointer whose address is THE START OF THIS CODE.
+    
+Ex:
+    void func(int,int);
+    auto func_ptr = &func; 
+    
+        This is actually "void (* func_ptr)(int,int) = &func;"
+        the return type is void
+        Because of the operator precedence rules in C++, we have to put *func_ptr inside brackets:
+            "void* func_ptr (int, int)" is interpreted as a function that returns a pointer to the void, which is not what func_ptr is.
+            With the asterisk inside the brackets, it's interpreted as pointing to a function who returns void.
+
+We can use a type alias for a function pointer's type:
+    using pfunc = void (*)(int, int);
+    
+A function pointer is a callable object, behaving like a variable, that calls the pointed function when dereferenced.
+    (*func_ptr)(1,2);
+    
+A function pointer is a "first class object"
+    We can pass a function pointer as argument to another function
+        void some_func(int x, int y, pfunc f) {...}; // using pfunc = void (*)(int, int)
+    The forwarded pointer can be dereferenced inside a function body
+        (*f)(...);
+    We can return a function pointer from a call to another function
+        pfunc some_func(...) {return &func};
+
+
+Pros and Cons:
+
+    Function pointers were inherited from C
+
+    Useful for writing callbacks
+        Operating systems, GUI's, event-driven code
+        Provides a function under certain conditions
+    
+    Raw pointers, so can be overwritten, null, or uninitialized
+    
+    Syntax is ugly
+
+    

@@ -1,0 +1,31 @@
+In C and early versions of C++, the loop counter had to be initialized before the loop.
+Since the variable is outside the loop, reusing it was possible. This is obviously problematic
+
+C++98 onwards, (int i=0; ...) is allowed, and i is defined inside the loop.
+
+We often have situations where we want to check the return value from a function before we do sth.
+    => we have to define a variable to hold the return value of that function
+    
+***********IMPORTANT***********
+C++17 onwards, we can initialize a var in an if statement:
+    if (auto iter = container.begin(); iter != container.end()) { //check if container's not empty
+        ...
+    }
+This var that was initialized in the if statement is local to the if statement, including the else part.
+***********IMPORTANT***********
+Same is true for switch statements
+
+***********IMPORTANT***********
+If you don't put a break into a case statement in a switch, the next case will be assumed true, and the code for that case will be executed.
+C++17 provides "[[fallthrough]]" attribute
+    used with an empty statement 
+Ex:
+    switch(c) {
+        case ' ': 
+            [[fallthrough]];
+        case '\t':
+            [[fallthrough]];
+        case '\n':
+            ++ws_count;
+            break;
+***********IMPORTANT***********

@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Function_pointers.txt"/>
+    <File Name="Namespaces.txt"/>
+    <File Name="Templates.txt"/>
+    <File Name="If_statements_Switch.txt"/>
     <File Name="auto.txt"/>
     <File Name="Iterators.txt"/>
     <File Name="Casting.txt"/>

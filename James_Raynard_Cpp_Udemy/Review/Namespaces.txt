@@ -1,0 +1,73 @@
+A namespace is used to group together logically related symbols
+    Typically done within libraries
+
+This groups together the names of all the functions, types and variables defined by it
+
+We can manage object files by creating binary libraries, DLLs or shared objects
+
+Large programs usually include several libraries
+    This can lead to name conflicts
+    Ex: two separate libraries might define a class with same name
+    One solution(the only solution in C) is to add an affix to the class name, but this is tedious and not rigorous.
+    Hence, namespaces.
+    
+C++ has a "one definition" rule:
+    A symbol can only be defined once, even if you want it to have different meanings
+    
+We create a namespace by "namespace" keyword, followed by what name we will use for the namespace.
+    namespace abc {
+        ...
+    }
+We put the symbols we want to declare in this namespace inside the braces
+Every symbol put inside a namespace will have the namespace's name added as a prefix:
+    namespace abc {
+        class Test {...};
+    } // the symbol abc::Test is defined automatically 
+    
+If a name is not in any namespaces, it's said to be in the "global namespace".
+    Global namespace has no name
+    If we want to refer to an object specifically in the global namespace, we just put :: at the start of the object
+    Ex: (assume Test is a class defined in both the global namespace and "abc" namespace)
+    ::Test test_1 {...};
+    abc::Test test_2 {...};
+    
+A namespace can be "split" over different parts of a code:
+
+    namespace abc {
+        class Test {
+            int do_test(int& value) const; // member function declaration 
+            }; // class definition
+        }
+
+    some_other_code;
+        
+    namespace abc {
+        int Test::do_test(int& value) const {...}; // member function definition
+        }
+    
+When a symbol is defined in a namespace, it "hides" any symbols outside the namespace with the same name.
+
+    int x=3;
+    namespace abc {
+        int x=5;
+        void func() {
+            std::cout << x << "\n"; // cout is 5
+            std::cout << ::x << "\n"; // cout is 3
+        }
+    }
+    
+    
+A "using" declaration will bring a particular version of a class from its namespace to the global namespace.
+Ex:
+    using xyz::Test; 
+    
+    Test test_1 {}; // xyz::Test object
+    ::Test test_2 {}; // global Test object (assuming there's a Test definition in the global namespace)
+This takes effect from the "using" declaration till the end of the scope.
+
+A "using" directive will bring everything from a namespace into the global namespace.
+    Not good practice since this defeats the purpose of using namespaces.
+    Guess: acceptable if you don't have any conflicting definitions with a particular namespace you bring into the global namespace.
+    Ex: 
+        using namespace std;
+        cout << ...;
