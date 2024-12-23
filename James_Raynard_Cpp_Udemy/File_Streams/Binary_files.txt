@@ -1,0 +1,76 @@
+we open files in binary mode for this
+    out_file.open("file_location", fstream::binary)
+    
+    << and >> are not suitable
+        they perform conversions between numeric data and text
+        text data is formatted on output
+        whitespace is discarded on input
+        we should always use read() and write() with binary mode
+    
+        the data in a binary file needs to be structured in some way, to make it meaningful to the apps that use it
+        often when we use a binary file, we use a standard format for storing our data (like .jpg and .zip)
+    
+        the best way to work with a binary file is to create a struct whose data members correspond to the fields in the file format
+    
+    Ex:
+    struct point {
+        char c;
+        int32_t x;
+        int32_t y;
+    }; 
+    
+    first problem: size of an int is dependent on the implementation
+    say we write a binary file in a 32-bit system and read it on a 64-bit system. then the data is going to be in the wrong place and we'll get wrong results
+    => we use fixed-size ints to make sure we get the same results on all systems
+    
+    the first argument to read() and write() will be the address of the point object
+        this needs to be converted to a "pointer to char" => use "reinterpret_cast<char *> (&p)" where p is the point object
+    second arg will be the number of bytes in the object, i.e. sizeof(point)
+    then the calls will be as below:
+        out_file.write(reinterpret_cast<char *>(&p), sizeof(point));
+        in_file.read(reinterpret_cast<char *>(&p2), sizeof(point));
+        
+        
+Memory alignment
+
+    Modern hardware is optimized for accessing data which is "word aligned"
+    On a 32-bit system, this means that the address of each object is a MULTIPLE OF 4
+    Ex:
+    0x1000 -> one var
+    0x1004 -> one var
+    0x1008 -> one var
+    .
+    .
+    .
+    
+    
+    If a struct is not word-aligned, compilers will usually add extra bytes (called "padding" bytes)
+        these place the struct members at the required offset
+    Ex:
+    struct point {
+        char c;
+        **** char[3] pad; added by the compiler
+        int32_t x;
+        int32_t y;
+    };
+    
+    
+    If we have a file format which expects data fields to be at offsets which are not multiples of 4, padding bytes will create discrepancies
+        Most compilers provide a non-standard #pragma directive to set the alignment
+            Between #pragma directives, everything is non-standard
+        Ex:
+        #pragma pack(push, n) -> pushes n-byte memory alignment for the variables of the defined structure
+        struct point { 
+            ... 
+        };
+        #pragma pack(pop) -> end of the specific alignment
+    
+    
+    ***********IMPORTANT**************
+    If we call some library code, which assumes standard alignment, we are likely to have problems
+    
+    There's also a compiler option, which will affect all the code in a source file
+    
+    C++11 introduced "alignas(n)" keyword to be called right before the type declaration of a variable
+        This forces the compiler to allocate n bytes for that variable
+        However, it is ignored if the argument is less than the word size

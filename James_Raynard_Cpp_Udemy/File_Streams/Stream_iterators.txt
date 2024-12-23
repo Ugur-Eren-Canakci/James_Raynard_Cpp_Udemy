@@ -1,0 +1,71 @@
+#include <iterator>
+#include <iostream>
+
+Up until now we used iterators designed for containers
+    These are called "random access iterators".
+    With these, you can access any element of a container, and it takes the same amount of 
+    time to obtain any element from the container
+    
+    
+STL provides iterators that work on streams
+    The data must all have the same type
+    Defined in <iterator>
+    
+    istream_iterator reads an input stream
+    ostream_iterator writes an output stream
+    
+    These iterators are parametric types
+        i.e. they must be instantiated with the type of the data
+        
+    Stream iterators have a very limited interface
+        Assigning an object to an ostream_iterator will put that object on the stream
+        Dereferencing an istream_iterator will return the object at the current position in the stream
+        Incrementing an istream_iterator will move the stream's position marker to the next object
+        
+    ostream_iterator has operator* and operator++ 
+        these do nothing but make the code look more consistent with the iterator syntax
+        
+    an ostream_iterator must be bound to an output stream
+        ostream_iterator<int> oi(cout); -> will put integers onto the console every time an integer is assigned onto *oi
+        *oi = 7; calls operator<< on cout and inserts 7 
+        
+        We can give a second argument to the ostream_iterator constructor
+            this arg has to be a c-style string
+            will be inserted to the output stream after every manual insertion
+            
+            ostream_iterator<int> oi(cout, '\n');
+            for (int i=0; i < 10; i++=) {
+                *oi = i;
+                oi++; -> does nothing but should be put there for consistency
+            } -> output will be 0 enter 1 enter 2 ... enter 9
+        
+    an istream_iterator is created in a similar way
+        istream_iterator<int> ii(cin); -> iterator set on cin => will return data from cin
+        
+        when we dereference ii, it will return the current data
+            int x = *ii;
+            std::cout << "You entered " << x << std::endl;
+        
+        to read multiple input, we use a loop
+            when dealing with input we have to know when to stop reading
+                the iterator will be empty when there's no more input
+                we can detect the end of input by comparing our iterator to an empty iterator
+                we can create an empty iterator by not binding it to any stream
+                    istream_iterator<string> eof; -> empty iterator
+                    
+            Ex:
+            istream_iterator<string> iis(cin);
+            istream_iterator<string> eof;
+            vector<string> vs;
+            while (!iis == eof) {
+                vs.push_back(*iis);
+                iis++;
+            }
+            
+            for (auto v: vs) {
+                cout << v << endl;
+            }
+            
+            
+        
+    

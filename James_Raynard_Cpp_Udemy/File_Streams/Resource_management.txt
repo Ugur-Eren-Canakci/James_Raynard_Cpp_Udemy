@@ -1,0 +1,36 @@
+// Resource management
+    // heap memory, files, database connections, GUI windows
+    
+    // we have to allocate, open or acquire the resource before use
+    // we have to release or close the resource after use
+    // we may need to give special thought to copying the resource
+    // we need to think about error handling
+    
+    // STL has some classes which manage resources
+    //      allocated memory -> vector and string
+    //      files -> fstream
+    //      Objects used in multithreading
+    
+    // These follow the OOP principle of encapsulation
+    // the details of managing the resource are hidden inside the class
+    // other code doesn't need to deal with resource directly
+    // instead, it uses the class's interface (i.e. member fn's)
+    
+    // C++ classes which manage a resource follow a common idiom 
+    // The resource is stored as a private member of the class
+    // The class constructor acquires the resource
+    // The class's public member functions control access to the resource
+    // The class's destructor releases the resource
+    
+    // This idiom is known as RAII -> Resource Acquisition Is Initialization
+    // When an object is copied or assigned to, the target object acquires its own version of the resource
+    
+    // Advantages of RAII:
+    // Obtaining access to the resource is straightforward and deterministic
+    // - Either the object is successfully created, or the resource is not usable by the program
+    // Using the resource is straightforward
+    // - Just call the object's member fn's
+    // Releasing resource is straightforward and deterministic
+    // - The resource is released when the object goes out of scope
+    // - Either at the end of the scope, or when an exception is thrown
+    // Only one object can own a given resource at a time

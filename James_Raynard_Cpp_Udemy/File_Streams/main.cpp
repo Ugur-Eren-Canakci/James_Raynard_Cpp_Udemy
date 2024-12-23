@@ -176,5 +176,57 @@ int main() {
     // istringstreams can be used with getline() to process strings easier compared to operator>>
     
     
+    
+    
+    // Random access to streams
+    // C++ streams have a position marker that keeps track of where the next read or write operation will be performed
+    // Normally, the stream controls the marker, but the programmer can alter its position
+    // - Requires "not append" mode for fstream
+    // - Stringstream
+    
+    // Operations are called "seek" and "tell"
+    // - seekg sets the current position in an input stream
+    // - seekp sets the current position in an output stream
+    // - tellg returns the current position in an input stream
+    // - tellp returns the current position in an output stream
+    // - g is for "get", p is for "put"
+    
+    // these tell and seek fn's are only defined for the appropriate streams
+    // they are defined for iostreams but cannot do anything useful
+    // - cause runtime error when called
+    // - the stream will be put in an invalid state
+    // for an fstream in append mode, seekp has no effect, as the output is always put at the end of the file
+    
+    // tellg and tellp
+    // return a pos_type object that can be converted to an int
+    // the operation can fail if the stream is in an invalid state, and these will return -1.
+    
+    // seekp and seekg
+    // take in a pos_type argument, to move the marker to an absolute position
+    // can take in negative numbers that work similar to the wrapping of arrays
+    // can also move the marker to a position which is relative to a base position
+    // - std::ios_base provides three base positions: beg -> beginning of the stream, end -> end, cur -> current marker position
+    // ex: seekp(-10, std::ios_base::end) -> move position marker to 10 chars before the end
+    
+    // tell operations are useful for saving the current marker position, so that we can retrieve them later
+    // Ex:
+    // ostringstream output;
+    // ...
+    // auto marker = ofile.tellp();
+    // ...
+    // if (cancel) {
+    //     ofile.seekp(marker);
+    // }
+    
+    // File modification
+    // The best way to modify a file is usually:
+    // - read it into a istringstream
+    // - get the bound string and make changes to the data
+    // - when ready, overwrite the original file
+    // - seek and tell can be used to modify a file in-place, but be very careful when doing so
+    
+
+    
+    
     return 0;
 }
