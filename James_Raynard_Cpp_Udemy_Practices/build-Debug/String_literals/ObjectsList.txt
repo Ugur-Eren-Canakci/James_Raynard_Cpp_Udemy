@@ -1,0 +1,1 @@
+../build-Debug/String_literals/main.cpp.o   

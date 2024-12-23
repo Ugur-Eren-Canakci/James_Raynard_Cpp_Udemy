@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="James_Raynard_Cpp_Udemy_Practices" Database="" Version="10000">
+  <Project Name="Local_variables_Function_argument" Path="Local_variables_Function_argument/Local_variables_Function_argument.project" Active="No"/>
+  <Project Name="Declaration_and_Initialization" Path="Declaration_and_Initialization/Declaration_and_Initialization.project" Active="No"/>
+  <Project Name="Special_member_functions" Path="Special_member_functions/Special_member_functions.project" Active="No"/>
+  <Project Name="Pointers_and_Memory" Path="Pointers_and_Memory/Pointers_and_Memory.project" Active="No"/>
+  <Project Name="Array_String_Vector" Path="Array_String_Vector/Array_String_Vector.project" Active="No"/>
+  <Project Name="Two_dimensional_arrays" Path="Two_dimensional_arrays/Two_dimensional_arrays.project" Active="No"/>
+  <Project Name="Numeric_Types_and_Literals" Path="Numeric_Types_and_Literals/Numeric_Types_and_Literals.project" Active="No"/>
+  <Project Name="String_literals" Path="String_literals/String_literals.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug">
+      <Environment/>
+      <Project Name="Local_variables_Function_argument" ConfigName="Debug"/>
+      <Project Name="Declaration_and_Initialization" ConfigName="Debug"/>
+      <Project Name="Special_member_functions" ConfigName="Debug"/>
+      <Project Name="Pointers_and_Memory" ConfigName="Debug"/>
+      <Project Name="Array_String_Vector" ConfigName="Debug"/>
+      <Project Name="Two_dimensional_arrays" ConfigName="Debug"/>
+      <Project Name="Numeric_Types_and_Literals" ConfigName="Debug"/>
+      <Project Name="String_literals" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release">
+      <Environment/>
+      <Project Name="Local_variables_Function_argument" ConfigName="Release"/>
+      <Project Name="Declaration_and_Initialization" ConfigName="Release"/>
+      <Project Name="Special_member_functions" ConfigName="Release"/>
+      <Project Name="Pointers_and_Memory" ConfigName="Release"/>
+      <Project Name="Array_String_Vector" ConfigName="Release"/>
+      <Project Name="Two_dimensional_arrays" ConfigName="Release"/>
+      <Project Name="Numeric_Types_and_Literals" ConfigName="Release"/>
+      <Project Name="String_literals" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
