@@ -3,12 +3,12 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Strings
+ProjectName            :=File_Streams_Assignment_1
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy"
-ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/Strings"
-IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Strings
+ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/File_Streams_Assignment_1"
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/File_Streams_Assignment_1
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -96,7 +96,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/Strings/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/File_Streams_Assignment_1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 

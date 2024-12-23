@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="James_Raynard_Cpp_Udemy" Database="" Version="10000">
   <Project Name="Review" Path="Review/Review.project" Active="No"/>
-  <Project Name="Strings" Path="Strings/Strings.project" Active="Yes"/>
+  <Project Name="Strings" Path="Strings/Strings.project" Active="No"/>
+  <Project Name="File_Streams" Path="File_Streams/File_Streams.project" Active="No"/>
+  <Project Name="File_Streams_Assignment_1" Path="File_Streams_Assignment_1/File_Streams_Assignment_1.project" Active="Yes"/>
+  <Project Name="File_Streams_Assignment_2" Path="File_Streams_Assignment_2/File_Streams_Assignment_2.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="Review" ConfigName="Debug"/>
       <Project Name="Strings" ConfigName="Debug"/>
+      <Project Name="File_Streams" ConfigName="Debug"/>
+      <Project Name="File_Streams_Assignment_1" ConfigName="Debug"/>
+      <Project Name="File_Streams_Assignment_2" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
       <Project Name="Review" ConfigName="Release"/>
       <Project Name="Strings" ConfigName="Release"/>
+      <Project Name="File_Streams" ConfigName="Release"/>
+      <Project Name="File_Streams_Assignment_1" ConfigName="Release"/>
+      <Project Name="File_Streams_Assignment_2" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
