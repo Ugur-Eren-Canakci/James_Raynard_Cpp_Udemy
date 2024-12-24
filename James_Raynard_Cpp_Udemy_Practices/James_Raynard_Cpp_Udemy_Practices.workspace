@@ -7,7 +7,27 @@
   <Project Name="Array_String_Vector" Path="Array_String_Vector/Array_String_Vector.project" Active="No"/>
   <Project Name="Two_dimensional_arrays" Path="Two_dimensional_arrays/Two_dimensional_arrays.project" Active="No"/>
   <Project Name="Numeric_Types_and_Literals" Path="Numeric_Types_and_Literals/Numeric_Types_and_Literals.project" Active="No"/>
-  <Project Name="String_literals" Path="String_literals/String_literals.project" Active="Yes"/>
+  <Project Name="String_literals" Path="String_literals/String_literals.project" Active="No"/>
+  <Project Name="Casting" Path="Casting/Casting.project" Active="No"/>
+  <Project Name="Iterators" Path="Iterators/Iterators.project" Active="No"/>
+  <Project Name="Auto_keyword" Path="Auto_keyword/Auto_keyword.project" Active="No"/>
+  <Project Name="Loops_and_Iterators" Path="Loops_and_Iterators/Loops_and_Iterators.project" Active="No"/>
+  <Project Name="Iterator_arithmetics_and_Iterator_ranges" Path="Iterator_arithmetics_and_Iterator_ranges/Iterator_arithmetics_and_Iterator_ranges.project" Active="No"/>
+  <Project Name="If_statements_Switch" Path="If_statements_Switch/If_statements_Switch.project" Active="No"/>
+  <Project Name="Templates" Path="Templates/Templates.project" Active="No"/>
+  <Project Name="Namespaces" Path="Namespaces/Namespaces.project" Active="No"/>
+  <Project Name="Function_pointer" Path="Function_pointer/Function_pointer.project" Active="No"/>
+  <Project Name="Basic_string_operations" Path="Basic_string_operations/Basic_string_operations.project" Active="No"/>
+  <Project Name="Searching_strings" Path="Searching_strings/Searching_strings.project" Active="No"/>
+  <Project Name="Files_and_streams" Path="Files_and_streams/Files_and_streams.project" Active="No"/>
+  <Project Name="File_streams" Path="File_streams/File_streams.project" Active="No"/>
+  <Project Name="Streams_and_buffering" Path="Streams_and_buffering/Streams_and_buffering.project" Active="No"/>
+  <Project Name="Unbuffered_IO" Path="Unbuffered_IO/Unbuffered_IO.project" Active="No"/>
+  <Project Name="File_modes" Path="File_modes/File_modes.project" Active="No"/>
+  <Project Name="Stream_member_functions_and_State" Path="Stream_member_functions_and_State/Stream_member_functions_and_State.project" Active="No"/>
+  <Project Name="Stream_Manipulators_and_Formatting" Path="Stream_Manipulators_and_Formatting/Stream_Manipulators_and_Formatting.project" Active="No"/>
+  <Project Name="Floating_point_output_formats" Path="Floating_point_output_formats/Floating_point_output_formats.project" Active="No"/>
+  <Project Name="Resource_management" Path="Resource_management/Resource_management.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -19,6 +39,26 @@
       <Project Name="Two_dimensional_arrays" ConfigName="Debug"/>
       <Project Name="Numeric_Types_and_Literals" ConfigName="Debug"/>
       <Project Name="String_literals" ConfigName="Debug"/>
+      <Project Name="Casting" ConfigName="Debug"/>
+      <Project Name="Iterators" ConfigName="Debug"/>
+      <Project Name="Auto_keyword" ConfigName="Debug"/>
+      <Project Name="Loops_and_Iterators" ConfigName="Debug"/>
+      <Project Name="Iterator_arithmetics_and_Iterator_ranges" ConfigName="Debug"/>
+      <Project Name="If_statements_Switch" ConfigName="Debug"/>
+      <Project Name="Templates" ConfigName="Debug"/>
+      <Project Name="Namespaces" ConfigName="Debug"/>
+      <Project Name="Function_pointer" ConfigName="Debug"/>
+      <Project Name="Basic_string_operations" ConfigName="Debug"/>
+      <Project Name="Searching_strings" ConfigName="Debug"/>
+      <Project Name="Files_and_streams" ConfigName="Debug"/>
+      <Project Name="File_streams" ConfigName="Debug"/>
+      <Project Name="Streams_and_buffering" ConfigName="Debug"/>
+      <Project Name="Unbuffered_IO" ConfigName="Debug"/>
+      <Project Name="File_modes" ConfigName="Debug"/>
+      <Project Name="Stream_member_functions_and_State" ConfigName="Debug"/>
+      <Project Name="Stream_Manipulators_and_Formatting" ConfigName="Debug"/>
+      <Project Name="Floating_point_output_formats" ConfigName="Debug"/>
+      <Project Name="Resource_management" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -30,6 +70,26 @@
       <Project Name="Two_dimensional_arrays" ConfigName="Release"/>
       <Project Name="Numeric_Types_and_Literals" ConfigName="Release"/>
       <Project Name="String_literals" ConfigName="Release"/>
+      <Project Name="Casting" ConfigName="Release"/>
+      <Project Name="Iterators" ConfigName="Release"/>
+      <Project Name="Auto_keyword" ConfigName="Release"/>
+      <Project Name="Loops_and_Iterators" ConfigName="Release"/>
+      <Project Name="Iterator_arithmetics_and_Iterator_ranges" ConfigName="Release"/>
+      <Project Name="If_statements_Switch" ConfigName="Release"/>
+      <Project Name="Templates" ConfigName="Release"/>
+      <Project Name="Namespaces" ConfigName="Release"/>
+      <Project Name="Function_pointer" ConfigName="Release"/>
+      <Project Name="Basic_string_operations" ConfigName="Release"/>
+      <Project Name="Searching_strings" ConfigName="Release"/>
+      <Project Name="Files_and_streams" ConfigName="Release"/>
+      <Project Name="File_streams" ConfigName="Release"/>
+      <Project Name="Streams_and_buffering" ConfigName="Release"/>
+      <Project Name="Unbuffered_IO" ConfigName="Release"/>
+      <Project Name="File_modes" ConfigName="Release"/>
+      <Project Name="Stream_member_functions_and_State" ConfigName="Release"/>
+      <Project Name="Stream_Manipulators_and_Formatting" ConfigName="Release"/>
+      <Project Name="Floating_point_output_formats" ConfigName="Release"/>
+      <Project Name="Resource_management" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

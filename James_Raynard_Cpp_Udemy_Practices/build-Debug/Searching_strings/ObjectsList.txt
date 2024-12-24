@@ -1,0 +1,1 @@
+../build-Debug/Searching_strings/main.cpp.o   

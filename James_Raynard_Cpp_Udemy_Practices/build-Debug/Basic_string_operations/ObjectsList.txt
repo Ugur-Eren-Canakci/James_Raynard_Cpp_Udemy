@@ -1,0 +1,1 @@
+../build-Debug/Basic_string_operations/main.cpp.o   
