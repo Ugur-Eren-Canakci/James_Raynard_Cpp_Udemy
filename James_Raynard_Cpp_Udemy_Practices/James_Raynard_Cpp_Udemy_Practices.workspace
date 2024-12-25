@@ -27,7 +27,15 @@
   <Project Name="Stream_member_functions_and_State" Path="Stream_member_functions_and_State/Stream_member_functions_and_State.project" Active="No"/>
   <Project Name="Stream_Manipulators_and_Formatting" Path="Stream_Manipulators_and_Formatting/Stream_Manipulators_and_Formatting.project" Active="No"/>
   <Project Name="Floating_point_output_formats" Path="Floating_point_output_formats/Floating_point_output_formats.project" Active="No"/>
-  <Project Name="Resource_management" Path="Resource_management/Resource_management.project" Active="Yes"/>
+  <Project Name="Resource_management" Path="Resource_management/Resource_management.project" Active="No"/>
+  <Project Name="Constructors" Path="Constructors/Constructors.project" Active="No"/>
+  <Project Name="Copy_constructors" Path="Copy_constructors/Copy_constructors.project" Active="No"/>
+  <Project Name="Assignment_operator" Path="Assignment_operator/Assignment_operator.project" Active="No"/>
+  <Project Name="Synthesized_Member_Functions" Path="Synthesized_Member_Functions/Synthesized_Member_Functions.project" Active="No"/>
+  <Project Name="Shallow_and_Deep_copying" Path="Shallow_and_Deep_copying/Shallow_and_Deep_copying.project" Active="No"/>
+  <Project Name="Copy_Elision" Path="Copy_Elision/Copy_Elision.project" Active="No"/>
+  <Project Name="Conversion_operators" Path="Conversion_operators/Conversion_operators.project" Active="No"/>
+  <Project Name="Default_and_Delete" Path="Default_and_Delete/Default_and_Delete.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -59,6 +67,14 @@
       <Project Name="Stream_Manipulators_and_Formatting" ConfigName="Debug"/>
       <Project Name="Floating_point_output_formats" ConfigName="Debug"/>
       <Project Name="Resource_management" ConfigName="Debug"/>
+      <Project Name="Constructors" ConfigName="Debug"/>
+      <Project Name="Copy_constructors" ConfigName="Debug"/>
+      <Project Name="Assignment_operator" ConfigName="Debug"/>
+      <Project Name="Synthesized_Member_Functions" ConfigName="Debug"/>
+      <Project Name="Shallow_and_Deep_copying" ConfigName="Debug"/>
+      <Project Name="Copy_Elision" ConfigName="Debug"/>
+      <Project Name="Conversion_operators" ConfigName="Debug"/>
+      <Project Name="Default_and_Delete" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -90,6 +106,14 @@
       <Project Name="Stream_Manipulators_and_Formatting" ConfigName="Release"/>
       <Project Name="Floating_point_output_formats" ConfigName="Release"/>
       <Project Name="Resource_management" ConfigName="Release"/>
+      <Project Name="Constructors" ConfigName="Release"/>
+      <Project Name="Copy_constructors" ConfigName="Release"/>
+      <Project Name="Assignment_operator" ConfigName="Release"/>
+      <Project Name="Synthesized_Member_Functions" ConfigName="Release"/>
+      <Project Name="Shallow_and_Deep_copying" ConfigName="Release"/>
+      <Project Name="Copy_Elision" ConfigName="Release"/>
+      <Project Name="Conversion_operators" ConfigName="Release"/>
+      <Project Name="Default_and_Delete" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

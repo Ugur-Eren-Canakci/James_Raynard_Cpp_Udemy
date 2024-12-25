@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ File_Streams_Assignment_2 - Debug ]----------"
-	@cd "File_Streams_Assignment_2" && "$(MAKE)" -f  "File_Streams_Assignment_2.mk"
+	@echo "----------Building project:[ Special_member_functions_and_Operator_overloading - Debug ]----------"
+	@cd "Special_member_functions_and_Operator_overloading" && "$(MAKE)" -f  "Special_member_functions_and_Operator_overloading.mk"
 clean:
-	@echo "----------Cleaning project:[ File_Streams_Assignment_2 - Debug ]----------"
-	@cd "File_Streams_Assignment_2" && "$(MAKE)" -f  "File_Streams_Assignment_2.mk" clean
+	@echo "----------Cleaning project:[ Special_member_functions_and_Operator_overloading - Debug ]----------"
+	@cd "Special_member_functions_and_Operator_overloading" && "$(MAKE)" -f  "Special_member_functions_and_Operator_overloading.mk" clean

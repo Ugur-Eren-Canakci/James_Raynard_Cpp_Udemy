@@ -96,4 +96,6 @@
     <File Name="../File_Streams_Assignment_1/languages2.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>
