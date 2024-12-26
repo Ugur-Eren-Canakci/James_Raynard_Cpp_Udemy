@@ -1,0 +1,1 @@
+../build-Debug/Algorithms_and_Lambda_Expressions/main.cpp.o   

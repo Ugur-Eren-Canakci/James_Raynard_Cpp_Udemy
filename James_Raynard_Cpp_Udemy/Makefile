@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Special_member_functions_and_Operator_overloading - Debug ]----------"
-	@cd "Special_member_functions_and_Operator_overloading" && "$(MAKE)" -f  "Special_member_functions_and_Operator_overloading.mk"
+	@echo "----------Building project:[ Algorithms_and_Lambda_Expressions - Debug ]----------"
+	@cd "Algorithms_and_Lambda_Expressions" && "$(MAKE)" -f  "Algorithms_and_Lambda_Expressions.mk"
 clean:
-	@echo "----------Cleaning project:[ Special_member_functions_and_Operator_overloading - Debug ]----------"
-	@cd "Special_member_functions_and_Operator_overloading" && "$(MAKE)" -f  "Special_member_functions_and_Operator_overloading.mk" clean
+	@echo "----------Cleaning project:[ Algorithms_and_Lambda_Expressions - Debug ]----------"
+	@cd "Algorithms_and_Lambda_Expressions" && "$(MAKE)" -f  "Algorithms_and_Lambda_Expressions.mk" clean
