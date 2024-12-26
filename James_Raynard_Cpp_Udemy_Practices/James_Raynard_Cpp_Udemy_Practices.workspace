@@ -37,7 +37,9 @@
   <Project Name="Conversion_operators" Path="Conversion_operators/Conversion_operators.project" Active="No"/>
   <Project Name="Default_and_Delete" Path="Default_and_Delete/Default_and_Delete.project" Active="No"/>
   <Project Name="Algorithms_overview" Path="Algorithms_overview/Algorithms_overview.project" Active="No"/>
-  <Project Name="Algorithms_with_predicates" Path="Algorithms_with_predicates/Algorithms_with_predicates.project" Active="Yes"/>
+  <Project Name="Algorithms_with_predicates" Path="Algorithms_with_predicates/Algorithms_with_predicates.project" Active="No"/>
+  <Project Name="Lambda_Capture_list" Path="Lambda_Capture_list/Lambda_Capture_list.project" Active="No"/>
+  <Project Name="Lambda_Partial_Evaluation" Path="Lambda_Partial_Evaluation/Lambda_Partial_Evaluation.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -79,6 +81,8 @@
       <Project Name="Default_and_Delete" ConfigName="Debug"/>
       <Project Name="Algorithms_overview" ConfigName="Debug"/>
       <Project Name="Algorithms_with_predicates" ConfigName="Debug"/>
+      <Project Name="Lambda_Capture_list" ConfigName="Debug"/>
+      <Project Name="Lambda_Partial_Evaluation" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -120,6 +124,8 @@
       <Project Name="Default_and_Delete" ConfigName="Release"/>
       <Project Name="Algorithms_overview" ConfigName="Release"/>
       <Project Name="Algorithms_with_predicates" ConfigName="Release"/>
+      <Project Name="Lambda_Capture_list" ConfigName="Release"/>
+      <Project Name="Lambda_Partial_Evaluation" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
