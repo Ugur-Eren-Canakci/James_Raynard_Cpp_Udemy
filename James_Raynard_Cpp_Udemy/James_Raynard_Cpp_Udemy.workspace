@@ -6,7 +6,8 @@
   <Project Name="File_Streams_Assignment_1" Path="File_Streams_Assignment_1/File_Streams_Assignment_1.project" Active="No"/>
   <Project Name="File_Streams_Assignment_2" Path="File_Streams_Assignment_2/File_Streams_Assignment_2.project" Active="No"/>
   <Project Name="Bitmap_practical" Path="Bitmap_practical/Bitmap_practical.project" Active="No"/>
-  <Project Name="Special_member_functions_and_Operator_overloading" Path="Special_member_functions_and_Operator_overloading/Special_member_functions_and_Operator_overloading.project" Active="Yes"/>
+  <Project Name="Special_member_functions_and_Operator_overloading" Path="Special_member_functions_and_Operator_overloading/Special_member_functions_and_Operator_overloading.project" Active="No"/>
+  <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -17,6 +18,7 @@
       <Project Name="File_Streams_Assignment_2" ConfigName="Debug"/>
       <Project Name="Bitmap_practical" ConfigName="Debug"/>
       <Project Name="Special_member_functions_and_Operator_overloading" ConfigName="Debug"/>
+      <Project Name="Algorithms_and_Lambda_Expressions" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -27,6 +29,7 @@
       <Project Name="File_Streams_Assignment_2" ConfigName="Release"/>
       <Project Name="Bitmap_practical" ConfigName="Release"/>
       <Project Name="Special_member_functions_and_Operator_overloading" ConfigName="Release"/>
+      <Project Name="Algorithms_and_Lambda_Expressions" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
