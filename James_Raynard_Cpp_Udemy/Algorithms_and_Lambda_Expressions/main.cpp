@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
+#include <utility>
 
 class is_shorter {
 public:
@@ -194,7 +194,7 @@ int main() {
     
     // we can also return lambda expressions from a function
     auto hello_greeter = greeter("Hello");
-    std::cout << hello_greeter("Ugur");
+    std::cout << hello_greeter("Ugur") << std::endl;
     
     
     // Partial evaluation
@@ -218,7 +218,126 @@ int main() {
     
     // If you're using capture by reference, make sure that the captured variables are valid when you call the lambda.
     
+    // Generic lambda expressions
+    
+    // In C++14, the compiler can always deduce the return type of a lambda expression
+    // in effect, the return type is implicitly auto
+    
+    // we can also use "auto" for the type of the arguments to the lambda expression
+    // these are known as "generic lambdas" or "polymorphic lambdas", most requested feature in c++14.
+    
+    // this is rather like having a template function, and it actually is implemented using templates
+    
+    auto func = [] (auto x, auto y) { return x+y; };
+    std::cout << func(3,5) << " " << func(2.78, 3.35) << std::endl;
+    
+    // The compiler generates a functor with a templated function call operator
+/*    
+    class lambda_func {
+    public:
+        template<typename T>
+        T operator() (T x, T y) {
+            return x+y; 
+        }
+    };
+    std::cout << lambda_func() (2,5) << std::endl; -> will print out 7
+    ***** compiler-generated constructor is called to create a temporary lambda_func object.
+    ***** then arguments 2 and 5 were forwarded to this temporary lambda_func object
+*/  
+    
+    // template will actually have two parameters, but the return type could be any of them
+    // it's hard to describe it here 
+    
+    // In C++14 we can create variables in the capture list 
+    // these variables are local to the lambda body
+    // these variables are implicitly auto and must be initialized
+    // they can be mixed in with other captures
+    // Ex: [=, &v, y=2] ...
+    
+    // these lambda-local variables can be initialized from captures
+    // Ex: int z = 1; [y = z+1] ...
+    
+    // the compiler will generate a constructor with an initializer list, assigning y the value "z+1"
+
+    // generalized lambda capture allows capture by move
+    
+    int a = 1;
+    [y = a+1](int x) { return x + y; };
+    std::cout << a << std::endl;
     
     
+    // Pair type
+    
+    // std::pair comes from <utility>
+    // has two public data members: first and second.
+    // these can be of different data types
+    
+    // can be used to return two related data items from a function
+    // std::pair is used by some of the containers in the standard library
+    
+    // std::pair<int,int> pair {3,5}; -> initialization
+    
+    // we can call make_pair() to create a pair variable
+    // Ex: auto pair{make_pair("hello", "there")};
+    
+    //In C++17, the compiler can deduce the types
+    // pair wordpair{"hello","there"};
+    
+    
+    
+    // Insert Iterators
+    
+    //An insert operator adds new elements to a container 
+    // To add an element, we assign it to the insert iterator
+    // There are three types of iterator, which add an element at different positions
+    // std::back_insert_iterator adds an element at the back
+    // std::front_insert_iterator adds an element at the front
+    // std::insert_iterator adds an element at any given position
+    
+    // to get an insert iterator, we call an "inserter" function
+    // we pass a container object as its argument to the inserter
+    // the function returns an insert operator for that object
+    // back_inserter(), front_inserter(), inserter()
+    
+    std::vector<int> vec;
+    auto it = back_inserter(vec);
+    *it = 100;
+    std::cout << "vec has " << vec.size() << " elements." << std::endl;
     return 0;
+    
+    // insert iterators can be used anywhere where a positional iterator is expected
+    // Ex: populating containers
+    // the container will ALWAYS EXPAND to make sure it has enough room when using insert iterators
+    // ordinary iterators may overflow the container
+    
+    std::cout << "Enter some words:" << std::endl;
+    
+    std::istream_iterator<string> iis(std::cin); //iterator to read strings
+    std::istream_iterator<string> eof;           // Empty iterator
+    
+    std::vector<int> vec2;
+    auto it = back_inserter(vec2);
+    
+    while (iis != eof) { //
+        it = *iis;
+        // *iis is a word from std::cin.
+        // it is the back inserter
+        // by assigning the word to the back inserter, 
+        //the back inserter will call push_back on vec2
+        ++iis;
+    }
+    
+    //***************CRUCIAL*****************
+    // check back_inserter from cppreference.com
+    //***************************************
+    
+    
+    
+    //Library function objects
+    
+    //C++ library provides some function objects
+    // these are generic operators for arithmetic, logical and relational operations
+    // they are implemented as template fn's
+    
+    // Ex: less<int>(int i1, int i2) returns the smaller integer
 }

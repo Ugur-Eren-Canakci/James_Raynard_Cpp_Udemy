@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Lambda_Partial_Evaluation - Debug ]----------"
-	@cd "Lambda_Partial_Evaluation" && "$(MAKE)" -f  "Lambda_Partial_Evaluation.mk"
+	@echo "----------Building project:[ Insert_Iterators - Debug ]----------"
+	@cd "Insert_Iterators" && "$(MAKE)" -f  "Insert_Iterators.mk"
 clean:
-	@echo "----------Cleaning project:[ Lambda_Partial_Evaluation - Debug ]----------"
-	@cd "Lambda_Partial_Evaluation" && "$(MAKE)" -f  "Lambda_Partial_Evaluation.mk" clean
+	@echo "----------Cleaning project:[ Insert_Iterators - Debug ]----------"
+	@cd "Insert_Iterators" && "$(MAKE)" -f  "Insert_Iterators.mk" clean

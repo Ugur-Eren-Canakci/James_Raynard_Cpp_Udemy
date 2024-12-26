@@ -39,7 +39,8 @@
   <Project Name="Algorithms_overview" Path="Algorithms_overview/Algorithms_overview.project" Active="No"/>
   <Project Name="Algorithms_with_predicates" Path="Algorithms_with_predicates/Algorithms_with_predicates.project" Active="No"/>
   <Project Name="Lambda_Capture_list" Path="Lambda_Capture_list/Lambda_Capture_list.project" Active="No"/>
-  <Project Name="Lambda_Partial_Evaluation" Path="Lambda_Partial_Evaluation/Lambda_Partial_Evaluation.project" Active="Yes"/>
+  <Project Name="Lambda_Partial_Evaluation" Path="Lambda_Partial_Evaluation/Lambda_Partial_Evaluation.project" Active="No"/>
+  <Project Name="Insert_Iterators" Path="Insert_Iterators/Insert_Iterators.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -83,6 +84,7 @@
       <Project Name="Algorithms_with_predicates" ConfigName="Debug"/>
       <Project Name="Lambda_Capture_list" ConfigName="Debug"/>
       <Project Name="Lambda_Partial_Evaluation" ConfigName="Debug"/>
+      <Project Name="Insert_Iterators" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -126,6 +128,7 @@
       <Project Name="Algorithms_with_predicates" ConfigName="Release"/>
       <Project Name="Lambda_Capture_list" ConfigName="Release"/>
       <Project Name="Lambda_Partial_Evaluation" ConfigName="Release"/>
+      <Project Name="Insert_Iterators" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
