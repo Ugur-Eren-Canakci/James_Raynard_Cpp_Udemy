@@ -35,7 +35,8 @@
   <Project Name="Shallow_and_Deep_copying" Path="Shallow_and_Deep_copying/Shallow_and_Deep_copying.project" Active="No"/>
   <Project Name="Copy_Elision" Path="Copy_Elision/Copy_Elision.project" Active="No"/>
   <Project Name="Conversion_operators" Path="Conversion_operators/Conversion_operators.project" Active="No"/>
-  <Project Name="Default_and_Delete" Path="Default_and_Delete/Default_and_Delete.project" Active="Yes"/>
+  <Project Name="Default_and_Delete" Path="Default_and_Delete/Default_and_Delete.project" Active="No"/>
+  <Project Name="Algorithms_overview" Path="Algorithms_overview/Algorithms_overview.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -75,6 +76,7 @@
       <Project Name="Copy_Elision" ConfigName="Debug"/>
       <Project Name="Conversion_operators" ConfigName="Debug"/>
       <Project Name="Default_and_Delete" ConfigName="Debug"/>
+      <Project Name="Algorithms_overview" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -114,6 +116,7 @@
       <Project Name="Copy_Elision" ConfigName="Release"/>
       <Project Name="Conversion_operators" ConfigName="Release"/>
       <Project Name="Default_and_Delete" ConfigName="Release"/>
+      <Project Name="Algorithms_overview" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
