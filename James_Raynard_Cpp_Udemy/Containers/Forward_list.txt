@@ -1,0 +1,18 @@
+Nodes contain a value and a pointer to the next node
+
+The last node has a nullptr, so it's possible to deduce the end of a forward list from that
+
+Also called a "singly-linked list"
+
+std::forward_list
+
+Adding an element:
+    Create a node
+    Make the last node point to the new one
+    
+Adding an element to the middle
+    Create a node
+    Copy the previous item's pointer to the new node
+    Insert the new node's address to the previous node's pointer
+
+

@@ -41,8 +41,9 @@
   <Project Name="Lambda_Capture_list" Path="Lambda_Capture_list/Lambda_Capture_list.project" Active="No"/>
   <Project Name="Lambda_Partial_Evaluation" Path="Lambda_Partial_Evaluation/Lambda_Partial_Evaluation.project" Active="No"/>
   <Project Name="Insert_Iterators" Path="Insert_Iterators/Insert_Iterators.project" Active="No"/>
-  <Project Name="Algorithms_and_Iterators_Assignment" Path="Algorithms_and_Iterators_Assignment/Algorithms_and_Iterators_Assignment.project" Active="Yes"/>
+  <Project Name="Algorithms_and_Iterators_Assignment" Path="Algorithms_and_Iterators_Assignment/Algorithms_and_Iterators_Assignment.project" Active="No"/>
   <Project Name="temp" Path="temp/temp.project" Active="No"/>
+  <Project Name="std_array" Path="std_array/std_array.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -89,6 +90,7 @@
       <Project Name="Insert_Iterators" ConfigName="Debug"/>
       <Project Name="Algorithms_and_Iterators_Assignment" ConfigName="Debug"/>
       <Project Name="temp" ConfigName="Debug"/>
+      <Project Name="std_array" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -135,6 +137,7 @@
       <Project Name="Insert_Iterators" ConfigName="Release"/>
       <Project Name="Algorithms_and_Iterators_Assignment" ConfigName="Release"/>
       <Project Name="temp" ConfigName="Release"/>
+      <Project Name="std_array" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

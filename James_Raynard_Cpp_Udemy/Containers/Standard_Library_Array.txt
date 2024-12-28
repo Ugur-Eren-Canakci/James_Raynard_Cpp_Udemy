@@ -1,0 +1,41 @@
+C++ has a built-in array inherited from C
+    This is faster than std::vector and directly compatible with C
+    But, it has serious disadvantages, including:
+        No direct way to find the number of elements
+        Silent conversion to pointers
+            If you pass an array into a function, the array converts to a pointer automatically
+        Passing an array to and from functions also requires passing the size of the array
+        Arrays can't be assigned to each other
+        
+
+std::array comes in <array>
+
+It's a templated type
+    parameters are the element type and the number of elements
+        trying to use an array with the wrong number of elements gives a compiler error
+        
+Has similar interface with other containers, and retains the speed of raw arrays
+    Doesn't decay to a pointer automatically
+    Retains info about its size
+    Supports iterators
+    
+An std::array object can only be created on the stack
+    The number of elements must be known at compile-time
+
+A contiguous block of memory is allocated to store the elements
+
+Unlike other containers, the default-constructor creates a fully-sized object. 
+    The elements are default-initialized with undefined values
+    
+Interface is similar to std::vector's interface
+- size()
+- empty()
+- operator[]
+- at()
+- front()
+- back() 
+- data()
+
+
+
+    
