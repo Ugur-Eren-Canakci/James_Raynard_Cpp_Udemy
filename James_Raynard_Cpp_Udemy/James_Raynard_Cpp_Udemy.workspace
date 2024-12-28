@@ -8,7 +8,8 @@
   <Project Name="Bitmap_practical" Path="Bitmap_practical/Bitmap_practical.project" Active="No"/>
   <Project Name="Special_member_functions_and_Operator_overloading" Path="Special_member_functions_and_Operator_overloading/Special_member_functions_and_Operator_overloading.project" Active="No"/>
   <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="No"/>
-  <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="Yes"/>
+  <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="No"/>
+  <Project Name="Containers" Path="Containers/Containers.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -21,6 +22,7 @@
       <Project Name="Special_member_functions_and_Operator_overloading" ConfigName="Debug"/>
       <Project Name="Algorithms_and_Lambda_Expressions" ConfigName="Debug"/>
       <Project Name="Algorithms_continued" ConfigName="Debug"/>
+      <Project Name="Containers" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -33,6 +35,7 @@
       <Project Name="Special_member_functions_and_Operator_overloading" ConfigName="Release"/>
       <Project Name="Algorithms_and_Lambda_Expressions" ConfigName="Release"/>
       <Project Name="Algorithms_continued" ConfigName="Release"/>
+      <Project Name="Containers" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

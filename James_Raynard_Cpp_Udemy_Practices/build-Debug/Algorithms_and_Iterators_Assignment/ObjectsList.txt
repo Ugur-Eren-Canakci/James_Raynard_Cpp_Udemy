@@ -1,0 +1,1 @@
+../build-Debug/Algorithms_and_Iterators_Assignment/main.cpp.o   

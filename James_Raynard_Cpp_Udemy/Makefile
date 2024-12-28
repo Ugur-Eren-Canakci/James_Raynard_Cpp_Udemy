@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Algorithms_and_Lambda_Expressions - Debug ]----------"
-	@cd "Algorithms_and_Lambda_Expressions" && "$(MAKE)" -f  "Algorithms_and_Lambda_Expressions.mk"
+	@echo "----------Building project:[ Algorithms_continued - Debug ]----------"
+	@cd "Algorithms_continued" && "$(MAKE)" -f  "Algorithms_continued.mk"
 clean:
-	@echo "----------Cleaning project:[ Algorithms_and_Lambda_Expressions - Debug ]----------"
-	@cd "Algorithms_and_Lambda_Expressions" && "$(MAKE)" -f  "Algorithms_and_Lambda_Expressions.mk" clean
+	@echo "----------Cleaning project:[ Algorithms_continued - Debug ]----------"
+	@cd "Algorithms_continued" && "$(MAKE)" -f  "Algorithms_continued.mk" clean
