@@ -1,0 +1,10 @@
+Deque is slightly slower than vector for most operations
+    Faster than vector for adding or removing elements at the front
+    
+List is much slower than vector and deque for most operations
+    But much faster when adding or removing elements if the position to add/remove is known
+    
+Vector should be the default choice
+    Modern hardware is optimized for accessing contiguous blocks of memory
+        
+    

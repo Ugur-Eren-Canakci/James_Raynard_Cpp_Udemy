@@ -1,0 +1,48 @@
+Unstructured collection of elements
+
+Comes in <set>
+
+Associative container
+    Elements only contain a key
+    Keys have to be unique
+
+Elements are ordered wr. to their keys
+
+Implemented as a tree due to the ordering
+
+=> Requires a defined order operator on the key objects 
+- Ex: if std::strings are used as keys, operator< is already defined, hence it's easy to implement a std::string set
+
+insert() to insert an element
+erase() to erase an element
+    these may cause the tree to become unbalanced
+    if the tree becomes unbalanced, these operations will halt until the tree rebalances itself
+        => at times it may take a while until insert and erase are finished
+        
+insert returns a std::pair
+    since elements are unique, insertion of non-unique elements fail automatically
+    
+    first element is an iterator to an element in the set
+        if insert was successful, points to the newly inserted element
+        if not, then points to the element with the same key
+    
+    second element is a boolean that shows the state of insertion
+    
+    
+no push_back() or push_front() since a total order is in effect between elements
+
+.find(set_element s) returns an iterator to pointing to s
+.count(set_element s) returns 1 or 0
+
+*********IMPORTANT***********
+elements are const
+    => many algorithms cannot be used on sets
+        only those which read from containers can be used
+*****************************
+
+useful for checking membership
+
+useful when duplicate data is not needed or not wanted
+    ex: number of distinct words in a document
+    
+

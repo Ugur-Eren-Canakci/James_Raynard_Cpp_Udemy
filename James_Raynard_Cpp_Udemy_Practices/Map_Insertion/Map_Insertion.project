@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Containers" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Map_Insertion" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,13 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Map.txt"/>
-    <File Name="Set.txt"/>
-    <File Name="Choosing_a_sequential_container.txt"/>
-    <File Name="Deque.txt"/>
-    <File Name="List.txt"/>
-    <File Name="Forward_list.txt"/>
-    <File Name="Standard_Library_Array.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

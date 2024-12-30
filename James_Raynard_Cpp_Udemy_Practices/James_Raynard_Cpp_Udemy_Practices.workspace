@@ -41,9 +41,15 @@
   <Project Name="Lambda_Capture_list" Path="Lambda_Capture_list/Lambda_Capture_list.project" Active="No"/>
   <Project Name="Lambda_Partial_Evaluation" Path="Lambda_Partial_Evaluation/Lambda_Partial_Evaluation.project" Active="No"/>
   <Project Name="Insert_Iterators" Path="Insert_Iterators/Insert_Iterators.project" Active="No"/>
-  <Project Name="Algorithms_and_Iterators_Assignment" Path="Algorithms_and_Iterators_Assignment/Algorithms_and_Iterators_Assignment.project" Active="No"/>
+  <Project Name="Assignment_8_Algorithms_and_Iterators" Path="Algorithms_and_Iterators_Assignment/Algorithms_and_Iterators_Assignment.project" Active="No"/>
   <Project Name="temp" Path="temp/temp.project" Active="No"/>
-  <Project Name="std_array" Path="std_array/std_array.project" Active="Yes"/>
+  <Project Name="std_array" Path="std_array/std_array.project" Active="No"/>
+  <Project Name="Forward_List" Path="Forward_List/Forward_List.project" Active="No"/>
+  <Project Name="Lists" Path="Lists/Lists.project" Active="No"/>
+  <Project Name="Assignment_9" Path="Assignment_9/Assignment_9.project" Active="No"/>
+  <Project Name="Assignment_10" Path="Assignment_10/Assignment_10.project" Active="No"/>
+  <Project Name="Assignment_11" Path="Assignment_11/Assignment_11.project" Active="No"/>
+  <Project Name="Map_Insertion" Path="Map_Insertion/Map_Insertion.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -88,9 +94,15 @@
       <Project Name="Lambda_Capture_list" ConfigName="Debug"/>
       <Project Name="Lambda_Partial_Evaluation" ConfigName="Debug"/>
       <Project Name="Insert_Iterators" ConfigName="Debug"/>
-      <Project Name="Algorithms_and_Iterators_Assignment" ConfigName="Debug"/>
+      <Project Name="Assignment_8_Algorithms_and_Iterators" ConfigName="Debug"/>
       <Project Name="temp" ConfigName="Debug"/>
       <Project Name="std_array" ConfigName="Debug"/>
+      <Project Name="Forward_List" ConfigName="Debug"/>
+      <Project Name="Lists" ConfigName="Debug"/>
+      <Project Name="Assignment_9" ConfigName="Debug"/>
+      <Project Name="Assignment_10" ConfigName="Debug"/>
+      <Project Name="Assignment_11" ConfigName="Debug"/>
+      <Project Name="Map_Insertion" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -135,9 +147,15 @@
       <Project Name="Lambda_Capture_list" ConfigName="Release"/>
       <Project Name="Lambda_Partial_Evaluation" ConfigName="Release"/>
       <Project Name="Insert_Iterators" ConfigName="Release"/>
-      <Project Name="Algorithms_and_Iterators_Assignment" ConfigName="Release"/>
+      <Project Name="Assignment_8_Algorithms_and_Iterators" ConfigName="Release"/>
       <Project Name="temp" ConfigName="Release"/>
       <Project Name="std_array" ConfigName="Release"/>
+      <Project Name="Forward_List" ConfigName="Release"/>
+      <Project Name="Lists" ConfigName="Release"/>
+      <Project Name="Assignment_9" ConfigName="Release"/>
+      <Project Name="Assignment_10" ConfigName="Release"/>
+      <Project Name="Assignment_11" ConfigName="Release"/>
+      <Project Name="Map_Insertion" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

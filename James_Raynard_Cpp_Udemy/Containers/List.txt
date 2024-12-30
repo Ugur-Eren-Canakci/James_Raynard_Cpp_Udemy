@@ -1,0 +1,33 @@
+Double-linked list
+
+Each node has pointers to next and previous nodes
+
+std::list to implement double-linked lists
+
+First node has its "previous node pointer" assigned nullptr.
+Last node has its "next node pointer" assigned nullptr.
+
+Appending a node is similar with forward lists
+
+Pros and cons:
+    Adding or removing elements to the middle is faster than vectors
+    Lists don't support indexing or subscript notation
+    Accessing an element is slower than vectors
+    Lists use more memory to store an element than vectors
+    
+=> Useful when we expect to add or remove a lot of elements frequently
+
+Lists support many of the operations we would expect for a sequential container
+    push_back() and push_front() are defined
+    iterators are used to traverse on lists
+
+Lists don't support random access
+    No straight jump to a specific element
+    We start from the front and iterate however many times needed
+    
+The generic sort() function requires random access to elements
+    Lists have their own sort() member function
+    
+In some cases, the list member function is quicker than their generic versions
+    The generic remove() shuffles the removed elements to the end of the container
+    List.remove() erases the item automatically

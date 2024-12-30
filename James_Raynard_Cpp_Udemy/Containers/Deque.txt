@@ -1,0 +1,18 @@
+Implements a double-ended queue
+    Similar to a vector, but elements can also be added to front efficiently
+    
+Defined in <deque>
+
+Implemented as a two-dim array
+    std::vector has one memory block which stores all the elements
+    std::list has one memory block per element
+    std::deque has multiple memory blocks which each store several elements
+        iterating from the first element of the first block to the last element of the last block will return all elements in order
+        
+similar interface with std::vector
+    also implements push_front() to insert an element before the first one
+        
+if there's not enough room to store a new element, the deque will allocate another memory block and store it in there
+    the existing elements keep their addresses
+    this is different from std::vector, where the memory block is reallocated, and all the elements are copied into the new block
+    

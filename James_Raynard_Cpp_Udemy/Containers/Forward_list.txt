@@ -15,4 +15,12 @@ Adding an element to the middle
     Copy the previous item's pointer to the new node
     Insert the new node's address to the previous node's pointer
 
-
+Removing an element:
+    Make the previous node point to the next node
+    Destroy node
+    
+Usually, sequential containers have insert() and erase() methods
+    std::forward_list only supports forward iterators
+        Use insert_after() and erase_after()
+        These will add or remove an element after a given location
+        

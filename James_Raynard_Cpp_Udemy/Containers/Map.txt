@@ -1,0 +1,117 @@
+Associative container
+
+Each element consists of std::pairs
+    .first member is the key
+    .second member is the value
+    
+Each element must have a unique element
+
+The elements are stored in order, wr.to operator< of the keys
+
+Implemented as a binary tree, usually a red black tree
+
+value is used to store data, and key is used as an index for the data 
+
+insert(std::pair p) and erase()
+    p has to be a pair, so form a non-persistent pair object with std::make_pair()
+    Ex:
+    std::map<int, char> map;
+    map.insert(std::make_pair({1,'A'});
+    C++11 onwards, you can also do insert({1,'A'}).
+    
+************IMPORTANT**************
+insert will fail if the map already contains an element WITH THE SAME KEY
+***********************************
+
+map supports subscripting
+
+very fast at accessing an arbitrary element
+insertion and deletion are usually really fast
+    can be slow if the internal tree gets unbalanced
+very fast for indexed data
+    Ex: contacts list, employee records, database query results, etc
+Also useful for storing data which is in key-value format
+    JSON, XML, CSV, etc.
+
+**************IMPORTANT******************
+Operator[] performs an insertion in two stages
+    1) creates a new element
+        the key is the argument
+        the value is default-initialized
+            => the value has to be either a built-in type
+                or it has to be default-constructible
+    2) value is assigned afterwards
+    
+    if the assignment throws an exception, the empty-initialized pair stays in the map
+*****************************************
+
+Operator[] returns a value
+    a reference to the element's value member
+    Ex: auto res = map[key] = value ;
+    
+insert() will only insert a new element
+    if the map already has an element with the same key, nothing happens
+    the return value of insert() allows us to find out whether a new element was added
+    
+    if an exception is thrown during the operation, the insertion has no effect
+    
+with insert(), the value's type does not need to have a default constructor
+
+**************CRUCIAL******************
+auto res = scores.insert({"Graham", 66});
+
+auto it = res.first;
+
+if (res.second) {
+    ... // element was added successfully
+}
+else {
+    it->second = 66; // manually set the pair's second element to be the value you need it to be
+}
+**************CRUCIAL******************
+
+C++17 onwards:
+    structured binding
+        in a single statement we 
+            1) declare local variables
+            2) bind them to members of a compound data structure
+            3) types are deduced by the compiler
+    
+    auto came in C++11, and extended in C++17 to work with multiple variables and compound initializer
+    
+    Ex:
+    std::pair p(3, 3.14); -> std::pair<int,double> deduced by compilers
+    auto [i,d] = p; -> i will inherit 3, d will inherit 3.14
+    
+    for (auto [name, score]:scores) {
+        ...
+    } ->scores is a map, and its elements are std::pair's. since there are two variables in brackets,
+    compiler deduces that name is of type pair.first, and score is of type pair.second 
+
+    checking the return value from insert() is much easier thanks to this
+    Ex:
+    auto [iter, success] = map.insert({k,v});
+    
+    if (!success) {
+        std::cout << "insert failed. manually inserting " << v << std::endl; 
+        iter->second = v;
+    }
+    
+    insert_or_assign() provided with C++17
+        takes two arguments:
+            1) the new element's key
+            2) its value
+            
+        returns a std::pair<iter, success>
+            first member is an iterator to the element 
+                if new element is added, then iter points to the key,value pair
+                if the value is assigned to the pre-existing pair, then iter points to the "old" element
+            second member is a boolean that shows the state of insertion
+                true if insertion happened
+                false if assignment
+                
+    Most general implementation:
+    if (auto [iter, success] = map.insert_or_assign({k,v}); success) {
+        std::cout << "insertion successful" << std::endl;
+    else {
+        std::cout << "assignment of " << v << " executed on " << k << std::endl;
