@@ -1,0 +1,50 @@
+std::map and std::set use binary trees to keep order
+
+<unordered_map>, <unordered_set>, <unordered_multimap>, <unordered_multiset>
+
+unordered containers use a hash tree instead
+    Ex: say we want to put numbers from 0 to 99 into buckets
+    buckets will be named from 0 to 9
+    each bucket will contain numbers whose "tens" digit is equal to the bucket number
+    
+    x % 10 returns the "ones" digit
+    => x - (x % 10) is equal to one of 0,10,20,...,80,90
+    => all possible x - (x % 10)'s are divisible by 10 and the result gives the "tens" digit"
+    => for all x in 0,1,2,...,99 x is mapped to (x - (x % 10))/10
+    this mapping is called a hash function
+        return value is x's hash value
+        
+    Ex: 
+    std::array<std::list<int>, 10> buckets;
+    for (int x=0; x<100; x++) {
+        int idx = x / 10;
+        buckets[idx].push_back(x);
+    }
+    
+In an unordered container, the buckets are LINKED LISTS OF POINTERS to the container's elements
+    a key is fed into the hash function, and the pointer of the value is placed in the bucket with respect to the key's hash value
+    
+Since elements are not ordered, operator== is used to find the elements 
+    The key's hash value is found
+    The correct bucket is searched
+    
+For maximum efficiency, each element should have its own bucket
+    If so, each key returns a unique hash value
+        Called "perfect hashing"
+In practice, some keys return the same hash value
+    Called "hash collision"
+
+.insert(), .find(), .erase() supported
+    There are also operations for managing the buckets
+    
+Operations on unordered containers are usually much faster than they are on ordered containers
+
+If the number of elements get too high, the hash table needs resizing, which may take a long time
+
+Unordered containers only allow forward iteration
+    => rbegin(), rend(), and their constant versions are not defined
+    
+lower_bound and upper_bound are not supported
+    we can still use equal_range() and find()+count() combo
+    
+    

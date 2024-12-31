@@ -1,0 +1,12 @@
+Ex: game levels
+
+std::map<int, std::map<int, std::string>> boss_codex;
+    
+std::map<int, std::string> level_one_bosses { std::make_pair(1,"Boss_1"), std::make_pair(2,"Boss_2") };
+std::map<int, std::string> level_two_bosses { std::make_pair(1,"Boss_3"), std::make_pair(2,"Boss_4") };
+std::map<int, std::string> level_three_bosses { std::make_pair(1,"Boss_5"), std::make_pair(2,"Boss_6") };
+
+boss_codex.insert(level_one_bosses);
+boss_codex.insert(level_two_bosses);
+boss_codex.insert(level_three_bosses);
+

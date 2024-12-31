@@ -1,0 +1,33 @@
+Very similar to set and map
+
+Duplicate keys are allowed
+    Since there's no uniqueness between keys, subscripting is undefined
+    Duplicate keys + duplicate values are also allowed
+    
+insert() always succeeds
+
+erase(k) deletes ALL elements with key k
+
+erase(iterator_to_an_element) erases only that element
+    How do you find which element to delete?
+        The elements are still ordered wr. to keys
+        => find the first element with key k by forward search
+           find the last element with key k by reverse search
+        => You have a closed range whose boundaries are the iterators
+        => When using STL algorithms you have to take into consideration that you have a closed range
+    
+    Or, use find() and count()
+        find(k) returns an iterator to the first element with key k
+        count(k) returns the number of elements 
+        => for (auto el = multimap.find(k); el != multimap.find(k) + multimap.count(k); el++ ) ...
+        
+    Or, use member functions (or their generic versions) that return the right iterators
+        upper_bound(k) returns an iterator to the first element whose key is greater than k
+        lower_bound(k) returns an iterator to the first element whose key is greater than or equal to k
+            if there's no match for lower_bound, it returns the same iterator as upper_bound, so the range is empty
+            
+        .equal_range(k) returns a std::pair
+            first element is the return value of lower_bound(k)
+            second element is the return value of upper_bound(k)
+        
+    

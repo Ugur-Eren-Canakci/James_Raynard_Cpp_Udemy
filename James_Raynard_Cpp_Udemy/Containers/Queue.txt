@@ -1,0 +1,35 @@
+FIFO (First in first out)
+
+Elements can only be removed from the front
+
+Elements can only be added from the back
+
+When an element is popped from front, all remaining elements "move" one step ahead
+
+C++ has an implementation of queues in <queue>
+
+Usually implemented as a deque, although can be implemented as a vector or int
+    Deques are good at front operations
+    
+Queues have limited interfaces
+    push() to add an element to the back of the queue
+    pop() to pop the front element
+    front() returns the front element
+    back() returns the back element
+    empty() returns true if there are no elements in the queue
+    size() returns the number of elements
+    
+No support for other typical container operations
+    No support for iterators
+    
+Mainly used for temporarily storing data in the order it arrived
+    Must be processed sequentially, so queues are great
+    
+    Ex: network data packets waiting for CPU time
+    
+    Ex: Inventory system for perishable goods
+    -> oldest goods should be shipped first
+    
+Useful for processing events in the order they occur
+
+No provision for "queue jumping"

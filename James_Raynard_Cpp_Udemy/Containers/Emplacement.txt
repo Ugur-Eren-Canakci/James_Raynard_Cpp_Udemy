@@ -1,0 +1,43 @@
+Another way of adding elements to a container
+    Brought in C++11
+    
+push_back() and insert() and similar member functions require an existing object
+    The container copies the existing object into the new element
+    If there's no existing object, we need to create a temporary object
+    
+With emplacement, the container creates the object in the new element, instead of copying it
+    This avoids a copy construction
+    
+insert() copies its argument into the newly-created element
+    the original object is potentially never used again
+    
+emplace() takes in an iterator pointing to the element that will store the object
+    other arguments will be the arguments for the constructor of said object
+        the function will then call the right constructor and forward the right arguments into it
+        
+For containers that support push_back(), there's emplace_back()
+For containers that support push_front(), there's emplace_front()
+For containers that support push(), there's emplace()
+
+Emplacement works differently with containers that have unique keys
+    for std::map and std::set, emplace() creates a temporary object first, and then checks if there's an element with the same key
+    
+    C++17 introduced try_emplace()
+        checks for duplicates. If there's none, then emplaces the object. If there's one, nothing happens
+        return value is the same with insert()
+    
+    both take in a key and the values to be used to construct the value object 
+
+Emplacement is the only way to insert objects which cannot be copied
+
+Emplacement will cause a temporary object to be created if:
+    the container does not allow duplicates
+    the implementation uses assignment rather than copying
+    a type conversion is required
+    
+Compilers can often optimize away the copying in insert()
+
+Move semantics can avoid copying temporary objects
+
+
+

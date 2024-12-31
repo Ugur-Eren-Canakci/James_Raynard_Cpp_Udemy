@@ -93,6 +93,12 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Emplacement.txt"/>
+    <File Name="Stack.txt"/>
+    <File Name="Queue.txt"/>
+    <File Name="Nested_map.txt"/>
+    <File Name="Unordered_Associative_Containers.txt"/>
+    <File Name="Multiset_and_Multimap.txt"/>
     <File Name="Map.txt"/>
     <File Name="Set.txt"/>
     <File Name="Choosing_a_sequential_container.txt"/>

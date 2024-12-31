@@ -1,5 +1,29 @@
 #include <iostream>
+#include <string>
+#include <map>
 
+class Book {
+private:
+    std::string title;
+    std::string publisher;
+public: 
+    Book(std::string t, std::string p) : title{t}, publisher{p} {} // default two-arg constructor
+};
+
+class Book_index { // compound key 
+private:
+    std::string author;
+    std::string title;
+public:
+    Book_index(std::string a, std::string t) : author{a}, title{t} {} // default two-arg constructpr
+    bool operator<(const Book_index& other) {
+        if (this->author == other.author) {
+            return this->title < other.title;
+        }
+        
+        return this->author < other.author;
+    }
+}
 int main() {
     
     
@@ -44,7 +68,8 @@ int main() {
     // these are data structures (queues and stacks) which are implemented using sequential containers
     // - data is stored in these containers in an order which depends on when the data was added
     
-    
+    // Associative containers & Custom Types example
+    std::multimap<std::string, Book> library;
  
     return 0;
 }
