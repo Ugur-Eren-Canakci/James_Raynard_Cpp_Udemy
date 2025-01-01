@@ -49,7 +49,8 @@
   <Project Name="Assignment_9" Path="Assignment_9/Assignment_9.project" Active="No"/>
   <Project Name="Assignment_10" Path="Assignment_10/Assignment_10.project" Active="No"/>
   <Project Name="Assignment_11" Path="Assignment_11/Assignment_11.project" Active="No"/>
-  <Project Name="Map_Insertion" Path="Map_Insertion/Map_Insertion.project" Active="Yes"/>
+  <Project Name="Map_Insertion" Path="Map_Insertion/Map_Insertion.project" Active="No"/>
+  <Project Name="Containers_Workshop" Path="Containers_Workshop/Containers_Workshop.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -103,6 +104,7 @@
       <Project Name="Assignment_10" ConfigName="Debug"/>
       <Project Name="Assignment_11" ConfigName="Debug"/>
       <Project Name="Map_Insertion" ConfigName="Debug"/>
+      <Project Name="Containers_Workshop" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -156,6 +158,7 @@
       <Project Name="Assignment_10" ConfigName="Release"/>
       <Project Name="Assignment_11" ConfigName="Release"/>
       <Project Name="Map_Insertion" ConfigName="Release"/>
+      <Project Name="Containers_Workshop" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

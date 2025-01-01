@@ -2,14 +2,14 @@
 <CodeLite_Workspace Name="James_Raynard_Cpp_Udemy" Database="" Version="10000">
   <Project Name="Review" Path="Review/Review.project" Active="No"/>
   <Project Name="Strings" Path="Strings/Strings.project" Active="No"/>
-  <Project Name="File_Streams" Path="File_Streams/File_Streams.project" Active="No"/>
+  <Project Name="File_Streams" Path="File_Streams/File_Streams.project" Active="Yes"/>
   <Project Name="File_Streams_Assignment_1" Path="File_Streams_Assignment_1/File_Streams_Assignment_1.project" Active="No"/>
   <Project Name="File_Streams_Assignment_2" Path="File_Streams_Assignment_2/File_Streams_Assignment_2.project" Active="No"/>
   <Project Name="Bitmap_practical" Path="Bitmap_practical/Bitmap_practical.project" Active="No"/>
   <Project Name="Special_member_functions_and_Operator_overloading" Path="Special_member_functions_and_Operator_overloading/Special_member_functions_and_Operator_overloading.project" Active="No"/>
   <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="No"/>
   <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="No"/>
-  <Project Name="Containers" Path="Containers/Containers.project" Active="Yes"/>
+  <Project Name="Containers" Path="Containers/Containers.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
