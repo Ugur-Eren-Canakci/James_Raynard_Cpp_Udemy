@@ -607,6 +607,8 @@ int main() {
     // =>
     // My answer: array<double,whatever_size> 
     // No add/remove => fixed container size => array
+    // Instructor's answer: vector/deque
+    // Implication: don't use fixed size container just because what you need is a fixed size container
     
     // A queue of people entering a venue. People join at the back of the queue and
     // leave, in arrival order, from the front. There should be provision for "VIP's" to
@@ -616,6 +618,10 @@ int main() {
     // VIP's have to go the front => push_front is necessary
     // Also, random access is not needed as people will be added or removed purely based on where they
     // are on the list, not based on their respective values
+    // Instructor's answer: deque
+    // list also supports fast add/removal on front, so what's different between link and queue
+    // in this situation is the constant time complexity of random access in deques
+    // Understandable answer from the instructor
     
     // Storing users who are connected to a very busy website. The users will be
     // added when they log on and removed when they log off (or are timed out)
@@ -623,6 +629,15 @@ int main() {
     // My answer: vector<User>
     // Random access is needed as we need to check their status frequently
     // Also, there's no need to have "adding a front element" functionality as timeouts are a thing.
+    // Instructor's answer: list
+    // list offers constant time complexity of add/remove of any element
+    // Actually is much better than vector
+    
+    // Conclusion:
+    // If two DS are supporting the same functionality on one front, choose the one that offers more
+    // List has constant add/remove on any element, no quick random access
+    // Deque has constant add/remove on front and back, and also constant random access
+    // Vector has constant random access 
     
     //Write a program that reads strings entered by the user, stores them in a set and prints out the strings
     //set_program();
