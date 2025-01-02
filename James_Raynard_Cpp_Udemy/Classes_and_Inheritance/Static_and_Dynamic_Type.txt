@@ -31,4 +31,24 @@ void draw_shape(const Shape& s) {
 
 Assume Shape::draw is a virtual function. Then for any Shape-derived class that's forwarded into draw_shape() will call the Derived::draw()
 
-
+If functions have different signatures then that's called "overloading", not "overriding"
+    Overload is "how a function can be called".
+        Refers to different arguments and commands inside the function definition
+    Override is "where a function can be called".
+        Refers to which object will call which function 
+        Depends on the dynamic type
+        
+    It's easy to "overload" when we're supposed to "override"
+    
+C++11 introduced the "override" keyword
+    We can add this to the definition of a Derived member function 
+    The compiler will check whether this member function overrides a virtual member function in the Base class
+        The compiler will raise an error if this function doesn't override
+        
+C++11 also introduced the "final" keyword
+    A final class cannot be derived from
+    A final member function cannot be overridden in a child class
+    
+    Libraries often use final
+        The library can provide a class hierarchy, or use one internally
+        Users of the library cannot extend this class hierarchy
