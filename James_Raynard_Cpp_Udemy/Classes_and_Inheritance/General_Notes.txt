@@ -1,0 +1,25 @@
+A derived class object is stored in memory as a base class object, followed by the derived class part
+When a derived class object is created, the base class's constructor is called first, then the derived class's constructor
+When destroyed, the derived class destructor is called first. Then the base class destructor is called
+
+Ex:
+class Vehicle {
+private:
+    double max_speed;
+    ...
+public:
+    Vehicle(double max_speed) : max_speed{max_speed} {}
+    ...
+};
+
+class Aeroplane : public Vehicle {
+private:
+    double max_height;
+public:
+    // constructor
+    Aeroplane(double max_speed, double max_height) : Vehicle(max_speed), max_height{max_height} {
+        ...
+    }
+};
+
+
