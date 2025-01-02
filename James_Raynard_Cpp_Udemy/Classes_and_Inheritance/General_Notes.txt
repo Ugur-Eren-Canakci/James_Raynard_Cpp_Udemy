@@ -22,11 +22,3 @@ public:
     }
 };
 
-
-A child class inherits all the non-private member functions of its parent class
-
-Public access:
-    a public member of a class is accessible from any part of the code
-    a child class will have access to all its parents' public members but not to the private members
-        If you want some members to be accessible from the child class but no other code, 
-        you should put those members into the "protected" section  

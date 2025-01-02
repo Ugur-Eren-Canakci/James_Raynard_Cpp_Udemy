@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Member_functions_and_Inheritance - Debug ]----------"
-	@cd "Member_functions_and_Inheritance" && "$(MAKE)" -f  "Member_functions_and_Inheritance.mk"
+	@echo "----------Building project:[ Overloading_Member_Functions - Debug ]----------"
+	@cd "Overloading_Member_Functions" && "$(MAKE)" -f  "Overloading_Member_Functions.mk"
 clean:
-	@echo "----------Cleaning project:[ Member_functions_and_Inheritance - Debug ]----------"
-	@cd "Member_functions_and_Inheritance" && "$(MAKE)" -f  "Member_functions_and_Inheritance.mk" clean
+	@echo "----------Cleaning project:[ Overloading_Member_Functions - Debug ]----------"
+	@cd "Overloading_Member_Functions" && "$(MAKE)" -f  "Overloading_Member_Functions.mk" clean

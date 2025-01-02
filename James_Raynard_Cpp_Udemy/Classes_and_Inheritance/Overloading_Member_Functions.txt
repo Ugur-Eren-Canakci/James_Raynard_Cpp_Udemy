@@ -1,0 +1,43 @@
+We can overload inherited member functions
+    We write a new member function which has the same name but a different signature
+        Perhaps with different number of arguments 
+        
+If we overload an inherited function in the child class, it will "hide" all the other inherited member functions with that name
+    => Those functions cannot be called from the child class
+    
+    One solution is to define the inherited functions in the child class
+    Ex:
+    class Vehicle {
+    public:
+        void accelerate() {...}
+    };
+    
+    class Aeroplane : public Vehicle {
+    public:
+        void accelerate() { Vehicle::accelerate(); } ***
+        void accelerate(double height) {}
+    };
+    
+    Due to ***, Vehicle::accelerate() is not directly callable from Aeroplane objects. So, we put the action of 
+    calling Vehicle::accelerate() into the overload of accelerate() itsel
+
+    Another solution (brought by C++11) is to TELL THE CHILD CLASS TO USE THE BASE VERSION OF THAT FUNCTION
+    Ex:
+    class Vehicle {
+    public:
+        void accelerate() {...}
+    };
+    
+    class Aeroplane : public Vehicle {
+    public:
+        using Vehicle::accelerate; ***
+        void accelerate(double height) {}
+    };
+    
+    Due to ***, Vehicle::accelerate is callable from Aeroplane objects
+    Well how about when the base class has a couple overloads of that function? 
+        Will all the overloads be available?
+        Since the code "using Vehicle::accelerate;" doesn't contain operator(), we don't see info about the arguments
+        This implies that every overload of accelerate inside Vehicle will be callable from Aeroplane objects
+        The instructor says "this will make all the hidden versions of the function available in the child class.". 
+    
