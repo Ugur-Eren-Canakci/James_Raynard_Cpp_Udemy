@@ -18,3 +18,17 @@ C++ almost always uses static typing
             Instead, the member function is chosen at runtime, using the object in memory
 
 To use the dynamic type of the variables, we have to declare the member functions as "virtual"
+
+A virtual member function will be inherited by all sub-classes
+    
+A child class which reimplements a virtual function is said to "override" it
+
+virtual declaration of a member function also solves issues that might appear when derived objects are passed as arguments to a function
+Ex:
+void draw_shape(const Shape& s) {
+    s.draw();
+}
+
+Assume Shape::draw is a virtual function. Then for any Shape-derived class that's forwarded into draw_shape() will call the Derived::draw()
+
+

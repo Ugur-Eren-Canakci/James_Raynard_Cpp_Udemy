@@ -3,28 +3,28 @@
 
 class Shape {
 public:
-    virtual void print() {
+    virtual void print() const {
         std::cout << "This is a shape." << std::endl;
     }
 };
 
 class Rectangle : public Shape {
 public:
-    virtual void print() {
+    virtual void print() const override {
         std::cout << "This is a rectangle." << std::endl;
     }
 };
 
 class Triangle : public Shape {
 public:
-    virtual void print() {
+    virtual void print() const override  {
         std::cout << "This is a triangle." << std::endl;
     }
 };
 
 class Circle : public Shape {
 public:
-    virtual void print() {
+    virtual void print() const override  {
         std::cout << "This is a circle." << std::endl;
     }
 };

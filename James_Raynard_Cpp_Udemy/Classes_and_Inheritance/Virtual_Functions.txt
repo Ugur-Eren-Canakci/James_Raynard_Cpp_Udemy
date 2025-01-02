@@ -1,0 +1,16 @@
+Normally when we call a member function on an object, the compiler will decide which function is called.
+    This is done at compile time
+    
+    This is done using the static type of the object
+        This is called "static binding"
+        
+There are some cases where the compiler doesn't make the decision
+    Instead, it generates some code which is used to make the decision
+        This code will run in runtime, and decide which function will be called
+        
+        The code will use the dynamic type of the object
+            This is called "dynamic binding"
+            
+    Two conditions must apply for dynamic binding to occur:
+        1) A member function is called through a pointer/reference of a base class object
+        2) The member function is declared "virtual" in the base class

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Classes_and_Inheritance" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Virtual_Functions" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,12 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Virtual_Functions.txt"/>
-    <File Name="Static_and_Dynamic_Type.txt"/>
-    <File Name="Pointers_Referances_and_Inheritance.txt"/>
-    <File Name="Overloading_Member_Functions.txt"/>
-    <File Name="Member_access.txt"/>
-    <File Name="General_Notes.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
