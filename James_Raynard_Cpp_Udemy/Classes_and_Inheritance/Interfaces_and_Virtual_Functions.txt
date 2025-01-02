@@ -1,0 +1,28 @@
+pure virtuals
+
+Ex:
+class Base {
+public:
+    virtual void draw() = 0; 
+}
+
+in the Base class, draw() does nothing. "=0" tells the compiler that this is a "pure virtual" function
+    Base is now an "abstract" class
+        => We cannot create a Base object
+        
+
+every subclass now has to override draw
+    if they don't, they will inherit the pure virtual function
+        => subclass itself becomes abstract
+            => cannot create a Derived object
+            
+
+Say you pass a Derived object into a pass-by-value function that has a Base argument
+    since the argument is a Base that takes in a value, Base's copy constructor will be called
+        then the Derived part of the passed object is not copied into the function's stack
+            this is called OBJECT SLICING
+            
+Abstract classes cannot be used as pass-by-value arguments of a function
+    Pass-by-value calls the copy constructor
+        copy constructor tries to initialize an abstract class object
+            this is not possible since abstract classes are not constructible
