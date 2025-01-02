@@ -57,7 +57,9 @@
   <Project Name="Pointers_References_and_Inheritance" Path="Pointers_References_and_Inheritance/Pointers_References_and_Inheritance.project" Active="No"/>
   <Project Name="Static_and_Dynamic_Type" Path="Static_and_Dynamic_Type/Static_and_Dynamic_Type.project" Active="No"/>
   <Project Name="Virtual_Functions" Path="Virtual_Functions/Virtual_Functions.project" Active="No"/>
-  <Project Name="Virtual_Functions_C++11" Path="Virtual_Functions_C++11/Virtual_Functions_C++11.project" Active="Yes"/>
+  <Project Name="Virtual_Functions_C++11" Path="Virtual_Functions_C++11/Virtual_Functions_C++11.project" Active="No"/>
+  <Project Name="Assignment_12" Path="Assignment_12/Assignment_12.project" Active="No"/>
+  <Project Name="Virtual_Destructors" Path="Virtual_Destructors/Virtual_Destructors.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -119,6 +121,8 @@
       <Project Name="Static_and_Dynamic_Type" ConfigName="Debug"/>
       <Project Name="Virtual_Functions" ConfigName="Debug"/>
       <Project Name="Virtual_Functions_C++11" ConfigName="Debug"/>
+      <Project Name="Assignment_12" ConfigName="Debug"/>
+      <Project Name="Virtual_Destructors" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -180,6 +184,8 @@
       <Project Name="Static_and_Dynamic_Type" ConfigName="Release"/>
       <Project Name="Virtual_Functions" ConfigName="Release"/>
       <Project Name="Virtual_Functions_C++11" ConfigName="Release"/>
+      <Project Name="Assignment_12" ConfigName="Release"/>
+      <Project Name="Virtual_Destructors" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

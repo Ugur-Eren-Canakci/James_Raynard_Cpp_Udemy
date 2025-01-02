@@ -1,0 +1,12 @@
+When a derived object is pointed by a Base* pointer, due to static binding, the Base destructor is called at the end of the stack
+    Or similarly, when delete is called on the pointer, same thing happens
+    
+=> We need to make the Base destructor virtual.
+
+The default destructor synthesised by the compiler is NOT VIRTUAL
+    => we have to define the destructor explicitly as a virtual function
+    
+In general, if a class has virtual functions, it should also have a virtual destructor.
+
+
+    
