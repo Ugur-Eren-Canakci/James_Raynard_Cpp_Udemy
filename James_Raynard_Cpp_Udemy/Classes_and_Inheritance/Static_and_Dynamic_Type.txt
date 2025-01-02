@@ -1,0 +1,20 @@
+C++ variables have two different kinds of type
+    Static and Dynamic
+    
+Static type is the type used in the variable declaration
+
+Dynamic type is the type of the variable in memory
+
+For most objects, these two will be the same
+    For pointers however, it can be different
+    
+C++ almost always uses static typing
+    type checking and function call resolution is done by the compiler
+    less runtime overhead
+    better optimization
+    
+    the dynamic typing is only used for a pointer or a reference to a base class
+        The compiler doesn't decide which member function to call
+            Instead, the member function is chosen at runtime, using the object in memory
+
+To use the dynamic type of the variables, we have to declare the member functions as "virtual"

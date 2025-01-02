@@ -54,7 +54,8 @@
   <Project Name="Base_and_Derived_Classes" Path="Base_and_Derived_Classes/Base_and_Derived_Classes.project" Active="No"/>
   <Project Name="Member_functions_and_Inheritance" Path="Member_functions_and_Inheritance/Member_functions_and_Inheritance.project" Active="No"/>
   <Project Name="Overloading_Member_Functions" Path="Overloading_Member_Functions/Overloading_Member_Functions.project" Active="No"/>
-  <Project Name="Pointers_References_and_Inheritance" Path="Pointers_References_and_Inheritance/Pointers_References_and_Inheritance.project" Active="Yes"/>
+  <Project Name="Pointers_References_and_Inheritance" Path="Pointers_References_and_Inheritance/Pointers_References_and_Inheritance.project" Active="No"/>
+  <Project Name="Static_and_Dynamic_Type" Path="Static_and_Dynamic_Type/Static_and_Dynamic_Type.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -113,6 +114,7 @@
       <Project Name="Member_functions_and_Inheritance" ConfigName="Debug"/>
       <Project Name="Overloading_Member_Functions" ConfigName="Debug"/>
       <Project Name="Pointers_References_and_Inheritance" ConfigName="Debug"/>
+      <Project Name="Static_and_Dynamic_Type" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -171,6 +173,7 @@
       <Project Name="Member_functions_and_Inheritance" ConfigName="Release"/>
       <Project Name="Overloading_Member_Functions" ConfigName="Release"/>
       <Project Name="Pointers_References_and_Inheritance" ConfigName="Release"/>
+      <Project Name="Static_and_Dynamic_Type" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
