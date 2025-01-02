@@ -1,0 +1,35 @@
+Polymorphism means that different types have the same interface
+
+Ex: STL containers
+    vector<int> and vector<string> are two different data types
+        yet, they have the same interface
+            This is known as "parametric polymorphism"
+            
+Ex: classes in an inheritance hierarchy
+    base classes define a virtual function to be overridden by derived classes
+        same interface(that comes from base classes) is used by all subclasses
+            This is known as "subtype polymorphism"
+
+Liskov substitution principle:
+    An object of a type can be replaced by an object of its subtype
+    
+Subtype Polymorphism:
+    Run-time overhead
+        The program has to decide which virtual function is called at run-time
+    May require memory management
+        if heap allocation is done
+    No control over child classes
+    Can result in large, unmaintainable inheritance hierarchies
+
+Parametric Polymorphism:
+    Compile-time binding
+    No run-time overhead
+    No memory allocation
+    More control over which types are instantiated
+        
+Inheritance is often over-used
+
+Many problems are better solved by composition
+    i.e. instead of inheriting from a class, create a member that holds an object of that class
+    
+Only use inheritance in the case of "is-a" 

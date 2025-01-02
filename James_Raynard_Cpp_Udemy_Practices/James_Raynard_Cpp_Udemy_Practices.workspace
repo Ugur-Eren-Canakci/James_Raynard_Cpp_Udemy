@@ -60,7 +60,8 @@
   <Project Name="Virtual_Functions_C++11" Path="Virtual_Functions_C++11/Virtual_Functions_C++11.project" Active="No"/>
   <Project Name="Assignment_12" Path="Assignment_12/Assignment_12.project" Active="No"/>
   <Project Name="Virtual_Destructors" Path="Virtual_Destructors/Virtual_Destructors.project" Active="No"/>
-  <Project Name="Interfaces_and_Virtual_Functions" Path="Interfaces_and_Virtual_Functions/Interfaces_and_Virtual_Functions.project" Active="Yes"/>
+  <Project Name="Interfaces_and_Virtual_Functions" Path="Interfaces_and_Virtual_Functions/Interfaces_and_Virtual_Functions.project" Active="No"/>
+  <Project Name="Polymorphism" Path="Polymorphism/Polymorphism.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -125,6 +126,7 @@
       <Project Name="Assignment_12" ConfigName="Debug"/>
       <Project Name="Virtual_Destructors" ConfigName="Debug"/>
       <Project Name="Interfaces_and_Virtual_Functions" ConfigName="Debug"/>
+      <Project Name="Polymorphism" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -189,6 +191,7 @@
       <Project Name="Assignment_12" ConfigName="Release"/>
       <Project Name="Virtual_Destructors" ConfigName="Release"/>
       <Project Name="Interfaces_and_Virtual_Functions" ConfigName="Release"/>
+      <Project Name="Polymorphism" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
