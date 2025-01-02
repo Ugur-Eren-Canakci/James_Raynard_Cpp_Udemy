@@ -1,0 +1,22 @@
+Normally a pointer must point to a variable of the same type
+However, a pointer to a base class can point to any object in the same hierarchy
+    This is due to how memory is managed for derived classes
+    Recall that a derived class object constructs a base class object first
+    
+Ex: base class Shape, derived class Circle
+    a Shape pointer can point to a Circle
+    A Circle pointer cannot point to a Shape
+    
+Same is true for references
+    a Base reference can refer to a Derived object
+    A Derived reference cannot refer to a Base object
+    
+If you have a Base pointer pointing to a Derived object, 
+    You cannot call the Derived member functions that are not defined in Base
+    This is due to the compiler thinking that a Base pointer should point to a Base object, hence only containing Base members
+    
+In function calls, you can pass a Derived object as a Base argument
+    The compiler will assume the object is a Base object, and will not call the Derived members
+    
+
+    
