@@ -51,7 +51,8 @@
   <Project Name="Assignment_11" Path="Assignment_11/Assignment_11.project" Active="No"/>
   <Project Name="Map_Insertion" Path="Map_Insertion/Map_Insertion.project" Active="No"/>
   <Project Name="Containers_Workshop" Path="Containers_Workshop/Containers_Workshop.project" Active="No"/>
-  <Project Name="Base_and_Derived_Classes" Path="Base_and_Derived_Classes/Base_and_Derived_Classes.project" Active="Yes"/>
+  <Project Name="Base_and_Derived_Classes" Path="Base_and_Derived_Classes/Base_and_Derived_Classes.project" Active="No"/>
+  <Project Name="Member_functions_and_Inheritance" Path="Member_functions_and_Inheritance/Member_functions_and_Inheritance.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -107,6 +108,7 @@
       <Project Name="Map_Insertion" ConfigName="Debug"/>
       <Project Name="Containers_Workshop" ConfigName="Debug"/>
       <Project Name="Base_and_Derived_Classes" ConfigName="Debug"/>
+      <Project Name="Member_functions_and_Inheritance" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -162,6 +164,7 @@
       <Project Name="Map_Insertion" ConfigName="Release"/>
       <Project Name="Containers_Workshop" ConfigName="Release"/>
       <Project Name="Base_and_Derived_Classes" ConfigName="Release"/>
+      <Project Name="Member_functions_and_Inheritance" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
