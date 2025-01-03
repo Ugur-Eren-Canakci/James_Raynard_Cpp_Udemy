@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Virtual_Destructors - Debug ]----------"
-	@cd "Virtual_Destructors" && "$(MAKE)" -f  "Virtual_Destructors.mk"
+	@echo "----------Building project:[ Exceptions_Introduction - Debug ]----------"
+	@cd "Exceptions_Introduction" && "$(MAKE)" -f  "Exceptions_Introduction.mk"
 clean:
-	@echo "----------Cleaning project:[ Virtual_Destructors - Debug ]----------"
-	@cd "Virtual_Destructors" && "$(MAKE)" -f  "Virtual_Destructors.mk" clean
+	@echo "----------Cleaning project:[ Exceptions_Introduction - Debug ]----------"
+	@cd "Exceptions_Introduction" && "$(MAKE)" -f  "Exceptions_Introduction.mk" clean

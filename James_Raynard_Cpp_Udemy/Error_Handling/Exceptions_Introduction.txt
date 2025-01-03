@@ -1,0 +1,38 @@
+Any type of object can be used for an exception object, even built-in types 
+
+std::exception came with C++98
+    provides consistent interface to exceptions
+    it's the base class of its inheritance hierarchy
+        has a number of subclasses 
+    what() virtual member function
+        returns a C-style string describing the error
+        
+
+try block
+    the exception mechanism requires some code to manage exceptions at runtime
+    this code is added by the compiler, but we need to tell the compiler to generate it
+    to do this, we put code that could throw an exception inside a "try" block
+Ex:
+try {
+    code_that_could_throw_an_exception;
+}
+catch block
+Ex:
+catch(const std::exception& e) {
+    std::cout << e.what() << std::endl;
+}
+    catch takes in an exception object by reference
+        hence it can take the std::exception's subclasses' objects as well
+        then a dynamic binding of the what() function is done at runtime by looking at the type definition of the refered object e
+        
+std::exception::what() returns "std::exception", which doesn't tell anything.
+    
+
+Say an exception is not handled by any of the catch blocks after the try block 
+    the program will try to find a catch block in the enclosing scope
+        
+    if the try/catch block is in a function body, it will look for a handler in the function
+        if it cannot find a catch block in the function body, it will jump out of the current function and look 
+            for a handler in the function's caller
+        this goes on recursively until the exception jumps out of main(), i.e. the program terminates
+    
