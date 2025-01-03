@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Error_Handling" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Exception_Hierarchy" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,12 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="STD_Exception_Hierarchy.txt"/>
-    <File Name="Exception_Mechanism.txt"/>
-    <File Name="Catch_all_Handlers.txt"/>
-    <File Name="Exceptions_Introduction.txt"/>
-    <File Name="Error_codes_and_Exceptions.txt"/>
-    <File Name="Error_Handling_Generals.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

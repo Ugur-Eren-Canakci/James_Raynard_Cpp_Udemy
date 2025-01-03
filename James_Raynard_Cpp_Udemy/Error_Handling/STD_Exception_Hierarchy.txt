@@ -1,0 +1,25 @@
+std::logic_error 
+    represents something that is under the control of the programmer
+        ex: violating a precondition such as going over the container's limits to dereference garbage values
+    
+    can be prevented by the programmer
+        ex: checking function arguments before processing them
+        
+std::runtime_error 
+    represents something that's not under the control of the programmer
+        ex: running out of memory
+        
+std::exception defines five public member functions:
+    constructor
+    copy constructor
+    assignment operator
+    virtual what()
+    virtual destructor
+    
+    what() returns a C-style string
+    what cannot throw an exception
+    
+exception, bad_alloc and bad_cast have a default constructor
+    the others don't have a default constructor, but have a constructor that takes a string argument
+        either C-style or C++ string
+        
