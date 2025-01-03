@@ -1,0 +1,17 @@
+There are three main ways to write exception-safe code:
+    1) Basic exception guarantee
+    2) Strong exception guarantee
+    3) No-throw guarantee
+    
+1) Basic exception guarantee
+    If an exception is thrown during an operation, no resources are leaked
+    Files opened during the operation will be closed
+    Memory allocated during the operation will be deallocated
+
+2) Strong exception guarantee
+    If an exception is thrown during an operation, the program reverts to its previous state
+        As if the operation had never happened
+
+3) No-throw guarantee
+    The code doesn't throw any exceptions
+    

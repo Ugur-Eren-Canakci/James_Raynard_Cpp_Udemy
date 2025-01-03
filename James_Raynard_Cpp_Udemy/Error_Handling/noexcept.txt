@@ -1,0 +1,39 @@
+equivalent to throw() with no arguments
+    if an exception is thrown, the program terminates immediately
+
+a noexcept function provides the no-throw guarantee 
+    helpful if we're writing exception-safe code which calls the function
+    
+noexcept helps the compiler generate better optimized code
+    provides info about how the code behaves
+    doesn't generate the "stack unwinding" code
+    
+should be used wherever possible
+    if we're certain a function will not throw exceptions
+    or we cannot do anything useful if an exception is thrown
+    
+A function must either be noexcept or not.
+    noexcept is part of the function's type, but not part of the function's signature
+        similar to return type
+Ex:
+void func();
+void func() noexcept; // error: cannot overload
+    
+noexcept is a tool for communicating with the compiler
+
+noexcept'ness is inherited
+    overrides of a virtual function also have to be noexcept
+    inheriting constructors will be noexcept if the base class constructor is noexcept
+    synthesised special member functions will be noexcept if the base class version is noexcept
+
+a derived class can add noexcept but not remove it
+
+destructors are implicitly noexcept
+    the compiler will assume a class's destructor is noexcept if
+        1) all members of the class have a noexcept destructor
+        2) all parent classes have a noexcept destructor
+        
+    this allows existing code to benefit from having "noexcept" destructors, with no modification
+    
+    however, it's better to write noexcept explicitly in new code
+    

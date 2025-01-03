@@ -1,0 +1,21 @@
+void func() throw(Exception1, Exception2) {
+    ...
+}
+if func is to throw any exception outside Exception1 and Exception2, the program terminates immediately
+
+void func_2() throw() {
+    ...
+}
+func_2 cannot throw any exceptions, or the program terminates immediately
+
+some problems:
+    this list of exceptions is not checked by the compiler
+    
+    if the list of exceptions is incorrect, the program might terminate unexpectedly
+    
+throw() was deprecated in C++11
+    throw(arg_list) was removed completely in C++17
+        throw() was removed completely in C++20
+and replaced by "noexcept" keyword
+
+
