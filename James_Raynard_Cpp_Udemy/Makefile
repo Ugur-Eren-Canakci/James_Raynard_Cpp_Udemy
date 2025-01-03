@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Classes_and_Inheritance - Debug ]----------"
-	@cd "Classes_and_Inheritance" && "$(MAKE)" -f  "Classes_and_Inheritance.mk"
+	@echo "----------Building project:[ Error_Handling - Debug ]----------"
+	@cd "Error_Handling" && "$(MAKE)" -f  "Error_Handling.mk"
 clean:
-	@echo "----------Cleaning project:[ Classes_and_Inheritance - Debug ]----------"
-	@cd "Classes_and_Inheritance" && "$(MAKE)" -f  "Classes_and_Inheritance.mk" clean
+	@echo "----------Cleaning project:[ Error_Handling - Debug ]----------"
+	@cd "Error_Handling" && "$(MAKE)" -f  "Error_Handling.mk" clean

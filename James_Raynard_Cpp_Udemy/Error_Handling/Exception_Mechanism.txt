@@ -1,0 +1,43 @@
+When an exception is thrown, several things happen:
+    1) The thrown object is copied into a special area of memory
+        This area is set up by the compiler
+        It's accessible by any catch block which can handle the object type
+    
+    2) Every local variable in the scope is destroyed
+        Including the original thrown object
+    
+    3) The program immediately leaves the scope 
+        No further instruction in that scope is executed by the program
+    
+    4) Catch blocks are scoured over the function stack
+    
+    5) Repeat steps 1-4 until either:
+        a) a suitable catch block is found in one of the function scopes of the current stack
+        b) main's scope is reached
+    
+    5b) if main is the only function remaining in the function stack, the program calls std::terminate()
+    
+    5a) When a suitable catch block is found, the program executes the code in the catch block and continues 
+
+A catch block can throw an exception as well
+    So the program will look for another catch block suitable for the rethrown exception
+    
+To throw the same exception object, use "throw" keyword with no argument
+    If we give it an argument, it will throw a copy of that object
+    
+    Since the exception is thrown from outside the current try block, the program will regard this as a completely new exception
+        A fresh stack unwinding process begins
+    
+Rethrow is useful for:
+    1) Adjusting the thrown exception, for example, to include more info about the error
+    2) Logging purposes
+    3) Converting the exception to higher level type
+    
+Ex:
+catch (TcpHandshakeFailure& e) {
+    logger << e.what() << "\n";
+    e.remote_host = remote_host;
+    // throw NetworkConnectionError(e);
+    throw;
+}
+
