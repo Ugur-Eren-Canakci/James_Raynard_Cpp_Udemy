@@ -7,6 +7,10 @@ int main() {
     int x=0;
     std::vector<int> vec;
     
+    if (true) {
+        x += 1;
+    }
+    std::cout << x << std::endl;
     try {
         std::cout << vec.at(1) << std::endl;
         x += 1; // discarded

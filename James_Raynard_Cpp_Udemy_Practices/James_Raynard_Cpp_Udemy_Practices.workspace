@@ -68,7 +68,8 @@
   <Project Name="Catch_all_Handlers" Path="Catch_all_Handlers/Catch_all_Handlers.project" Active="No"/>
   <Project Name="Exception_Mechanism" Path="Exception_Mechanism/Exception_Mechanism.project" Active="No"/>
   <Project Name="Exception_Hierarchy" Path="Exception_Hierarchy/Exception_Hierarchy.project" Active="No"/>
-  <Project Name="Exceptions_and_Special_Member_Functions" Path="Exceptions_and_Special_Member_Functions/Exceptions_and_Special_Member_Functions.project" Active="Yes"/>
+  <Project Name="Exceptions_and_Special_Member_Functions" Path="Exceptions_and_Special_Member_Functions/Exceptions_and_Special_Member_Functions.project" Active="No"/>
+  <Project Name="Custom_Exception_Class" Path="Custom_Exception_Class/Custom_Exception_Class.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -141,6 +142,7 @@
       <Project Name="Exception_Mechanism" ConfigName="Debug"/>
       <Project Name="Exception_Hierarchy" ConfigName="Debug"/>
       <Project Name="Exceptions_and_Special_Member_Functions" ConfigName="Debug"/>
+      <Project Name="Custom_Exception_Class" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -213,6 +215,7 @@
       <Project Name="Exception_Mechanism" ConfigName="Release"/>
       <Project Name="Exception_Hierarchy" ConfigName="Release"/>
       <Project Name="Exceptions_and_Special_Member_Functions" ConfigName="Release"/>
+      <Project Name="Custom_Exception_Class" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

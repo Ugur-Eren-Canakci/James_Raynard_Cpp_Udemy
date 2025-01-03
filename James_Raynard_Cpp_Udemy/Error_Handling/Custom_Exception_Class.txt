@@ -1,0 +1,27 @@
+Usually it's best to derive from subclasses of std::exception
+    Existing interface
+    We can inherit code instead of rewriting 
+    Will be caught by std::exception handlers
+    
+We don't derive directly from std::exception
+    it only has a default constructor
+    No provision for passing a custom error message
+    
+A custom exception class needs constructors which take a string
+    Both std::string and C-style string
+It needs a copy constructor
+    Either inherited or default
+    This is because the exception object is copied to a memory block outside the function stack
+        So that it can be caught by stuff outside the body that created it
+            This body is popped off the stack when an exception is thrown from it
+    
+It can override the what() member function
+
+Also it can have extra data members to populate with info about the exception 
+    Recommended to only use built-in type data members
+    
+The object should be lightweight
+    Have minimum number of data members
+    Perform minimal processing
+    
+It shouldn't do anything that might throw another exception
