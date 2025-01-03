@@ -1,0 +1,25 @@
+When an exception is thrown, the destructor is called for all local variables in the scope
+
+What happens if the destructor throws an exception?
+    maybe it can be handled in a catch block inside the destructor
+    if not, a stack unwind will ensue
+    
+    if another exception is being processed, there could be two stack unwinding at the same time
+        C++ implementations assume there's only one unwind at a time
+            => undefined behaviour
+    
+    Destructors should NEVER throw an exception
+    
+    If a command inside the destructor throws an error, then the destructor MUST have a suitable catch block
+    
+If an unhandled exception is thrown during a constructor call, the partially initialized object will be destroyed
+    all data members are also destroyed
+    if the object is a Derived object, Base part of the object also gets destroyed
+    
+    As far as the rest of the program is concerned, an object does not exist until its constructor call has successfully completed
+    
+    An exception thrown in a constructor should be left for the caller to handle
+        caller is the block that has the construction command
+        Ex: if an Obj object is initialized in main and Obj can throw an exception, main should have a catch block
+        
+    The constructor should only handle the exception iff it can solve the problem itself
