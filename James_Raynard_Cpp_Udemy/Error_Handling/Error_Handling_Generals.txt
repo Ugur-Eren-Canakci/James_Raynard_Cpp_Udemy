@@ -1,0 +1,18 @@
+There are situations which arise at runtime when the environment doesn't behave as expected
+
+Communicate with the user
+    Tell user what the problem is and what they can do about it
+    Give opportunity to retry, resolve, or ignore as appropriate
+    If necessary, notify other concerned parties
+
+Avoid information which is not helpful to the user
+    
+Only exit the program as a last resort
+
+Often, errors can be handled where they occur
+    Sometimes it's useful to handle errors in a different part of the code 
+    Ex: a pop-up for a network error
+    
+A better approach is to have these errors handled at higher levels
+    The error needs to be passed from the place where the error occured to the code that handles it
+    

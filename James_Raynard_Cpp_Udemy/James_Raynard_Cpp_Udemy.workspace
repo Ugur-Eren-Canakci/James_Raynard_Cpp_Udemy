@@ -10,7 +10,8 @@
   <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="No"/>
   <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="No"/>
   <Project Name="Containers" Path="Containers/Containers.project" Active="No"/>
-  <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="Yes"/>
+  <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="No"/>
+  <Project Name="Error_Handling" Path="Error_Handling/Error_Handling.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -25,6 +26,7 @@
       <Project Name="Algorithms_continued" ConfigName="Debug"/>
       <Project Name="Containers" ConfigName="Debug"/>
       <Project Name="Classes_and_Inheritance" ConfigName="Debug"/>
+      <Project Name="Error_Handling" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -39,6 +41,7 @@
       <Project Name="Algorithms_continued" ConfigName="Release"/>
       <Project Name="Containers" ConfigName="Release"/>
       <Project Name="Classes_and_Inheritance" ConfigName="Release"/>
+      <Project Name="Error_Handling" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
