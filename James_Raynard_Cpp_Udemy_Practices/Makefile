@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Exceptions_Introduction - Debug ]----------"
-	@cd "Exceptions_Introduction" && "$(MAKE)" -f  "Exceptions_Introduction.mk"
+	@echo "----------Building project:[ Try_and_Catch_Blocks - Debug ]----------"
+	@cd "Try_and_Catch_Blocks" && "$(MAKE)" -f  "Try_and_Catch_Blocks.mk"
 clean:
-	@echo "----------Cleaning project:[ Exceptions_Introduction - Debug ]----------"
-	@cd "Exceptions_Introduction" && "$(MAKE)" -f  "Exceptions_Introduction.mk" clean
+	@echo "----------Cleaning project:[ Try_and_Catch_Blocks - Debug ]----------"
+	@cd "Try_and_Catch_Blocks" && "$(MAKE)" -f  "Try_and_Catch_Blocks.mk" clean

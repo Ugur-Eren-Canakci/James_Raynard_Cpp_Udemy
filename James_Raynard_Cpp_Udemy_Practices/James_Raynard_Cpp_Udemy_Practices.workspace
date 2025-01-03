@@ -63,7 +63,8 @@
   <Project Name="Interfaces_and_Virtual_Functions" Path="Interfaces_and_Virtual_Functions/Interfaces_and_Virtual_Functions.project" Active="No"/>
   <Project Name="Polymorphism" Path="Polymorphism/Polymorphism.project" Active="No"/>
   <Project Name="Error_codes_and_Exceptions" Path="Error_codes_and_Exceptions/Error_codes_and_Exceptions.project" Active="No"/>
-  <Project Name="Exceptions_Introduction" Path="Exceptions_Introduction/Exceptions_Introduction.project" Active="Yes"/>
+  <Project Name="Exceptions_Introduction" Path="Exceptions_Introduction/Exceptions_Introduction.project" Active="No"/>
+  <Project Name="Try_and_Catch_Blocks" Path="Try_and_Catch_Blocks/Try_and_Catch_Blocks.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -131,6 +132,7 @@
       <Project Name="Polymorphism" ConfigName="Debug"/>
       <Project Name="Error_codes_and_Exceptions" ConfigName="Debug"/>
       <Project Name="Exceptions_Introduction" ConfigName="Debug"/>
+      <Project Name="Try_and_Catch_Blocks" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -198,6 +200,7 @@
       <Project Name="Polymorphism" ConfigName="Release"/>
       <Project Name="Error_codes_and_Exceptions" ConfigName="Release"/>
       <Project Name="Exceptions_Introduction" ConfigName="Release"/>
+      <Project Name="Try_and_Catch_Blocks" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -1,0 +1,56 @@
+A catch block can only come after a try block
+
+We can have more than one catch block for the same try block
+    The exception will be handled by the first catch block that can handle it
+    => the more "derived" your catch argument is, the higher priority in the order
+
+Ex:
+try {
+    ...
+} 
+catch (const std::out_of_range& e) {
+    ...
+}
+catch (const std::exception& e) {
+    ...
+}
+
+
+When the program is executing a catch block, it may not be in a stable state
+    Avoid allocating memory
+    Avoid creating new variables
+    Avoid calling functions
+    If possible, only use variables of built-in types
+    
+    Never do anything that might throw another exception
+    
+    Keep the code simple
+    
+We can put another try/catch block into other blocks
+    If the inner block can't catch an exception, the outer block will be searched
+    
+    
+    
+We sometimes want an exception to be handled in a different function from where it happened
+Ex:
+void get_file() {
+    ...
+    code_that_may_cause_an_exceptions;
+}
+
+void process_data() {
+    get_file();
+    ...
+}
+
+    If get_file throws an exception and it doesn't contain a catch block, get_file will pop out of the function stack
+    Then process_data()'s function body will be searched. So we can put a try/catch block into process_data for the possible 
+    exceptions that may arise from get_file.
+Ex:
+void process_data() {
+try {
+    get_file();
+}
+catch (const std::exception& e) {
+    ...
+}
