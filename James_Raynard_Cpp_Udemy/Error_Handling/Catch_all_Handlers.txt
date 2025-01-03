@@ -1,0 +1,6 @@
+three-dots to tell the program that that block will catch every single thrown exception if not caught by previous catch blocks
+
+Useful when testing, not so useful for debugging
+    No info about the error condition
+    Doesn't capture other events
+        Ex: Unix signals, Windows "structured exceptions"

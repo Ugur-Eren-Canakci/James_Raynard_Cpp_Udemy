@@ -10,8 +10,8 @@
   <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="No"/>
   <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="No"/>
   <Project Name="Containers" Path="Containers/Containers.project" Active="No"/>
-  <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="Yes"/>
-  <Project Name="Error_Handling" Path="Error_Handling/Error_Handling.project" Active="No"/>
+  <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="No"/>
+  <Project Name="Error_Handling" Path="Error_Handling/Error_Handling.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
