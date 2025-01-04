@@ -77,7 +77,8 @@
   <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
   <Project Name="Lvalues_and_Rvalues" Path="Lvalues_and_Rvalues/Lvalues_and_Rvalues.project" Active="No"/>
   <Project Name="Lvalue_and_Rvalue_Reference" Path="Lvalue_and_Rvalue_Reference/Lvalue_and_Rvalue_Reference.project" Active="No"/>
-  <Project Name="Value_Categories" Path="Value_Categories/Value_Categories.project" Active="Yes"/>
+  <Project Name="Value_Categories" Path="Value_Categories/Value_Categories.project" Active="No"/>
+  <Project Name="Move_operators" Path="Move_operators/Move_operators.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -159,6 +160,7 @@
       <Project Name="Lvalues_and_Rvalues" ConfigName="Debug"/>
       <Project Name="Lvalue_and_Rvalue_Reference" ConfigName="Debug"/>
       <Project Name="Value_Categories" ConfigName="Debug"/>
+      <Project Name="Move_operators" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -240,6 +242,7 @@
       <Project Name="Lvalues_and_Rvalues" ConfigName="Release"/>
       <Project Name="Lvalue_and_Rvalue_Reference" ConfigName="Release"/>
       <Project Name="Value_Categories" ConfigName="Release"/>
+      <Project Name="Move_operators" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

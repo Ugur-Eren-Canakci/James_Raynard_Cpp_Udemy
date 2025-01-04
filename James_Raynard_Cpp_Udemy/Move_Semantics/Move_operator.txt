@@ -1,0 +1,29 @@
+We can overload a function to behave differently depending on whether its argument is moved
+    void func(const myclass& obj); //lvalue reference
+    void func(myclass&& obj); //rvalue reference
+    
+Two of the most useful functions to overload this way are the copy constructor and the assignment operator
+    These member functions typically copy all the members of the class. 
+        Often they create a new copy of a resource
+    Moving instead of copying improves performance
+    
+C++11 introduced move constructor and move assignment operator
+    Called automatically if the passed object is an rvalue
+    
+    The move operations should not throw exceptions
+        No simple way to recover from part-completed move operation
+        STL containers will only call an element's move operator if it's noexcept
+    
+    The move assignment operator should return the "moved" lvalue object by lvalue reference
+    
+    When writing a move operator for a derived class, we should call the corresponding operator for the base class
+    Similarly, if the object to move contains a not-built-in object, that object should be moved into the new object's member
+    
+    
+Classes written before the move semantics will behave as they used to in modern c++ compilers
+
+If we copy an rvalue object that doesn't have a move constructor, the copy constructor will be called instead
+If we copy an rvalue object that doesn't have a move assignment operator, the copy assignment operator will be called instead
+
+
+    
