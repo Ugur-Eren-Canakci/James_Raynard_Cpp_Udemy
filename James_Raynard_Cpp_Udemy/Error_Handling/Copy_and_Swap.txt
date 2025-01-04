@@ -1,0 +1,43 @@
+Instead of manually filling in the assignment operator, we can do this:
+String& operator=(const String& other) {
+    String temp(other); // calls the copy constructor
+    std::swap(*this, temp); // replaces the temp object with the current one
+    return *this;
+}
+
+In short, the steps are:
+    1) create temporary object as a local variable
+    2) swap the contents of the local variable with "this" object
+    3) return the *this, which now contains the correct values
+    4) local variable is then destroyed automatically
+    
+
+If operator= throws, 
+    1) temp object is destroyed
+    2) the function returns immediately
+    3) "this" is unmodified
+    4) the exception is left to handle for the caller
+    
+swap is noexcept, i.e. cannot throw an exception
+
+when the function returns, the destructor for temp is called
+    temp is now the old object, so the old object is destroyed 
+        => no memory leaks caused by the old object
+        
+This action is called the "copy-and-swap" idiom
+Advantages:
+    1) No need to check for self-assignment (if &other == this)
+    2) Code reuse (doesn't duplicate code from copy constructor / original constructor)
+    3) Much shorter code with less scope for errors
+    4) Provides strong exception safety guarantee
+        If an exception is thrown, the program goes back to the exact same state as before the call
+
+Disadvantages:
+    1) Always makes a new allocation, even if the target object already has enough memory
+    2) Creates an extra object, which increases memory consumption
+    
+    
+    
+    
+    
+    

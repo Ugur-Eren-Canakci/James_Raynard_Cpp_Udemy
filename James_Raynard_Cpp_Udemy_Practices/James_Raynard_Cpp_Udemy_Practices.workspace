@@ -73,6 +73,7 @@
   <Project Name="noexcept" Path="noexcept/noexcept.project" Active="No"/>
   <Project Name="Swap" Path="Swap/Swap.project" Active="No"/>
   <Project Name="Exception_Safe_Classes" Path="Exception_Safe_Classes/Exception_Safe_Classes.project" Active="Yes"/>
+  <Project Name="Copy_and_Swap" Path="Copy_and_Swap/Copy_and_Swap.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -149,6 +150,7 @@
       <Project Name="noexcept" ConfigName="Debug"/>
       <Project Name="Swap" ConfigName="Debug"/>
       <Project Name="Exception_Safe_Classes" ConfigName="Debug"/>
+      <Project Name="Copy_and_Swap" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -225,6 +227,7 @@
       <Project Name="noexcept" ConfigName="Release"/>
       <Project Name="Swap" ConfigName="Release"/>
       <Project Name="Exception_Safe_Classes" ConfigName="Release"/>
+      <Project Name="Copy_and_Swap" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
