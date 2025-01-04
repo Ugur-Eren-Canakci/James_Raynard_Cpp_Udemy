@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Swap - Debug ]----------"
-	@cd "Swap" && "$(MAKE)" -f  "Swap.mk"
+	@echo "----------Building project:[ Exception_Safe_Classes - Debug ]----------"
+	@cd "Exception_Safe_Classes" && "$(MAKE)" -f  "Exception_Safe_Classes.mk"
 clean:
-	@echo "----------Cleaning project:[ Swap - Debug ]----------"
-	@cd "Swap" && "$(MAKE)" -f  "Swap.mk" clean
+	@echo "----------Cleaning project:[ Exception_Safe_Classes - Debug ]----------"
+	@cd "Exception_Safe_Classes" && "$(MAKE)" -f  "Exception_Safe_Classes.mk" clean

@@ -4,7 +4,7 @@ class Object {
 public:
     int x, y;
     Object(int x, int y) : x(x), y(y) { std::cout << "two-args constructor" << std::endl; }
-    friend void swap(Object& o1, Object& o2) {
+    friend void swap(Object& o1, Object& o2) noexcept {
         int temp_x = o2.x;
         int temp_y = o2.y;
         o2.x = o1.x;

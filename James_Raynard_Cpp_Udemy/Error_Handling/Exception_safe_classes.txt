@@ -1,0 +1,85 @@
+class String {
+    ...
+public:
+    ...
+    String(const char *str, int size) : size(size) {
+        data = new char[size];
+        ...
+    }
+    
+    String(const String& other) {
+        size = other.size;
+        data = new char[size];
+        for (int i=0; i<size; i++) {
+            data[i] = other.data[i];
+        }
+        ...
+    }
+    
+    String& operator=(const String& other) {
+        if (&other != this) {
+            delete[] data;
+            size = other.size;
+            data = new char[other.size];
+            for (int i=0; i<size; i++) {
+                data[i] = other.data[i];
+            }
+        }
+        
+        return *this;
+    }
+    
+    ~String() {
+        ...
+        delete [] data;
+        ...
+    }
+}
+
+Constructors cannot be declared noexcept
+    => No-throw guarantee invalid here
+
+If an exception is thrown due to the "new" keyword, everything gets rolled back
+    All data members are destroyed
+    Any resource allocation that's done after the "new" statement is automatically aborted 
+    Also the partially created object will also be destroyed
+    
+    => Strong exception guarantee
+    
+"delete" is defined as noexcept
+    => the destructor gives no-throw guarantee
+    
+Assignment operator is currently a bit faulty
+    ->delete[] data;
+    ->data = new char[other.size];
+    Here, "delete" does not interact with the pointer, it simply releases the memory in the heap
+    Hence, if "new" throws an exception, then "data" will point out to the previous memory slot
+        This might cause undefined behaviours
+    
+    Solution:
+        "new" returns a pointer to the first allocated memory slot
+            => keep this new pointer in a temporary member
+            clean the old memory slots
+            assign data the temp value
+            
+            in this case, if "new" throws an exception, the values in the old memory slots will not be affected 
+                since the "delete" call will not be executed
+            after all the rollbacks, the assignment will have vanished, and no elements will be affected
+    
+    String& operator=(const String& other) {
+        if (&other != this) {
+            char* new_data = new char[other.size];
+            delete[] data;
+            data = new_data;
+            for (int i=0; i<other.size; i++) {
+                data[i] = other.data[i];
+            }
+            size = other.size;
+        }
+    }
+    
+With RAII, the constructor and the copy constructor automatically provide the strong exception safety guarantee
+    The destructor automatically provides no-throw guarantee
+    The assignment operator (when defined carefully) also offers strong exception safety guarantee
+    
+    

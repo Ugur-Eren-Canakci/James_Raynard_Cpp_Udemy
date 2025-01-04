@@ -71,7 +71,8 @@
   <Project Name="Exceptions_and_Special_Member_Functions" Path="Exceptions_and_Special_Member_Functions/Exceptions_and_Special_Member_Functions.project" Active="No"/>
   <Project Name="Custom_Exception_Class" Path="Custom_Exception_Class/Custom_Exception_Class.project" Active="No"/>
   <Project Name="noexcept" Path="noexcept/noexcept.project" Active="No"/>
-  <Project Name="Swap" Path="Swap/Swap.project" Active="Yes"/>
+  <Project Name="Swap" Path="Swap/Swap.project" Active="No"/>
+  <Project Name="Exception_Safe_Classes" Path="Exception_Safe_Classes/Exception_Safe_Classes.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -147,6 +148,7 @@
       <Project Name="Custom_Exception_Class" ConfigName="Debug"/>
       <Project Name="noexcept" ConfigName="Debug"/>
       <Project Name="Swap" ConfigName="Debug"/>
+      <Project Name="Exception_Safe_Classes" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -222,6 +224,7 @@
       <Project Name="Custom_Exception_Class" ConfigName="Release"/>
       <Project Name="noexcept" ConfigName="Release"/>
       <Project Name="Swap" ConfigName="Release"/>
+      <Project Name="Exception_Safe_Classes" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

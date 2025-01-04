@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Exception_safe_classes.txt"/>
     <File Name="noexcept.txt"/>
     <File Name="throw_specifier.txt"/>
     <File Name="Exception_Safety.txt"/>
