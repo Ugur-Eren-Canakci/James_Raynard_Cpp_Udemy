@@ -75,7 +75,8 @@
   <Project Name="Exception_Safe_Classes" Path="Exception_Safe_Classes/Exception_Safe_Classes.project" Active="No"/>
   <Project Name="Copy_and_Swap" Path="Copy_and_Swap/Copy_and_Swap.project" Active="No"/>
   <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
-  <Project Name="Lvalues_and_Rvalues" Path="Lvalues_and_Rvalues/Lvalues_and_Rvalues.project" Active="Yes"/>
+  <Project Name="Lvalues_and_Rvalues" Path="Lvalues_and_Rvalues/Lvalues_and_Rvalues.project" Active="No"/>
+  <Project Name="Lvalue_and_Rvalue_Reference" Path="Lvalue_and_Rvalue_Reference/Lvalue_and_Rvalue_Reference.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -155,6 +156,7 @@
       <Project Name="Copy_and_Swap" ConfigName="Debug"/>
       <Project Name="Move_Semantics" ConfigName="Debug"/>
       <Project Name="Lvalues_and_Rvalues" ConfigName="Debug"/>
+      <Project Name="Lvalue_and_Rvalue_Reference" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -234,6 +236,7 @@
       <Project Name="Copy_and_Swap" ConfigName="Release"/>
       <Project Name="Move_Semantics" ConfigName="Release"/>
       <Project Name="Lvalues_and_Rvalues" ConfigName="Release"/>
+      <Project Name="Lvalue_and_Rvalue_Reference" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

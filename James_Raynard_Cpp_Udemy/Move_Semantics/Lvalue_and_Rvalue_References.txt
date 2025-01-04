@@ -1,0 +1,51 @@
+A reference to an lvalue is typically implemented as a pointer
+    The compiler adds code to dereference the pointers as needed
+Ex:
+int x = 3;
+int& y = x; // Equivalent to int* y = &x;
+y = 5;  // Equivalent to *y = 5;
+    
+    ->This action obviously requires x to have a name and an address
+        i.e. x has to be an lvalue
+    Then y is an lvalue reference
+    
+We cannot bind an lvalue reference to an rvalue, unless the reference is const:
+Ex:
+int& x = 3; // Error
+const int& x = 3; // OK
+    The compiler will add code which makes this appear to work like a const reference to an lvalue
+    
+
+C++11 introduced the concept of "rvalue reference"
+    This is a syntactic device which indicates that a function argument must be a moveable rvalue
+    
+    An rvalue reference has '&&' after the type
+Ex:
+void func(int&& x);
+
+func(2); // 2 is an rvalue -> OK
+int y{2}; // y is an lvalue
+func(y); // Error
+
+Literals are rvalues, and built-in types are regarded as moveable
+
+A function argument can be an rvalue reference
+    The passed object will be moved into the argument if:
+        1) The passed object is an rvalue
+        2) The type of the object is moveable
+    Otherwise, the call doesn't compile
+        
+    This allows us to overload the function to behave differently depending on whether the passed object is an lvalue or an rvalue
+    
+If we want to pass an lvalue to a function which takes an rvalue reference, we have to cast it to an rvalue
+    std::move() will cast its argument to an rvalue
+        this will move the lvalue object's data into the function argument
+        
+    This should only be done if the lvalue's data is expendable
+        the lvalue's data may be empty or unusable
+        if we want to use that data again, we must re-assign it a value
+        
+Even though rvalue reference is set up for function arguments, you can set a variable to be an rvalue reference
+    Since the variable will have a name and an address, it will be an lvalue object
+    
+
