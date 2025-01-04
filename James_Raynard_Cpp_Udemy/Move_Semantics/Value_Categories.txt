@@ -1,0 +1,41 @@
+lvalues represent persistent objects
+    These occupy memory which is accessible to the programmer
+    
+    They remain valid until they go out of scope or are deleted
+    
+    Ex:
+    local vars
+    global vars
+    static vars
+    function arguments
+    
+rvalues are stored in locations which are not accessible to the programmer, such as processor registers
+    Literals like 2 or 'c'
+    
+    they are temporary objects
+        Destroyed in the same statement in which they are created
+        
+
+C++ has three value categories:
+    1) Literals
+        No name
+        Cannot be referred to again
+        Called "prvalues" (pure rvalues)
+    2) Temporary objects
+        Represent an object 
+        Data can be moved
+        Called "xvalues" (expiring values)
+    3) lvalues
+    
+    Every expression has a type and a value category
+    
+lvalue and rvalue sets are complements of each others
+    xvalue and prvalue sets are subsets of the rvalue set
+    
+lvalues and xvalues are objects
+    their dynamic types can be different fron their static types
+    collectively known as "generalized lvalues"
+    
+
+    
+    
