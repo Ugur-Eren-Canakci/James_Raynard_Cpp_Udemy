@@ -1,0 +1,43 @@
+An object is either an rvalue or an lvalue
+
+originally, an lvalue could appear on the left of an assignment
+    similarly, an rvalue could only appear on the right
+    
+In C++, an lvalue represents a named memory location
+    anything else is an rvalue  
+    
+    this new definition is due to operators that return things which can be assigned to
+        Ex: operator-> takes in the name of a data member of a class, and its return value is used to change that data member
+    
+lvalues have a name, and we can take its address using operator&
+Ex: int x=2;
+    name is x, and &x returns a memory address => x is an lvalue
+    2 is a pure value, it doesn't have a name(an alias), and it doesn't have a memory address => 2 is an rvalue
+Ex: int x = func();
+    func() is not a name for the returned value, and &func() is not a valid use of operator& as func() isn't sth that has a memory address
+    =>value returned by func() is an rvalue
+
+lvalues and rvalues behave differently when passed as function arguments
+    both can be passed by value, and if so, their values are copied into the function body
+    
+    both can be passed by const reference
+    
+    lvalues can be passed by address, but rvalues cannot
+        rvalues don't have a memory address
+    
+    lvalues can be passed by non-const reference, but rvalues cannot
+        
+In older C++, an argument is always copied by default
+
+pass-by-move uses the same syntax with pass-by-value
+    In C++11 onwards, the argument can be moved if:
+        1) object is an rvalue
+        2) object's type is "movable"
+    If one of these conditions fail, the object will be copied
+        1) object is an lvalue
+        2) object type is not movable (including built-in types)
+    
+    This provides compatibility with old code
+    
+
+

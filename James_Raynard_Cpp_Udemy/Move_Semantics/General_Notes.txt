@@ -1,0 +1,47 @@
+We can save time by "moving" data in and out of function calls
+
+This topic is all about function arguments and function return values
+
+C++ often uses value semantics, in which data is copied
+    By default, function arguments are passed by value (i.e. the value is copied and forwarded into the argument)
+    By default, functions return by value (i.e. the return value is a copy of the final object in the function, stored in a special place)
+    
+    STL containers copy data into their elements
+        Using references is not allowed (too easy to create dangling references)
+            If you use a reference variable in a container and delete the original object, the reference variable refers to nothing
+        Pointers can be used, but may dangle or cause memory leaks
+            the object pointed by the pointer might get deleted
+            delete might be called for the pointer, causing undefined behaviour on pointer dereferencing
+            
+
+Value semantics avoids the need for a garbage collector
+    But it requires the copying of the object
+        This increases the execution time
+    Traditional C++ can elide copies when returning temporary and local variables from functions
+    
+Consider the following code:
+    std::vector<std::string> vec(1000000);
+    ... // populating vec
+    func(vec);
+    
+    if func is taking arguments by value, then the whole vector vec is copied sequentially, to be used in the function body
+        extremely time-inefficient
+        at the end of func's scope, vec's copy inside the scope is destructed, as well as the elements inside it.
+    if only there was a way to get the data inside vec out of the vector and into the function call argument
+        then we wouldn't need to call a million and one destructors(one for the copied vector, a million for the copied strings)
+        
+
+C++11 introduced move semantics
+    Optimization over copying objects
+    If the source object is an "rvalue", its data can be moved into the target instead of being copied
+    Similar to moving files between folders instead of copying them
+    
+Ex:
+string str1 = "abcd";
+string str2 = "1234";
+    when str2 is copied into str1, both will have values "1234"
+    when str1 and str2 are swapped, their values will be each others'
+    when str2 is moved into str1, str1 will be "1234" and str2 will have an invalid buffer
+    
+
+    

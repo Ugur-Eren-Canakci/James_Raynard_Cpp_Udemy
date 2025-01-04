@@ -72,8 +72,10 @@
   <Project Name="Custom_Exception_Class" Path="Custom_Exception_Class/Custom_Exception_Class.project" Active="No"/>
   <Project Name="noexcept" Path="noexcept/noexcept.project" Active="No"/>
   <Project Name="Swap" Path="Swap/Swap.project" Active="No"/>
-  <Project Name="Exception_Safe_Classes" Path="Exception_Safe_Classes/Exception_Safe_Classes.project" Active="Yes"/>
+  <Project Name="Exception_Safe_Classes" Path="Exception_Safe_Classes/Exception_Safe_Classes.project" Active="No"/>
   <Project Name="Copy_and_Swap" Path="Copy_and_Swap/Copy_and_Swap.project" Active="No"/>
+  <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
+  <Project Name="Lvalues_and_Rvalues" Path="Lvalues_and_Rvalues/Lvalues_and_Rvalues.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -151,6 +153,8 @@
       <Project Name="Swap" ConfigName="Debug"/>
       <Project Name="Exception_Safe_Classes" ConfigName="Debug"/>
       <Project Name="Copy_and_Swap" ConfigName="Debug"/>
+      <Project Name="Move_Semantics" ConfigName="Debug"/>
+      <Project Name="Lvalues_and_Rvalues" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -228,6 +232,8 @@
       <Project Name="Swap" ConfigName="Release"/>
       <Project Name="Exception_Safe_Classes" ConfigName="Release"/>
       <Project Name="Copy_and_Swap" ConfigName="Release"/>
+      <Project Name="Move_Semantics" ConfigName="Release"/>
+      <Project Name="Lvalues_and_Rvalues" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
