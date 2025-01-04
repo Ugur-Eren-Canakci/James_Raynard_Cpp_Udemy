@@ -1,0 +1,39 @@
+class String {
+    int i;
+    char* data;
+public:
+    ...
+    String(String&& other) noexcept {
+        i = other.i;
+        data = other.data; // Crucial 
+        other.data = nullptr;
+    }
+    
+    String& operator=(String&& other) noexcept {
+        if (&other != this) {
+            i = other.i;
+            data = other.data; // Crucial
+            other.data = nullptr;
+        }
+    }
+    
+    ~String() noexcept {
+        delete[] data;
+    }
+};
+
+String class manages heap allocation
+
+When we call the move constructor, the pointer other.data will be stripped off the other object.
+    Hence, other.data will be an invalid pointer
+    
+    When the program ends, the destructor will be called for both the original object and the copied object
+    
+    When the original object's destructor executes "delete[] data", the copied object's data will call delete
+        And then, the target object will call delete ON THE SAME POINTER!
+            => undefined behaviour
+        
+Solution: Fix the invalid pointer so that delete[] doesn't lead to undefined behaviour
+    "other.data = nullptr;" in both move operators
+    
+    
