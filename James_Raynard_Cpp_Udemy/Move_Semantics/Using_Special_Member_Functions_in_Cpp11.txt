@@ -1,0 +1,38 @@
+Rule of Zero:
+    If a class doesn't need to define a destructor, it doesn't need to define copy or move operators either
+    
+    For most classes, rule of zero is sufficient
+
+The compiler will synthesize a default constructor 
+    Unless we declare it ourselves
+    Sometimes useful to declare a default constructor which initializes the members with sensible values
+    
+If we need a destructor, for example, to release memory, the compiler-generated copy operators will not be sufficient
+    Then we need to provide our own destructor and copy operators
+    We'll need to declare our own constructor as well
+    For performance, move operators should be defined as well, or the copy operators will be used by default
+    
+To make a move-only class, we need to provide:
+    Destructor
+    Move constructor
+    Move assignment operator
+    
+    The synthesised copy operators will be declared deleted by the compiler
+        Yet for clarity we should declare them as deleted as well
+        
+We can define a class as non-moveable and non-copyable
+    => cannot be forwarded to functions
+    => cannot be returned from functions
+    eg: low-level concurrency objects which release a lock at the end of their scope
+    
+    To do this, delete the copy operators
+        The compiler will not synthesize the move operators
+        Any copy or move operation will invoke the copy operators that are deleted
+        
+Similarly, a copy-only class is possible
+    declare the move operators as deleted
+    
+    not really recommended, as the compiler might still try to invoke move operators
+    
+    
+    
