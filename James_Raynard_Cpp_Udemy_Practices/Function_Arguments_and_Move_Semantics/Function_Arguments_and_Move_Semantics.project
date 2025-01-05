@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Move_Semantics" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Function_Arguments_and_Move_Semantics" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,16 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Function_Arguments_and_Move_Semantics.txt"/>
-    <File Name="Using_Special_Member_Functions_in_Cpp11.txt"/>
-    <File Name="Special_Member_Functions_in_Cpp11.txt"/>
-    <File Name="Move_only_classes.txt"/>
-    <File Name="RAII_Class_with_Move_Operators.txt"/>
-    <File Name="Move_operator.txt"/>
-    <File Name="Value_Categories.txt"/>
-    <File Name="Lvalue_and_Rvalue_References.txt"/>
-    <File Name="Lvalues_and_Rvalues.txt"/>
-    <File Name="General_Notes.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -1,0 +1,29 @@
+Pass-by-value
+    Invokes copy constructor
+    Function has its own copy of the forwarded objects
+    Caller's objects are unmodified
+    
+Pass-by-const-reference
+    Function only has read-only access
+    Caller's objects are unmodified
+    
+Pass-by-non-const-reference / pass-by-address
+    Function has full access to caller's objects
+    Caller's objects may be modified
+
+Pass-by-move
+    Move constructor called
+    Function now owns the objects' data
+    Caller's objects are unusable (unless re-assigned)
+    
+Older C++ advice:
+    Pass built-in types and small objects by value
+    Pass other objects by const reference
+
+Modern C++ advice:
+    Pass lvalues by const reference
+    Pass rvalues by rvalue reference
+    
+    This, though, requires writing two identical functions
+        
+        
