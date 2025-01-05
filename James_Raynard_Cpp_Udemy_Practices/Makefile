@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Special_Member_Functions_Cpp11 - Debug ]----------"
-	@cd "Special_Member_Functions_Cpp11" && "$(MAKE)" -f  "Special_Member_Functions_Cpp11.mk"
+	@echo "----------Building project:[ Forwarding_References - Debug ]----------"
+	@cd "Forwarding_References" && "$(MAKE)" -f  "Forwarding_References.mk"
 clean:
-	@echo "----------Cleaning project:[ Special_Member_Functions_Cpp11 - Debug ]----------"
-	@cd "Special_Member_Functions_Cpp11" && "$(MAKE)" -f  "Special_Member_Functions_Cpp11.mk" clean
+	@echo "----------Cleaning project:[ Forwarding_References - Debug ]----------"
+	@cd "Forwarding_References" && "$(MAKE)" -f  "Forwarding_References.mk" clean

@@ -1,0 +1,44 @@
+Nested references are not declarable directly due to syntax limitations
+    However, the compiler can do this internally for a type alias or a template parameter
+    Ex:
+    using int_ref = int&;
+    int i{0};
+    int_ref j{i};
+    int_ref& rj{j};
+    
+    Type of rj is determined by "reference collapsing"
+        The reference to (int reference) "collapses" into "int reference"
+    
+With rvalue references, things get complicated
+    Basic concept: assume nested references work in AND circuits
+    rvalue reference to rvalue reference => rvalue reference
+    otherwise => lvalue reference
+    
+&& argument parameters
+    func(Test&& t) {}
+    t is an rvalue reference to a Test object
+        t can only be bound to xvalues(temp objects) or prvalues(literals)
+        
+&& template argument parameters
+    template <typename T>
+    func(T&& t) {}
+    
+    t is now a "forwarding"/"universal" reference
+        It can be bound to lvalues and rvalues
+        func is THE overload that's called everytime 
+    
+    When deducing the argument type for a forwarding reference, the compiler first examines the value category
+        if an lvalue is passed into func(T&&), T is deduced as lvalue reference
+        if an rvalue is passed into func(T&&), T is deduced as rvalue reference
+        
+WHY IS THIS USEFUL?
+    We discovered that when lvalue's are forwarded, const reference argument is the fastest
+        Similarly, when rvalue's are forwarded, rvalue reference argument is the fastest
+    
+    Ex:
+    template<typename T1, typename T2, typename T3, typename T4> 
+    func(T1&& t1, T2&& t2, T3&& t3, T4&& t4) {}
+        Say the arguments you have are either lvalues or rvalues
+        Then you would have to define 16 func overloads, with arguments switching between lvalue refs and rvalue refs
+        
+    
