@@ -1,0 +1,26 @@
+The compiler will only synthesise a move operator if
+    1) the class does not define a copy constructor, assignment operator or destructor
+    2) every data member of the class is either:
+        a) Built-in type
+        b) User-defined type with move operators
+        c) Static data member (i.e. not moved)
+        
+    The synthesised move constructor will call the move constructor for each member
+    
+    The synthesised move assignment operator will call the move assignment operator for each member
+    
+If a class defines a move operator, both the copy operators will be synthesised as "deleted"
+    The class should define its own copy operators if it needs them
+        => otherwise, the class will be move-only
+        
+Rule of three becomes rule of five here on
+    Defining one of:
+    1) Copy constructor
+    2) Copy assignment operator
+    3) Move constructor
+    4) Move assignment operator
+    5) Destructor
+    Implies you should define others as well
+    Or you could simply define some as deleted so that it's not possible to do that which you deleted
+    
+    

@@ -80,7 +80,8 @@
   <Project Name="Value_Categories" Path="Value_Categories/Value_Categories.project" Active="No"/>
   <Project Name="Move_operators" Path="Move_operators/Move_operators.project" Active="No"/>
   <Project Name="RAII_Class_with_Move_Operators" Path="RAII_Class_with_Move_Operators/RAII_Class_with_Move_Operators.project" Active="No"/>
-  <Project Name="Move_only_types_and_RAII" Path="Move_only_types_and_RAII/Move_only_types_and_RAII.project" Active="Yes"/>
+  <Project Name="Move_only_types_and_RAII" Path="Move_only_types_and_RAII/Move_only_types_and_RAII.project" Active="No"/>
+  <Project Name="Special_Member_Functions_Cpp11" Path="Special_Member_Functions_Cpp11/Special_Member_Functions_Cpp11.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -165,6 +166,7 @@
       <Project Name="Move_operators" ConfigName="Debug"/>
       <Project Name="RAII_Class_with_Move_Operators" ConfigName="Debug"/>
       <Project Name="Move_only_types_and_RAII" ConfigName="Debug"/>
+      <Project Name="Special_Member_Functions_Cpp11" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -249,6 +251,7 @@
       <Project Name="Move_operators" ConfigName="Release"/>
       <Project Name="RAII_Class_with_Move_Operators" ConfigName="Release"/>
       <Project Name="Move_only_types_and_RAII" ConfigName="Release"/>
+      <Project Name="Special_Member_Functions_Cpp11" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
