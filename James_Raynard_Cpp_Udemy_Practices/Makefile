@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ RAII_Class_with_Move_Operators - Debug ]----------"
-	@cd "RAII_Class_with_Move_Operators" && "$(MAKE)" -f  "RAII_Class_with_Move_Operators.mk"
+	@echo "----------Building project:[ Move_only_types_and_RAII - Debug ]----------"
+	@cd "Move_only_types_and_RAII" && "$(MAKE)" -f  "Move_only_types_and_RAII.mk"
 clean:
-	@echo "----------Cleaning project:[ RAII_Class_with_Move_Operators - Debug ]----------"
-	@cd "RAII_Class_with_Move_Operators" && "$(MAKE)" -f  "RAII_Class_with_Move_Operators.mk" clean
+	@echo "----------Cleaning project:[ Move_only_types_and_RAII - Debug ]----------"
+	@cd "Move_only_types_and_RAII" && "$(MAKE)" -f  "Move_only_types_and_RAII.mk" clean

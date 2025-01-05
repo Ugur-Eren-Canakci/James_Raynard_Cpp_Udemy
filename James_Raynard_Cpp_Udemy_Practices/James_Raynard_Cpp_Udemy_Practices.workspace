@@ -79,7 +79,8 @@
   <Project Name="Lvalue_and_Rvalue_Reference" Path="Lvalue_and_Rvalue_Reference/Lvalue_and_Rvalue_Reference.project" Active="No"/>
   <Project Name="Value_Categories" Path="Value_Categories/Value_Categories.project" Active="No"/>
   <Project Name="Move_operators" Path="Move_operators/Move_operators.project" Active="No"/>
-  <Project Name="RAII_Class_with_Move_Operators" Path="RAII_Class_with_Move_Operators/RAII_Class_with_Move_Operators.project" Active="Yes"/>
+  <Project Name="RAII_Class_with_Move_Operators" Path="RAII_Class_with_Move_Operators/RAII_Class_with_Move_Operators.project" Active="No"/>
+  <Project Name="Move_only_types_and_RAII" Path="Move_only_types_and_RAII/Move_only_types_and_RAII.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -163,6 +164,7 @@
       <Project Name="Value_Categories" ConfigName="Debug"/>
       <Project Name="Move_operators" ConfigName="Debug"/>
       <Project Name="RAII_Class_with_Move_Operators" ConfigName="Debug"/>
+      <Project Name="Move_only_types_and_RAII" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -246,6 +248,7 @@
       <Project Name="Value_Categories" ConfigName="Release"/>
       <Project Name="Move_operators" ConfigName="Release"/>
       <Project Name="RAII_Class_with_Move_Operators" ConfigName="Release"/>
+      <Project Name="Move_only_types_and_RAII" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
