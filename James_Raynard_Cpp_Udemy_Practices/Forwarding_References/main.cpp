@@ -56,6 +56,25 @@ int main() {
     func(5);
     int x=3;
     func(x);
-
+    
+    /*Consider this function with an argument which is a forwarding reference
+    template <typename T>
+    func(T&& x);
+     * What will be the prototype of the instantiated function if it is called
+    with
+    • An lvalue object of class Test
+    • An rvalue object of class Test
+    • (For simplicity, assume that the instantiated function has the same name)
+    */
+    // lvalue:
+    // func(Test& x) ...
+    // rvalue:
+    // func(Test&& x) ...
+    
+    // Explain why forwarding references are useful
+    // if you have a function with n arguments, and that function is going to take either lvalues or rvalues,
+    // then there has to be 2^n explicit declarations and definitions of the same function
+    // With forwarding reference, compiler deduces what category of value is forwarded into the functions
+    // and then defines the functions for those categories of values.
     return 0;
 }

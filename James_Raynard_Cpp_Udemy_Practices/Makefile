@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Forwarding_References - Debug ]----------"
-	@cd "Forwarding_References" && "$(MAKE)" -f  "Forwarding_References.mk"
+	@echo "----------Building project:[ Perfect_Forwarding - Debug ]----------"
+	@cd "Perfect_Forwarding" && "$(MAKE)" -f  "Perfect_Forwarding.mk"
 clean:
-	@echo "----------Cleaning project:[ Forwarding_References - Debug ]----------"
-	@cd "Forwarding_References" && "$(MAKE)" -f  "Forwarding_References.mk" clean
+	@echo "----------Cleaning project:[ Perfect_Forwarding - Debug ]----------"
+	@cd "Perfect_Forwarding" && "$(MAKE)" -f  "Perfect_Forwarding.mk" clean

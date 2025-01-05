@@ -1,0 +1,70 @@
+A function that passes some or all of its arguments to another function is said to "forward" them
+    Ex:
+    void f(Test x) {
+        g(x);
+    }
+    
+With "perfect forwarding", the properties of the passed objects are preserved
+    If x is modifiable in f, it's modifiable in g as well
+    If x is unmodifiable in f, it's unmodifiable in g as well
+    If x was moved into f's argument, it will be moved to g's argument as well
+    
+Perfect forwarding is used to write functions that call constructors
+    Ex: make_pair
+    
+    If a passed object is an rvalue, the more efficient move constructor will automatically be called
+    
+    Also used by variadic templates(templates with variable number of arguments) to 
+        dispatch their arguments to functions which process them
+    
+Ex:
+
+void g(Test x) {
+    std::cout << "pass-by-value" << std::endl;
+}
+
+void g(Test& x) {
+    std::cout << "pass-by-lvalue-reference" << std::endl;
+}
+
+void g(const Test& x) {
+    std::cout << "pass-by-const-reference" << std::endl;
+}
+
+void g(Test&& x) {
+    std::cout << "pass-by-rvalue-reference" << std::endl;
+}
+
+
+template <typename T>
+void f(T&& x) {
+    g(x);
+}
+
+int main() {
+    
+    Test x;
+    f(std::move(x)); -> output is "pass-by-lvalue-reference"
+    return 0;
+}
+
+Even though you forward an rvalue into f, the lvalue reference version of g is invoked
+    This is because x inside f is an lvalue, as x has a name and the function stores the rvalue in an address to use it
+    
+You might forward std::move(x) into g, but f is defined for all other versions of the argument
+    => f will always call the rvalue-ref version of g
+    => if f is called with a non-const lvalue reference, the lvalue will be stripped off its value, leading to possible crashes and undefined behaviours
+    
+SOLUTION:
+    use std::forward<T>(x)
+        if x is of type T&, then std::forward<T>(x) is again of type T&
+        if x is of type T or T&&, then std::forward<T>(x) is of type T&&
+    in short, std::forward casts its argument into an rvalue reference IF the argument is not an lvalue
+    otherwise, it doesn't change it
+    
+    template <typename T>
+    void f(T&& x) {
+        g(std::forward<T>(x));
+    }
+        
+    
