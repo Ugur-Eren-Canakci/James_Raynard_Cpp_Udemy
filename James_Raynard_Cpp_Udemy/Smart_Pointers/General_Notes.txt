@@ -1,0 +1,42 @@
+The traditional pointer is inherited from C
+
+A pointer stores a binary number which represents an address in memory
+    Can represent the address of a stack variable (e.g. function argument)
+    Can be used to manage memory allocated on the heap, typically for variable-length arrays
+    Can be used to implement polymorphism
+    
+Drawbacks:
+    No concept of ownership
+        Any code that uses a pointer can reassign it, overwrite it or invalidate it
+    No destructor
+        Allocated memory can be released twice, or not at all
+    
+C++11 onwards, traditional pointers are very rarely needed
+    For working with stack memory, we can use references instead of pointers
+    We can use std::vector instead of variable-size arrays
+    We can use smart pointers for working with heap
+    For dynamic binding, we can use smart pointers or references
+    
+Smart pointers are classes which encapsulate allocated memory
+    The class has a private data member which is a pointer to the memory
+    The smart pointer object has ownership of the allocated memory
+    The allocated memory can only be accessed through public member functions
+    Pointer arithmetic is not allowed
+    
+Smart pointers are implemented using RAII
+    The memory is allocated in the constructor and released in the destructor
+    
+unique_ptr appeared in C++11
+    cannot be copied or assigned to
+    however, the memory can be moved from one unique_ptr to another
+        have to be done explicitly, with std::move
+
+shared_ptr also appeared in C++11
+    can share its memory allocation with other shared_ptr's
+    reference counting is used to manage the memory
+    similar to a garbage collector in other languages
+    has more overhead than unique_ptr, so should be used only when extra features are needed
+    
+
+    
+    

@@ -1,0 +1,3 @@
+In most situations, unique_ptr is the best replacement for traditional pointers which manage heap memory
+    allocates the heap memory in its constructor, and has sole ownership of it
+    
