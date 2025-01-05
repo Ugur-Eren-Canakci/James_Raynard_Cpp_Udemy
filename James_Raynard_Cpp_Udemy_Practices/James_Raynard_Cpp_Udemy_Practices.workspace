@@ -85,7 +85,8 @@
   <Project Name="Using_Special_Member_Functions_in_Cpp11" Path="Using_Special_Member_Functions_in_Cpp11/Using_Special_Member_Functions_in_Cpp11.project" Active="No"/>
   <Project Name="Function_Arguments_and_Move_Semantics" Path="Function_Arguments_and_Move_Semantics/Function_Arguments_and_Move_Semantics.project" Active="No"/>
   <Project Name="Forwarding_References" Path="Forwarding_References/Forwarding_References.project" Active="No"/>
-  <Project Name="Perfect_Forwarding" Path="Perfect_Forwarding/Perfect_Forwarding.project" Active="Yes"/>
+  <Project Name="Perfect_Forwarding" Path="Perfect_Forwarding/Perfect_Forwarding.project" Active="No"/>
+  <Project Name="Perfect_Forwarding_Practical" Path="Perfect_Forwarding_Practical/Perfect_Forwarding_Practical.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -175,6 +176,7 @@
       <Project Name="Function_Arguments_and_Move_Semantics" ConfigName="Debug"/>
       <Project Name="Forwarding_References" ConfigName="Debug"/>
       <Project Name="Perfect_Forwarding" ConfigName="Debug"/>
+      <Project Name="Perfect_Forwarding_Practical" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -264,6 +266,7 @@
       <Project Name="Function_Arguments_and_Move_Semantics" ConfigName="Release"/>
       <Project Name="Forwarding_References" ConfigName="Release"/>
       <Project Name="Perfect_Forwarding" ConfigName="Release"/>
+      <Project Name="Perfect_Forwarding_Practical" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
