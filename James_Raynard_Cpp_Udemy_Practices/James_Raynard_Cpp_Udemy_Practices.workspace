@@ -87,7 +87,8 @@
   <Project Name="Forwarding_References" Path="Forwarding_References/Forwarding_References.project" Active="No"/>
   <Project Name="Perfect_Forwarding" Path="Perfect_Forwarding/Perfect_Forwarding.project" Active="No"/>
   <Project Name="Perfect_Forwarding_Practical" Path="Perfect_Forwarding_Practical/Perfect_Forwarding_Practical.project" Active="No"/>
-  <Project Name="Smart_Pointers_Introduction" Path="Smart_Pointers_Introduction/Smart_Pointers_Introduction.project" Active="Yes"/>
+  <Project Name="Smart_Pointers_Introduction" Path="Smart_Pointers_Introduction/Smart_Pointers_Introduction.project" Active="No"/>
+  <Project Name="Unique_Pointer" Path="Unique_Pointer/Unique_Pointer.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -179,6 +180,7 @@
       <Project Name="Perfect_Forwarding" ConfigName="Debug"/>
       <Project Name="Perfect_Forwarding_Practical" ConfigName="Debug"/>
       <Project Name="Smart_Pointers_Introduction" ConfigName="Debug"/>
+      <Project Name="Unique_Pointer" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -270,6 +272,7 @@
       <Project Name="Perfect_Forwarding" ConfigName="Release"/>
       <Project Name="Perfect_Forwarding_Practical" ConfigName="Release"/>
       <Project Name="Smart_Pointers_Introduction" ConfigName="Release"/>
+      <Project Name="Unique_Pointer" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

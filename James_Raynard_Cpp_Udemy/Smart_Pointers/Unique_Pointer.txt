@@ -1,3 +1,69 @@
 In most situations, unique_ptr is the best replacement for traditional pointers which manage heap memory
     allocates the heap memory in its constructor, and has sole ownership of it
+    releases heap memory in its destructor
+    allows heap memory to be used just like a stack object
     
+It has the usual advantages of smart pointers
+    The programmer doesn't need to manage memory
+    The pointer to the memory cannot be overwritten or invalidated
+    No issues with "shallow copying"
+    
+unique_ptr is very lightweight
+    has no more overhead than a traditional pointer
+    
+defined in <memory>
+
+template class with a raw pointer as member
+    the template parameter is the type of the pointed-to data
+    
+public member functions of the class implement some of the operations on traditional pointers
+
+unique_ptr is a move-only class
+    moving a unique_ptr transfers the allocated memory from one object to another
+    
+In C++11 we have to provide the pointer by calling "new" explicitly
+    unique_ptr<int> p1 { new int(42) };
+
+We can also create a fixed size array
+    unique_ptr<int []> p2 {new int[6]};
+    
+    usually better to use std::vector or std::array
+    
+In C++14 there's "make_unique" function that calls "new" internally
+    auto p1 { make_unique<int>(42) };
+    auto p2 { make_unique<int []>(6) }; // allocates 6 int-holding contiguous memory slots
+    
+    uses perfect forwarding while forwarding arguments to the constructor
+    
+operator[] is defined on unique_ptr's that point to an array
+    not defined on unique_ptr's that point to a single memory slot
+    
+If we want to use them in functions, we have to move the values into the function argument
+    WHY? because 
+    1) we can't copy unique_ptr's 
+    2) the argument itself will be a unique_ptr pointing to the same memory address
+    
+    Ex:
+    void func(unique_ptr<Test> u_ptr) {
+        ...
+    }
+    func(make_unique<Test>(Test())); // will not work since the output of make_unique will keep the ownership of the pointed address
+    auto p {make_unique<Test> (Test()) };
+    func(std::move(p)); // will work as the ownership will be given to u_ptr inside func
+    // caution: p will be invalid after this, and u_ptr will be destructed
+    
+We can return unique_ptr's from functions
+    The object is moved into the function's return space
+        This transfers ownership of the allocated memory
+    The object is then moved again, into a variable in the caller
+    
+    *** the compiler will always move a return value if possible
+    
+    Ex:
+    unique_ptr<Point> point_ptr(int x, int y) {
+        Point p{x,y}; // struct with two private data members
+        
+        auto ptr {make_unique<Point> (p)}; // unique_ptr constructor
+        return ptr; // moves the ptr object into the return space of point_ptr
+    }
+    auto ptr {point_ptr(3,4)}; // moves the object in the return space into this variable
