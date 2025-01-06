@@ -1,0 +1,24 @@
+There are two ways to create a unique_ptr object:
+    1) with make_unique and with the right type parameter (make_unique calls "new")
+    2) forwarding a traditional pointer:
+        a) using the "new" keyword inside the init. list
+        b) initializing a raw pointer and calling unique_ptr constructor
+        
+The constructor of unique_ptr can take any pointer, not just one which represents allocated memory
+    
+We could use unique_ptr as a generic class for managing resources
+
+unique_ptr's destructor calls delete on the private pointer member
+    This will be disastrous if the pointer isn't returned by "new" (2b above)
+    
+We can provide a "deleter" to the unique pointers
+    callable object
+    will be invoked by the destructor instead of the classic "unique_ptr.delete"
+    
+    the managed pointer is passed into this callable object
+    the deleter then releases the resource as appropriate
+Ex:
+auto end_connection = [] (connection* conn) { disconnect(*conn); };
+std::unique_ptr<connection, decltype(end_connection)> conn_ptr {std::make_unique<connection>(), end_connection};
+    Even if an exception is thrown, the network connection will always be closed
+    
