@@ -1,0 +1,28 @@
+In OOP we aim to seperate the interface from the implementation
+    
+Typically in C++ we put the class definition in a header file and the member function definitions in a source file
+    public, private and protected specifiers are used to control access to the implementation
+
+However, some implementation details are still visible to clients
+    Names of private data members
+    Prototypes of private/protected member functions
+    Definitions of inline member functions
+
+All clients which use the class must include the header file
+    Any implementation changes will force a recompile of all clients
+    Ex: windows.exe needs up to days of compiling
+    
+The Handle-Body pattern addresses this issue
+    The handle is an outer class that provides the interface to clients
+    The body is the inner class that provides the implementation
+    When a client creates a Handle object, the Handle creates a Body object
+    When a client calls a member function on the Handle object, the call is forwarded to the Body
+    
+    "Handle.h" defines the Handle class
+        Public member functions only
+    "Body.h" defines the Body class
+        The full class definition
+    Clients #include "Handle.h" but not "Body.h"
+    If the implementation details change, this only affects Body.h
+    Clients do not need to be recompiled
+    

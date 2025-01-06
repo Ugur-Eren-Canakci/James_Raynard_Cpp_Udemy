@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Smart_Pointers" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Handle_Body_Pattern" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,11 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="The_Handle_Body_Pattern.txt"/>
-    <File Name="Unique_Pointers_and_Custom_Deleters.txt"/>
-    <File Name="Unique_Pointers_and_Polymorphism.txt"/>
-    <File Name="Unique_Pointer.txt"/>
-    <File Name="General_Notes.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -90,7 +90,8 @@
   <Project Name="Smart_Pointers_Introduction" Path="Smart_Pointers_Introduction/Smart_Pointers_Introduction.project" Active="No"/>
   <Project Name="Unique_Pointer" Path="Unique_Pointer/Unique_Pointer.project" Active="No"/>
   <Project Name="Unique_Pointers_and_Polymorphism" Path="Unique_Pointers_and_Polymorphism/Unique_Pointers_and_Polymorphism.project" Active="No"/>
-  <Project Name="Unique_Pointers_and_Custom_Deleters" Path="Unique_Pointers_and_Custom_Deleters/Unique_Pointers_and_Custom_Deleters.project" Active="Yes"/>
+  <Project Name="Unique_Pointers_and_Custom_Deleters" Path="Unique_Pointers_and_Custom_Deleters/Unique_Pointers_and_Custom_Deleters.project" Active="No"/>
+  <Project Name="Handle_Body_Pattern" Path="Handle_Body_Pattern/Handle_Body_Pattern.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -185,6 +186,7 @@
       <Project Name="Unique_Pointer" ConfigName="Debug"/>
       <Project Name="Unique_Pointers_and_Polymorphism" ConfigName="Debug"/>
       <Project Name="Unique_Pointers_and_Custom_Deleters" ConfigName="Debug"/>
+      <Project Name="Handle_Body_Pattern" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -279,6 +281,7 @@
       <Project Name="Unique_Pointer" ConfigName="Release"/>
       <Project Name="Unique_Pointers_and_Polymorphism" ConfigName="Release"/>
       <Project Name="Unique_Pointers_and_Custom_Deleters" ConfigName="Release"/>
+      <Project Name="Handle_Body_Pattern" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
