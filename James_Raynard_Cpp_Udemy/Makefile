@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Move_Semantics - Debug ]----------"
-	@cd "Move_Semantics" && "$(MAKE)" -f  "Move_Semantics.mk"
+	@echo "----------Building project:[ Smart_Pointers - Debug ]----------"
+	@cd "Smart_Pointers" && "$(MAKE)" -f  "Smart_Pointers.mk"
 clean:
-	@echo "----------Cleaning project:[ Move_Semantics - Debug ]----------"
-	@cd "Move_Semantics" && "$(MAKE)" -f  "Move_Semantics.mk" clean
+	@echo "----------Cleaning project:[ Smart_Pointers - Debug ]----------"
+	@cd "Smart_Pointers" && "$(MAKE)" -f  "Smart_Pointers.mk" clean

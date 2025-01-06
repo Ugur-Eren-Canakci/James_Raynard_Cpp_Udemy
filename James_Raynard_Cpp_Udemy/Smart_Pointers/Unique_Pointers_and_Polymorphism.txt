@@ -1,0 +1,7 @@
+Check main for working code
+std::unique_ptr<Base> pbase{std::make_unique<Derived>{}}
+
+
+We can implement a "factory pattern" with unique_ptr's
+    Factory pattern is a concept of OOP where all new objects come from one function
+    
