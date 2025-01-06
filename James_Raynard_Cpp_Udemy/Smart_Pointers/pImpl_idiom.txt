@@ -1,0 +1,96 @@
+there are a number of ways of implementing the Handle-Body pattern
+
+in the pImpl idiom, the handle has a private member which is a pointer to the Body object
+    "(p)ointer to (Impl)ementation"
+    also known as "compiler firewall"
+        introduces a rigid seperation between the client code and the implementation code
+        
+Handle.h declares the Body class, but doesn't define it
+    Clients only know its name
+    We don't need the "Body.h" header in "Handle.h" as well, as 
+    
+Ex:
+class Body;
+
+class Handle {
+private:
+    Body* body;
+public:
+    void func() {/* calls body->func() */}
+    ...
+};
+
+The Handle class is implemented using RAII
+    The Body object is allocated in the constructor
+    The Body object is released in the destructor
+    Need to consider the effects of copy and move operations
+    
+Ex:
+Date_impl.h  contains:
+    #ifndef Date_impl_H
+    #define Date_impl_H
+    
+    #include <iostream>
+    class Date_impl {
+        /* class definition */
+        ...
+    };
+    
+    #endif Date_impl_H
+
+Date.h contains:
+    #ifndef Date_H
+    #define Date_H
+    
+    class Date_impl; // implementation is declared here, definition will be in Date.cpp
+    
+    class Date {
+        /* class declarations */
+    };
+    #endif Date_H
+
+Date.cpp contains:
+    #include "Date.h"
+    #include "Date_impl.h" // definition of Date_impl is in Date.cpp due to this line
+    
+    /* Date class member definitions */
+    
+Finally, Client.cpp contains:
+    #include "Date.h"
+    #include <iostream>
+    
+    int main() {
+        /* main program */
+        return 0;
+    }
+
+We can use unique_ptr with pImpl idiom
+    However, the code will not compile unless we declare ~Handle()
+    
+    If we declare a destructor, the compiler will not synthesize move operators
+    
+    Also the class has a non-copyable member, so the compiler will not synthesize copy operators
+    
+
+Advantages of pImpl:
+    Clients don't need to include Body.h
+    Clients don't need to be modified if Body.h changes
+    Clients don't need to be recompiled if Body.h changes
+    Users don't need a new program executable if Body.h changes
+    Useful if implementation is supposed to be kept secret from users
+Disadvantages of pImpl:
+    Requires an extra memory allocation for the Body object
+    Member functions calls require a pointer dereference
+    Loading a shared library increases the program's start-up time
+    Adds complexity to the codebase
+    
+Applications of pImpl:
+    often used in large projects to reduce compilation time and simplify product updates
+    
+    Heavily used in QT(popular graphics library)
+    
+    pImpl could be used to write standard container classes
+        std::string could have a body which stores the data and manipulates it, and a handle which provides the std::string interface
+        With careful programming, we could arrange for two string objects which store the same data to share the same body pointer, saving memory
+        
+    
