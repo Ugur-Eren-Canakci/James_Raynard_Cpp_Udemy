@@ -43,5 +43,17 @@ int main() {
          std::cout << el.use_count() << ", ";
     }
     std::cout << std::endl;
+    
+    //What issues arise when shared_ptr is used in a multithreaded program?
+    // different threads might want to alter the objects pointed by different shared_ptr's
+    
+    //Give an example of a programming problem where shared_ptr could be useful
+    // Relational DB setups, ownership of objects
+    // 1-to-many relations: 
+        // objects on the "many" side can have shared pointers, pointing to the owner
+        // the owner object can have a vector of unique_ptr's, each pointing to a different owned object
+    
+    
+    
 	return 0;
 }
