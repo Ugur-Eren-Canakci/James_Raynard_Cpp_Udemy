@@ -1,7 +1,12 @@
 #include <iostream>
+#include <chrono>
+
+using namespace std::chrono;
 
 int main() {
     
-    std::cout << "Default Project Template" << std::endl;
+    minutes a{3};
+    seconds b{287};
+    std::cout << (a+b).count() << std::endl;
 	return 0;
 }

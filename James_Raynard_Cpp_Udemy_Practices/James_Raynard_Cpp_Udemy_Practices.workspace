@@ -96,7 +96,8 @@
   <Project Name="Reference_Counting" Path="Reference_Counting/Reference_Counting.project" Active="No"/>
   <Project Name="Shared_Pointers" Path="Shared_Pointers/Shared_Pointers.project" Active="No"/>
   <Project Name="Weak_Pointers" Path="Weak_Pointers/Weak_Pointers.project" Active="No"/>
-  <Project Name="Chrono_Library_Introduction" Path="Chrono_Library_Introduction/Chrono_Library_Introduction.project" Active="Yes"/>
+  <Project Name="Chrono_Library_Introduction" Path="Chrono_Library_Introduction/Chrono_Library_Introduction.project" Active="No"/>
+  <Project Name="Chrono_Duration_Types" Path="Chrono_Duration_Types/Chrono_Duration_Types.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -197,6 +198,7 @@
       <Project Name="Shared_Pointers" ConfigName="Debug"/>
       <Project Name="Weak_Pointers" ConfigName="Debug"/>
       <Project Name="Chrono_Library_Introduction" ConfigName="Debug"/>
+      <Project Name="Chrono_Duration_Types" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -297,6 +299,7 @@
       <Project Name="Shared_Pointers" ConfigName="Release"/>
       <Project Name="Weak_Pointers" ConfigName="Release"/>
       <Project Name="Chrono_Library_Introduction" ConfigName="Release"/>
+      <Project Name="Chrono_Duration_Types" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

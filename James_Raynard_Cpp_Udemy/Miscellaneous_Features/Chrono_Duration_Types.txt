@@ -1,0 +1,52 @@
+<chrono> defines integer types which represent units of duration
+    in the std::chrono namespace
+    
+These are used to measure time intervals
+    hours
+    minutes 
+    seconds
+    milliseconds
+    microseconds
+    nanoseconds
+    
+    C++14 provides literals for these units
+        Ex: 
+        auto hour = 5h;
+        auto mins = 10min;
+    C++20 also has days, weeks, months and years
+
+Duration units are default-initialized
+    The constructor takes a single argument
+    
+    Ex:
+    hours hour{5}; // 5 hour interval
+        
+        Assignment is explicit
+        Ex:
+        seconds sec = 2 ; // error: cannot convert from int
+        seconds sec = 2s; (s is the literal from std::literals for type "second")
+        
+        Function calls are explicit as well.
+        Ex: assume func() takes in chrono units
+        func(2); // error: cannot convert from int
+        func(2s); // works
+
+Duration types cannot be printed out directly
+    The count() member function returns the numeric value of the duration
+        Should be used only for I/O and interfacing to legacy code
+        
+        If we have an object which represents 2 seconds, then count() will return 2.
+
+We can perform integer operations on duration type objects
+Ex:
+minutes a{3};
+seconds b{287};
+std::cout << (a+b).count() << std::endl; // output is 467
+
+Implicit conversions between durations are executed only if there's no loss of information
+Ex: 
+seconds sec{2m}; -> sec.count() returns 120
+minutes min{5043ms}; -> error
+
+    Use duration_cast<typename> for explicit conversions
+    
