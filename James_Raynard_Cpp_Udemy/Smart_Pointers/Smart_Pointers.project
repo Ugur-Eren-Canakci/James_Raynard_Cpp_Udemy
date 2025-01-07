@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Weak_Pointers_and_Cycle_Prevention.txt"/>
     <File Name="Weak_Pointers.txt"/>
     <File Name="Shared_Pointers.txt"/>
     <File Name="Reference_Counting.txt"/>
