@@ -1,0 +1,68 @@
+Technique for allowing different objects to share the same resource
+
+An integer is used to store the number of objects which are sharing the source
+    Known as a reference count
+    
+    When an object is bound to the resource, the counter is incremented
+    When an object is unbound, the counter is decremented
+    When there are no objects bound, the count is zero
+    
+Ex: add a pointer to the counter inside the String class
+class String {
+private:
+    int size;
+    char* data;
+    int* counter;
+public:
+    ...
+}
+    
+    Constructor:
+    The constructor will allocate the counter on the heap
+        Initially it will have value 0
+        We acquire the resource by allocating the shared memory
+        We increment the counter by one because there's a bound object
+
+    Destructor:
+    When an object is destroyed, it's no longer bound to the shared memory
+        We therefore decrement the counter
+    If the counter is non-zero, there are still bound objects
+        We must not release the memory as it's still shared
+    If the counter is zero, then we release the memory pointed by data
+        We release the counter from the memory as well as there's no more String objects bound to that data address
+    
+    Copy constructor:
+    String s2(s1);
+    When we copy-construct an object, the new object should have the same values as the argument
+        s1 and s2 will share the same memory allocation and counter
+            their pointers will point to the same memory addresses
+            a shallow copy is good enough
+            
+        The reference counter will be incremented
+        
+    Copy assignment operator:
+    String s2 = s1;
+    For assignment, we can do a shallow copy and increment the counter
+    
+    If s1 and s2 are bound to the same shared memory, this is sufficient
+    If not, s2 is assigned the value of s1, so the values of s2 have to be managed
+        Decrement the s2's data member's counter
+            If this counter == 0, then release that old string from memory
+        Deattach s2's data pointer from the old state by shallow copying s1's traits
+        Then increment s1's counter 
+        
+        Obviously check for self assignment
+    
+    Move operators:
+    String s2 = std::move(s1);
+    s1 will be stripped off the data and counter by being assigned a nullptr 
+        we have to add checks for if at least one of the pointer members are assigned a nullptr as 
+        we dereference it in other member functions 
+    The counter will not be incremented/decremented as there's no new object
+    data and counter pointers will be shallow-copied onto s2's members
+    
+    
+    
+    
+    
+    

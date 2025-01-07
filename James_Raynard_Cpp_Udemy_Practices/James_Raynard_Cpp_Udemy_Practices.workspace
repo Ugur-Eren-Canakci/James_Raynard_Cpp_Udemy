@@ -92,7 +92,8 @@
   <Project Name="Unique_Pointers_and_Polymorphism" Path="Unique_Pointers_and_Polymorphism/Unique_Pointers_and_Polymorphism.project" Active="No"/>
   <Project Name="Unique_Pointers_and_Custom_Deleters" Path="Unique_Pointers_and_Custom_Deleters/Unique_Pointers_and_Custom_Deleters.project" Active="No"/>
   <Project Name="Handle_Body_Pattern" Path="Handle_Body_Pattern/Handle_Body_Pattern.project" Active="No"/>
-  <Project Name="pImpl_idiom" Path="pImpl_idiom/pImpl_idiom.project" Active="Yes"/>
+  <Project Name="pImpl_idiom" Path="pImpl_idiom/pImpl_idiom.project" Active="No"/>
+  <Project Name="Reference_Counting" Path="Reference_Counting/Reference_Counting.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -189,6 +190,7 @@
       <Project Name="Unique_Pointers_and_Custom_Deleters" ConfigName="Debug"/>
       <Project Name="Handle_Body_Pattern" ConfigName="Debug"/>
       <Project Name="pImpl_idiom" ConfigName="Debug"/>
+      <Project Name="Reference_Counting" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -285,6 +287,7 @@
       <Project Name="Unique_Pointers_and_Custom_Deleters" ConfigName="Release"/>
       <Project Name="Handle_Body_Pattern" ConfigName="Release"/>
       <Project Name="pImpl_idiom" ConfigName="Release"/>
+      <Project Name="Reference_Counting" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
