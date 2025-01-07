@@ -1,0 +1,51 @@
+Introduced in C++11
+
+Uses reference counting
+    This allows for different shared_pointer objects to share a memory allocation
+    
+When a shared_ptr object is copied or assigned, there are no memory operations
+    the reference counting is incremented
+    when one of the shared_ptr objects is destroyed, the counter is decremented
+    when the last shared_ptr object is destroyed, the counter is equal to zero
+        the allocated memory is then released
+        
+shared_ptr has a private data member pointing to the allocated memory
+    another private data member pointing to its control block
+        the control block contains the reference counter
+        
+defined in <memory>
+
+to create a shared_ptr, we can pass a pointer to its constructor, or use std::make_shared()
+    we can also initialize a shared_ptr by moving a unique_ptr into it
+        this transfers the ownership of the unique_ptr's allocated memory
+        can be useful when working with factory functions
+        
+    However, we cannot convert a shared_ptr into a unique_ptr
+    
+make_shared() performs a single allocation for the shared memory and the control block
+    auto p1 {std::make_shared<int>(42)};
+    
+    If we call "new" to allocate the memory ourselves, the control block is allocated seperately
+        with an extra call to "new"
+        the shared memory and the control block are probably not contiguous
+        
+when different threads copy or assign shared_ptr objects which use the same control block, there's a data race
+    the reference counter is "atomic" to counter this issue
+    however, access to the allocated memory must be protected by the programmer
+    
+    Operations on atomic variables take much longer, even in non-threaded code
+    
+unique_ptr has the same overhead with raw pointers
+    shared_ptr has more overhead
+        control block initialization
+        the reference counter operations
+
+a unique_ptr can be converted to a shared_ptr but not vice versa
+
+ONLY USE A SHARED_PTR WHEN NEEDED
+    not as efficient as unique_ptr
+    
+shared_ptr is useful where different objects need to have access to the same area of heap memory
+    Duplicate words in large documents
+    A web browser where several tabs are displaying the same image
+

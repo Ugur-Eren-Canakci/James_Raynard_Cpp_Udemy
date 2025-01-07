@@ -3,12 +3,12 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Reference_Counting
+ProjectName            :=Shared_Pointers
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices"
-ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Reference_Counting"
-IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Reference_Counting
+ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Shared_Pointers"
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Shared_Pointers
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -64,7 +64,7 @@ AS       := C:/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/String.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -96,14 +96,9 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Reference_Counting/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Shared_Pointers/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
-$(IntermediateDirectory)/String.cpp$(ObjectSuffix): String.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Reference_Counting/String.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/String.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/String.cpp$(PreprocessSuffix): String.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/String.cpp$(PreprocessSuffix) String.cpp
 
 ##
 ## Clean

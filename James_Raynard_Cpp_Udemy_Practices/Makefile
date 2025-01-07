@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Reference_Counting - Debug ]----------"
-	@cd "Reference_Counting" && "$(MAKE)" -f  "Reference_Counting.mk"
+	@echo "----------Building project:[ Shared_Pointers - Debug ]----------"
+	@cd "Shared_Pointers" && "$(MAKE)" -f  "Shared_Pointers.mk"
 clean:
-	@echo "----------Cleaning project:[ Reference_Counting - Debug ]----------"
-	@cd "Reference_Counting" && "$(MAKE)" -f  "Reference_Counting.mk" clean
+	@echo "----------Cleaning project:[ Shared_Pointers - Debug ]----------"
+	@cd "Shared_Pointers" && "$(MAKE)" -f  "Shared_Pointers.mk" clean

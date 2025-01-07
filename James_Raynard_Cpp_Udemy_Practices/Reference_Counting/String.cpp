@@ -13,6 +13,7 @@ int str_size(const char* s) {
 
 // c-style string constructor
 String::String(const char* s) : size(str_size(s)), counter(new int{1}) {
+    std::cout << "c-style string constructor" << std::endl;
     data = new char[size];
     for (int i = 0; i < size; i++) {
         data[i] = s[i];
@@ -57,14 +58,20 @@ bool String::check_corrupted() {
 
 // copy constructor
 String::String(const String& other) : size(other.size), data(other.data), counter(other.counter) {
-    
     if (counter != nullptr) ++(*counter);
 }
 
 // copy assignment operator
 String& String::operator=(String& other) {
     if (this != &other) {
-        if (counter != nullptr) ++(*(other.counter));
+        if (counter != nullptr) {
+            if (*counter > 1) --(*counter);
+            else if (*counter == 1) {
+                delete[] data;
+                delete[] counter;
+            }
+            ++(*(other.counter));
+        }
         size = other.size;
         data = other.data;
         counter = other.counter;
@@ -82,6 +89,13 @@ String::String(String&& other) : size(other.size), counter(other.counter), data(
 // move assignment operator
 String& String::operator=(String&& other) {
     if (this != &other) {
+        if (counter != nullptr) {
+            if (*counter > 1) --(*counter);
+            else if (*counter == 1) {
+                delete[] data;
+                delete counter;
+            }
+        }
         this->size = other.size;
         this->data = other.data;
         this->counter = other.counter;
