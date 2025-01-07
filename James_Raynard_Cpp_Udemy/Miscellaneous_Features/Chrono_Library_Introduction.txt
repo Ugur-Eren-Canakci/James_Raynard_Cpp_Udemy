@@ -1,0 +1,35 @@
+C++ inherited some time-handling types and functions from C
+    defined in <ctime>
+    Low-level and poorly designed
+
+    C++11 added the chrono library for time-handling
+        More precise, but involves complicated syntax
+        
+    C++20 extends the chrono library to handle dates
+
+    clock() returns the number of "clock ticks" since the program started
+        stored in a variable of type "clock_t"
+        
+        can be used for intervals of up to a few minutes
+        
+        Precision is implementation-defined (usually 1 microsecond)
+        
+    time() takes a variable of type time_t by address
+        It sets this argument to the number of seconds since 1970
+        
+        Can be used for longer intervals (up to several decades)
+        
+        Precision is 1 second
+
+C++11 provided <chrono>
+    Three important concepts:
+        1) Clock
+            Start date and tick rate
+            C's clock starts on Jan 1 1970 and ticks once per second
+        2) Time point
+            The number of clock ticks since the epoch, at a given point in time
+        3) Duration
+            An interval between two time points, measured in clock ticks
+        
+    
+    

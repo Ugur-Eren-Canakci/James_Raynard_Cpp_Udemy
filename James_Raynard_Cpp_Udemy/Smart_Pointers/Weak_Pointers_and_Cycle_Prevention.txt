@@ -1,0 +1,13 @@
+The reason weak pointers were added is Cycle Prevention
+
+struct Father {
+    shared_ptr<Son> fptr;
+}
+
+struct Son {
+    shared_ptr<Father> sptr;
+}
+
+shared_ptr<Father> father = make_shared<Father>();
+shared_ptr<Son> son = make_shared<Son>(father);
+father.set_son(Son);

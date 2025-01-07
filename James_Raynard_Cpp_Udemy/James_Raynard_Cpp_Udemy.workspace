@@ -13,7 +13,8 @@
   <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="No"/>
   <Project Name="Error_Handling" Path="Error_Handling/Error_Handling.project" Active="No"/>
   <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
-  <Project Name="Smart_Pointers" Path="Smart_Pointers/Smart_Pointers.project" Active="Yes"/>
+  <Project Name="Smart_Pointers" Path="Smart_Pointers/Smart_Pointers.project" Active="No"/>
+  <Project Name="Miscellaneous_Features" Path="Miscellaneous_Features/Miscellaneous_Features.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -31,6 +32,7 @@
       <Project Name="Error_Handling" ConfigName="Debug"/>
       <Project Name="Move_Semantics" ConfigName="Debug"/>
       <Project Name="Smart_Pointers" ConfigName="Debug"/>
+      <Project Name="Miscellaneous_Features" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -48,6 +50,7 @@
       <Project Name="Error_Handling" ConfigName="Release"/>
       <Project Name="Move_Semantics" ConfigName="Release"/>
       <Project Name="Smart_Pointers" ConfigName="Release"/>
+      <Project Name="Miscellaneous_Features" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
