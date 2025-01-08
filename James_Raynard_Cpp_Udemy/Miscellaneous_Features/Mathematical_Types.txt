@@ -1,0 +1,24 @@
+std::valarray 
+    vector-like type, based on Fortran arrays
+        fixed size
+        easier syntax for numerical operations
+    not widely used
+        poorly designed
+        compiler implementers not interested in optimizing it
+        better to use third party libraries
+        
+C++11 has std::complex in <complex>
+    templated type (for the types of the real coefficients of the base vectors)
+        can be float, double or long double
+        
+    we can insert them to streams
+        displayed as "(real, imaginary)"
+    we can extract them from streams as well, if they're in the form above
+    
+    supports usual arithmetic operations
+        not the increment/decrement operations though
+        
+C++14 provides the literal suffix i
+    returns a std::complex object whose real part is 0.0
+    
+    

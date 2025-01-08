@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Mathematical_Types.txt"/>
     <File Name="Unions_Continued.txt"/>
     <File Name="Unions.txt"/>
     <File Name="Tuples_in_Cpp17.txt"/>
