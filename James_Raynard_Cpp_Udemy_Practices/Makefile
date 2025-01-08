@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Unions_Continued - Debug ]----------"
-	@cd "Unions_Continued" && "$(MAKE)" -f  "Unions_Continued.mk"
+	@echo "----------Building project:[ Binding - Debug ]----------"
+	@cd "Binding" && "$(MAKE)" -f  "Binding.mk"
 clean:
-	@echo "----------Cleaning project:[ Unions_Continued - Debug ]----------"
-	@cd "Unions_Continued" && "$(MAKE)" -f  "Unions_Continued.mk" clean
+	@echo "----------Cleaning project:[ Binding - Debug ]----------"
+	@cd "Binding" && "$(MAKE)" -f  "Binding.mk" clean

@@ -21,4 +21,11 @@ C++11 has std::complex in <complex>
 C++14 provides the literal suffix i
     returns a std::complex object whose real part is 0.0
     
+There are non-member functions to convert the complex number to and from polar coordinates
+    abs(), arg(), conj()
     
+exp, log, pow, sqrt, sin, cos, tan, inverse trig and hyperbolic trig funcs are all supported
+
+
+
+

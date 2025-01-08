@@ -1,0 +1,39 @@
+Say you want to use a binary predicate with an STL algorithm that uses unary predicate as a callable function object
+Ex:
+bool match(const std::string& animal, const std::string& species) {
+    return animal == species;
+}
+
+auto n = count_if(container.begin(), container.end(), match()); 
+    count_if will plug single elements from container into match, but match requires two arguments to be executed
+    
+C++11 defines std::bind in <functional>
+    std::bind() takes a callable object as its first argument, and performs a "partial function call"
+        binds the remaining arguments to this object and returns a new callable
+        Ex:
+        auto match_cat = std::bind(match, "cat");
+            match_cat can take arguments
+                these arguments are forwarded to match
+                
+        we need to tell where the arguments will appear
+            we do this by using "placeholder" arguments (from namespace std::placeholder) 
+                Ex:(match(animal, species))
+                "_1" will be replaced by the first argument forwarded to the object returned by bind
+                "_2" will be replaced by the first argument forwarded to the object returned by bind
+                ...
+                
+            Ex:
+            auto match_cat = std::bind(match, _1, "cat");
+            match_cat("dog"); -> calls match("dog", "cat")
+            match_cat("horse"); -> calls match("horse", "cat");
+            
+            we can order the arguments as we want as well
+            Ex:
+            (assume func takes three args)
+            auto binded_func = std::bind(func, _2, "string", _1);
+            binded_func(arg1,arg2); -> calls func(arg2, "string", arg1);
+
+
+std::bind is equivalent to a c++14 lambda which creates a local variable
+Ex:
+auto match_cat = [species = "cat"] (std::string& s) { return match(animal, species); };
