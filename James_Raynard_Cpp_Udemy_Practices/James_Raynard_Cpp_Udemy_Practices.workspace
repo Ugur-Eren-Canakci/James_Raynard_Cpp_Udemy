@@ -102,7 +102,8 @@
   <Project Name="Bitsets" Path="Bitsets/Bitsets.project" Active="No"/>
   <Project Name="Tuples" Path="Tuples/Tuples.project" Active="No"/>
   <Project Name="Tuples_in_Cpp17" Path="Tuples_in_Cpp17/Tuples_in_Cpp17.project" Active="No"/>
-  <Project Name="Unions" Path="Unions/Unions.project" Active="Yes"/>
+  <Project Name="Unions" Path="Unions/Unions.project" Active="No"/>
+  <Project Name="Unions_Continued" Path="Unions_Continued/Unions_Continued.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -209,6 +210,7 @@
       <Project Name="Tuples" ConfigName="Debug"/>
       <Project Name="Tuples_in_Cpp17" ConfigName="Debug"/>
       <Project Name="Unions" ConfigName="Debug"/>
+      <Project Name="Unions_Continued" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -315,6 +317,7 @@
       <Project Name="Tuples" ConfigName="Release"/>
       <Project Name="Tuples_in_Cpp17" ConfigName="Release"/>
       <Project Name="Unions" ConfigName="Release"/>
+      <Project Name="Unions_Continued" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

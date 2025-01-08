@@ -1,0 +1,50 @@
+For greater safety, wrap the tagged union inside a class
+    The union should be a private member
+    Public members of this class should access the value in union by checking the tag 
+    
+Ex:
+class TokenWrapper {
+private:
+    Token token;
+public:
+    void set_char(char c) {
+        if (token.tag == Tag::Char) {
+            token.c = c;
+        }
+        else {
+            ...
+        }
+    }
+};
+
+C++17 provides std::variant type
+    Similar to a wrapped tagged union, but
+        1) Type-safe
+        2) Can have different "alternatives" with the same type
+        3) Automatically calls constructors and destructors when required
+        4) Simpler to use
+    Templated, defined in <variant>
+        template parameters give the member types or "alternatives"
+        
+    Ex:
+    std::variant<char, int, double> v;
+    v = 'Z';
+        deduced type of the argument is used to choose the alternative
+        
+    to get an alternative, use std::get<typename>(variant_obj) or std::get<index_number>(variant_obj)
+    
+    std::holds_alternative<typename>(variant_obj) returns true if variant_obj currently holds a value in its typename member
+    
+Uses for Union/Variant:
+    Parsing
+        Ex: a source code with a variable that can have different types
+        Ex: Configuration (.ini) files where a parameter can only be a string, a number or a Boolean
+    Language implementation
+        Ex: an object can have one of several types depending on how it's used (duck typing)
+    Return value
+        Ex: you may want to return either a string or an int, or even an error code if failed to evaluate
+    Polymorphism
+        Ex: virtual function implementation
+    
+    
+    
