@@ -1,0 +1,40 @@
+Compound data type, similar to struct and class but very distinct in its own right
+    Can only store one of each type of variable
+    Can return only one of these values at a time
+    
+    Members are ordered in memory so that one can "live inside another"
+    Ex:
+    union Token {
+        char c;
+        int i;
+        double d;
+    }
+    
+        char needs one byte, int needs two, double needs four
+        double is placed in the memory
+        int is placed into the first two bytes of the double variable
+        char is placed into the first byte of the int variable
+        
+One example of use is parsing info from a network
+
+All members are public by default
+
+In older c++, all members had to be simple types with no special member functions
+    Relaxed in C++11
+    
+Unions can have member functions but not virtual ones
+    => Cannot be used as Base or Derived classes
+    
+To use a union object, we assign a value to "strictly" one of the members 
+    the other members don't carry a value
+    the assigned member is only read-safe
+    
+    Ex: We might assign an int value to Token, then the double and char members will be undefined
+    
+This type of use is very error-prone
+    Solution: add a "tag" member to indicate which data member is used at a time
+        Known as a "tagged union"
+    the tag member has to be outside the Union object, so we define a struct with a Union object and a tag member
+    
+
+    

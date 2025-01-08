@@ -101,7 +101,8 @@
   <Project Name="Chrono_Clocks_and_Time_Points" Path="Chrono_Clocks_and_Time_Points/Chrono_Clocks_and_Time_Points.project" Active="No"/>
   <Project Name="Bitsets" Path="Bitsets/Bitsets.project" Active="No"/>
   <Project Name="Tuples" Path="Tuples/Tuples.project" Active="No"/>
-  <Project Name="Tuples_in_Cpp17" Path="Tuples_in_Cpp17/Tuples_in_Cpp17.project" Active="Yes"/>
+  <Project Name="Tuples_in_Cpp17" Path="Tuples_in_Cpp17/Tuples_in_Cpp17.project" Active="No"/>
+  <Project Name="Unions" Path="Unions/Unions.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -207,6 +208,7 @@
       <Project Name="Bitsets" ConfigName="Debug"/>
       <Project Name="Tuples" ConfigName="Debug"/>
       <Project Name="Tuples_in_Cpp17" ConfigName="Debug"/>
+      <Project Name="Unions" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -312,6 +314,7 @@
       <Project Name="Bitsets" ConfigName="Release"/>
       <Project Name="Tuples" ConfigName="Release"/>
       <Project Name="Tuples_in_Cpp17" ConfigName="Release"/>
+      <Project Name="Unions" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
