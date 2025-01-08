@@ -1,0 +1,61 @@
+C has operators for bitwise manipulation of integers
+    Inherited by C++
+    
+C++11 provides std::bitset in <bitset>
+
+Abstraction that represent groups of bits
+
+std::bitset is a templated type
+    the parameter is the number of bits
+    
+    Ex:
+    std::bitset<8> b1{"10100011"}; // init from string
+    std::bitset<8> b2{0xae}; // init from hexadec
+    std::bitset<8> b3{0b1010'1110}; // init from binary (C++14 onwards)
+    
+can be used with stream objects
+
+we can access the data by calling a member function 
+    to_ulong() returns it as unsigned long
+    to_ullong() returns it as unsigned long long
+    to_string returns it as string
+    
+size() member function returns the number of bits in the bitset
+
+subscript notation can be used to access individual bits
+    Index 0 represents the least significant bit (on the far right)
+    Ex:
+    std::bitset<8> b1{"10101110"};
+    std::cout << b1[0] << std::endl; // output is 0
+    
+    test() accesses a bit with bounds checking
+    Ex:
+    b1.test(8); // throws std::out_of_range
+    
+operators that work on bitsets b1 and b2:
+    & for AND commands
+        at every index i, applies AND on b1[i] and b2[i]
+    | for OR commans
+    ~for negation of single bits
+    <<, >> (check cppreference)
+    ^ (check cppreference)
+    
+set() member function
+    b1.set(); // sets all bits to 1
+    b1.set(0); // sets bit 0 to true
+    b1.set(0, false); // sets bit 0 to false
+    
+reset() member function
+    b.reset(); // sets all bits to 0
+    b.reset(7); // sets bit 7 to false
+    
+flip() member function
+    b.flip(); // inverts all bits
+    
+all() returns true if all bits are 1
+
+any() returns true if at least one bit is 1
+
+none() returns true if no bits are 1
+
+count() returns the number of 1's
