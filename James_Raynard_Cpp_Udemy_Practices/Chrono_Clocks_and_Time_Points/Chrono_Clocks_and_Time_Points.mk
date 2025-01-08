@@ -3,12 +3,12 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Miscellaneous_Features
+ProjectName            :=Chrono_Clocks_and_Time_Points
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy"
-ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/Miscellaneous_Features"
-IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Miscellaneous_Features
+WorkspacePath          :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices"
+ProjectPath            :="C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Chrono_Clocks_and_Time_Points"
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Chrono_Clocks_and_Time_Points
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -29,7 +29,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/build-$(WorkspaceConfiguration)/bin
+OutputDirectory        :=C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/build-$(WorkspaceConfiguration)/bin
 OutputFile             :=..\build-$(WorkspaceConfiguration)\bin\$(ProjectName).exe
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -96,7 +96,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy/Miscellaneous_Features/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/ugur_/Desktop/Self Studies/Cpp/James_Raynard_Cpp_Udemy/James_Raynard_Cpp_Udemy_Practices/Chrono_Clocks_and_Time_Points/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 

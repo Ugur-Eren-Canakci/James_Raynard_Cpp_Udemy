@@ -1,0 +1,54 @@
+Examples in main
+
+system_clock
+    Measures "wall time" using the hardware system's clock
+steady_clock
+    Idealized clock which goes forward only, one tick at a time
+high_resolution_clock
+    Clock with the shortest tick period supported by the system 
+    Implementation-defined. Usually an alias for system_clock or steady_clock
+    
+system clock is similar to the C library clock
+
+    it is the best one for interactive use
+        its time points relate to calendars, watches, phones, etc.
+        matches the user's view of time
+    
+    not the best for measuring time intervals
+        the clock may be corrected if it runs fast or slow
+        occasional adjustments for daylight saving, leap years,
+        changes may cause the clock to jump erratically or even go backwards
+
+steady clock is an idealized clock, only going forward, one tick at a time
+    
+     best clock for measuring time intervals
+        its timepoints relate to an internal stopwatch
+        external events can never cause the clock to jump around
+        
+all three clocks have a static function now()
+    returns the clock's current time point
+    
+time_point represents a point in time
+    contains a duration representing the time interval since the clock's epoch
+        cannot exist in isolation
+            a time_point object is associated with a particular clock
+        calling the clock's now() function will return a time_point object
+    two time_point objects can be subtracted 
+        the result will be a duration
+    we can also add or subtract a time point and a duration, giving a new time_point
+    
+sleep_for()
+    the thread library provides sleep_for(), which makes the current thread pause or sleep for a specified duration
+    
+    in a single-thread program, this will make the main thread sleep
+    
+    the actual duration forwarded as the argument is just a "minimum duration for sleep"
+        the thread will stop executing
+        the operating system scheduler or the thread scheduler will start doing other things
+        schedulers won't come back to this unless all other things are finished
+            it will assume you're due for another turn
+        
+    
+    
+    
+    
