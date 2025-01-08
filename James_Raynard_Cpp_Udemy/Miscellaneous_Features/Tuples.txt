@@ -1,0 +1,67 @@
+Tuples are related to std::pair
+    std::pair is a compound type
+    two members of any type, accessed as "first" and "second"
+    
+    we can create a pair object explicitly
+    std::pair<std::string,std::string> word_pair {"hello ", "there "};
+    
+    or use std::make_pair() to create a pair object
+    auto pair = std::make_pair({"hello", "there"});
+    
+C++11 introduces std::tuple in <tuple>
+    Similar to std::pair, but can have any fixed number of elements
+    Elements are accessed by indices, not by member name
+    
+    we can create a tuple object explicitly
+    std::tuple<double, int,std::string> tuple {1.0, 2, "three"};
+    
+    or use std::make_tuple() to create a tuple object
+    auto tuple = std::make_tuple({1.0, 2, "three"});
+    
+To access tuple members, we use the templated std::get() function
+    Takes the tuple as argument, and uses the element index as the template parameter
+    Ex:
+    auto x = std::get<0>(tuple_obj);
+    get<1>(tuple_obj) = 3; -> sets the second element of the tuple to 3
+    
+    C++14 onwards you can use a type as the parameter of std::get() instead of an index
+        There has to be only one int element of the tuple. Otherwise, this won't work
+    Ex:
+    auto i = std::get<int>(tuple_obj); -> i is the int element of the tuple
+    
+std::tie function unpacks all the elements in a tuple into variables
+    the number and type of elements must match exactly
+    Ex:
+    double d;
+    int i;
+    std::string s;
+    std::tie(d,i,s) = tuple;
+
+tuples are useful as an ad-hoc data type
+    if we want somewhere to store data in the short term that:
+        doesn't need member functions
+        doesn't need special member functions
+        isn't important enough to merit making a new type
+        has elements of different types
+    
+    traditionally we'd use a struct to return multiple values from a function
+        requires quite a bit of hassle compared to tuples
+    
+        instead, 
+            1) make the return type "tuple<type_1, type_2, ..., type_n>" 
+            2) return an initializer list {ret_val_1, ..., ret_val_n}
+            3) tie the returns to their respective variables
+        Ex:
+        std::tuple<double,int,std::string> func() {
+            return {1.0, 2, "three"};
+        }
+        double d;
+        int i;
+        std::string s;
+        std::tie(d,i,s) = func();
+        
+        ****we can't use auto with std::tie, as std::tie is not able to deduce element types
+        
+        
+    
+    

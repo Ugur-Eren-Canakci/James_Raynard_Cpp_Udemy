@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\James_Raynard_Cpp_Udemy_Practices.workspace">
-  <int Value="5" Name="m_selectedTab"/>
+  <int Value="6" Name="m_selectedTab"/>
   <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\James_Raynard_Cpp_Udemy_Practices.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
@@ -33,8 +33,8 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Chrono_Duration_Types\main.cpp" Name="FileName"/>
-      <int Value="23" Name="FirstVisibleLine"/>
-      <int Value="46" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -42,6 +42,13 @@
       <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Chrono_Clocks_and_Time_Points\main.cpp" Name="FileName"/>
       <int Value="9" Name="FirstVisibleLine"/>
       <int Value="29" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Bitsets\main.cpp" Name="FileName"/>
+      <int Value="12" Name="FirstVisibleLine"/>
+      <int Value="36" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

@@ -99,7 +99,8 @@
   <Project Name="Chrono_Library_Introduction" Path="Chrono_Library_Introduction/Chrono_Library_Introduction.project" Active="No"/>
   <Project Name="Chrono_Duration_Types" Path="Chrono_Duration_Types/Chrono_Duration_Types.project" Active="No"/>
   <Project Name="Chrono_Clocks_and_Time_Points" Path="Chrono_Clocks_and_Time_Points/Chrono_Clocks_and_Time_Points.project" Active="No"/>
-  <Project Name="Bitsets" Path="Bitsets/Bitsets.project" Active="Yes"/>
+  <Project Name="Bitsets" Path="Bitsets/Bitsets.project" Active="No"/>
+  <Project Name="Tuples" Path="Tuples/Tuples.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -203,6 +204,7 @@
       <Project Name="Chrono_Duration_Types" ConfigName="Debug"/>
       <Project Name="Chrono_Clocks_and_Time_Points" ConfigName="Debug"/>
       <Project Name="Bitsets" ConfigName="Debug"/>
+      <Project Name="Tuples" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -306,6 +308,7 @@
       <Project Name="Chrono_Duration_Types" ConfigName="Release"/>
       <Project Name="Chrono_Clocks_and_Time_Points" ConfigName="Release"/>
       <Project Name="Bitsets" ConfigName="Release"/>
+      <Project Name="Tuples" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
