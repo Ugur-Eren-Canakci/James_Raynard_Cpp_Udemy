@@ -1,0 +1,22 @@
+C++17 onwards, constructor template argument deduction is in play
+    => compiler chooses the parameters for us, we don't need to declare the types on declaring a tuple variable     
+    Ex:
+    tuple tuple_1{1,3};
+    
+A structured binding can be used to unpack tuples
+Ex:
+tuple<int, int, int> func() {
+    return {1,2,3};
+}
+auto [x1, x2, x3] = func();
+
+We can use std::apply() with tuples
+    first argument is the callable function object, the second argument is the tuple that contains the arguments for the callable function
+    
+We can also pass a tuple to a constructor call
+    std::make_from_tuple<T>(tuple_object) -> calls the constructor of T with the arguments coming from tuple_object
+    
+
+
+
+
