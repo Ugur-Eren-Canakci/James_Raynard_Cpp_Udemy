@@ -1,0 +1,74 @@
+A callable object supports operator() 
+
+C++ provides several callable objects:
+    Pointers to non-member functions
+    Functors
+    Lambda expressions
+    Return values of std::bind
+    
+C++11 provides std::function in <functional>
+    This class has a private member which stores a callable object
+    
+    Template class
+        The object's signature is the parameter
+            Ex: std::function<bool(const std::string&)> match_ptr;
+    
+    Implemented using inheritance
+    
+    performs "type erasure"
+        you cannot tell what kind of callable object is in the std::function object
+        
+
+We can declare a function argument to be a std::function
+    This allows us to pass any callable object as argument
+
+    We can also create a container whose elements are of type std::function
+        This can be populated with any kind of callable object
+    
+    Limitations:
+        The function prototype must match the template parameter
+            std::function doesn't support overloading
+            
+        Run-time overhead due to the inheritance structure of std::function
+        
+        Invoking the callable object involves indirection
+            Similar overhead to a virtual function
+            
+        May perform a heap allocation
+            std::function object has a fixed size
+            if the callable object is too large(eg. functor with data members), it allocates the necessary memory on the heap
+            
+
+std::function should be used only when we need a polymorphic function object
+    
+For storing a callable object in a variable, use auto
+
+Ex:
+bool match(const std::string& test) {
+    return test == "cat";
+}
+
+class functor_match {
+public:
+    bool operator() (const std::string& test) {
+        return test == "cat";
+    }
+};
+
+bool bind_match(const std::string& animal, const std::string& species) { // will create a unary by using std::bind on this fn
+    return animal == species;
+}
+
+int count_strings(std::vector<std::string>& texts, std::function<bool(const std::string&)> match_ptr) { 
+    // each function defined above will be passed into this
+    int tally = 0;
+    for (auto text : texts) {
+        if (match_ptr(text)) tally++;
+    }
+    return tally;
+}
+// every function defined above (replace bind_match with std::bind(bind_match, _1, "cat")) takes a const string and returns a bool value
+// we defined various different functions and forwarded each into count_strings by the help of std::function
+
+!!!
+none of the functions we defined are of type std::function<...>, but count_strings works. So, does the compiler construct a std::function object for us?
