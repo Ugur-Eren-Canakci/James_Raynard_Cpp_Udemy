@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Runtime_Type_Information - Debug ]----------"
-	@cd "Runtime_Type_Information" && "$(MAKE)" -f  "Runtime_Type_Information.mk"
+	@echo "----------Building project:[ Multiple_Inheritance - Debug ]----------"
+	@cd "Multiple_Inheritance" && "$(MAKE)" -f  "Multiple_Inheritance.mk"
 clean:
-	@echo "----------Cleaning project:[ Runtime_Type_Information - Debug ]----------"
-	@cd "Runtime_Type_Information" && "$(MAKE)" -f  "Runtime_Type_Information.mk" clean
+	@echo "----------Cleaning project:[ Multiple_Inheritance - Debug ]----------"
+	@cd "Multiple_Inheritance" && "$(MAKE)" -f  "Multiple_Inheritance.mk" clean

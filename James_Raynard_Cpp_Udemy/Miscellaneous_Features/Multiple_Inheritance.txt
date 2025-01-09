@@ -1,0 +1,21 @@
+A derived class can have multiple base classes
+
+Quite controversial
+    Adds complexity
+    Many programmers and OO designers don't like it
+    Some languages don't support it
+    
+However, multiple inheritance can be useful for writing mix-in classes
+
+class Derived : public Base1, Base2 {
+    ...
+};
+
+Stored in memory with Base1 as the first part, Base2 as the second part, and rest belongs to Derived's members
+
+Derived inherits all non-private members of the base classes
+
+If we call an inherited member function from Derived, its name must only be defined in one Base class
+    solution: define the commands you want inside the Derived class so no ambiguity comes up
+    
+    
