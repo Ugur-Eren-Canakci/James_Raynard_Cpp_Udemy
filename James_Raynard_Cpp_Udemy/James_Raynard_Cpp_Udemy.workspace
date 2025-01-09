@@ -8,13 +8,13 @@
   <Project Name="Bitmap_practical" Path="Bitmap_practical/Bitmap_practical.project" Active="No"/>
   <Project Name="Special_member_functions_and_Operator_overloading" Path="Special_member_functions_and_Operator_overloading/Special_member_functions_and_Operator_overloading.project" Active="No"/>
   <Project Name="Algorithms_and_Lambda_Expressions" Path="Algorithms_and_Lambda_Expressions/Algorithms_and_Lambda_Expressions.project" Active="No"/>
-  <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="No"/>
+  <Project Name="Algorithms_continued" Path="Algorithms_continued/Algorithms_continued.project" Active="Yes"/>
   <Project Name="Containers" Path="Containers/Containers.project" Active="No"/>
   <Project Name="Classes_and_Inheritance" Path="Classes_and_Inheritance/Classes_and_Inheritance.project" Active="No"/>
   <Project Name="Error_Handling" Path="Error_Handling/Error_Handling.project" Active="No"/>
   <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
   <Project Name="Smart_Pointers" Path="Smart_Pointers/Smart_Pointers.project" Active="No"/>
-  <Project Name="Miscellaneous_Features" Path="Miscellaneous_Features/Miscellaneous_Features.project" Active="Yes"/>
+  <Project Name="Miscellaneous_Features" Path="Miscellaneous_Features/Miscellaneous_Features.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>

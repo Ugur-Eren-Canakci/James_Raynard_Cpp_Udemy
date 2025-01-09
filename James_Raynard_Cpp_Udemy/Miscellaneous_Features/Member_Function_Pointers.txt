@@ -1,0 +1,79 @@
+We can define a pointer to a member function of a class
+
+Their use is more complicated than with function pointers
+    Requires different syntax
+    May need to provide "this" pointer
+    
+Member function pointers cannot be called directly
+    Have to be explicitly dereferenced
+    
+Recall: function pointers have an ugly type:
+return_type (*ptr_name)(arg_type_1,...,arg_type_n)
+
+=> member functions will have a type as below:
+return_type (Classname::*ptr_name)(arg_type_1,...,arg_type_n)
+
+Ex:
+class Test {
+public:
+    void func(int a, const std::string& b) {...}
+}
+
+void (Test::*pfunc)(int,const std::string&); // definition of the function pointer
+...
+(*pfunc)(3,"cat"); // calling the function via its pointer
+
+another way of defining a member function pointer:
+pfunc = &Test::func;
+
+To call a member function, we need an object of that class
+
+********************
+We access the pointer as a member of the object, and then we dereference it
+    To do this, we use ".*" operator
+    Ex:
+    Test test;
+    (test.*pfunc)(2,"a");
+    
+    There's also ->* operator, for pointers to objects
+    Ex:
+    Test test;
+    Test* ptest = &test;
+    (ptest->*pfunc)(1,"b");
+********************
+
+C++11 makes everything easier
+    1) auto for type declaration of the member function pointers
+        Ex:
+        auto pfunc = &Test::func;
+    2) type aliases for the specific classes' member functions
+        Ex:
+        using m_funcptr = (void Test::*)(int, const std::string&);
+        
+C++11 provides std::mem_fn() in <functional>
+    Takes a member function pointer as argument and returns a callable object
+    Ex:
+    void (Test::*pfunc)(int,const std::string&);
+    auto f = std::mem_fn(pfunc);
+    f(4,"c");
+    
+    passes "this" as the first argument
+    
+    We can also use std::bind() to generate a callable object
+        requires an object address to work
+        Ex:
+        class matcher {
+        public:
+            bool match(arg_1, arg_2) {...}
+        }
+        matcher m; // object where the function will be called from
+        auto match_cat = std::bind(&matcher::match, &m; _1, "cat");
+        
+
+Applications of member function pointers:
+    1) Concurrency
+        Needed to run member functions in their own thread
+    2) Run-time decision making
+    3) Choosing which object to use the function from
+    4) Choosing which member function is called
+    5) Using conditionals to make the decision
