@@ -28,5 +28,8 @@ int main() {
     
     //Write the same program as in the last exercise, but this time using an inline namespace instead of a nested namespace
     std::cout << y << std::endl;
+    
+    //Give an example where inline namespaces are useful
+    // You might have different versions of the same class/function in different namespaces
 	return 0;
 }

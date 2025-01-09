@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Inline_Namespaces - Debug ]----------"
-	@cd "Inline_Namespaces" && "$(MAKE)" -f  "Inline_Namespaces.mk"
+	@echo "----------Building project:[ Attributes - Debug ]----------"
+	@cd "Attributes" && "$(MAKE)" -f  "Attributes.mk"
 clean:
-	@echo "----------Cleaning project:[ Inline_Namespaces - Debug ]----------"
-	@cd "Inline_Namespaces" && "$(MAKE)" -f  "Inline_Namespaces.mk" clean
+	@echo "----------Cleaning project:[ Attributes - Debug ]----------"
+	@cd "Attributes" && "$(MAKE)" -f  "Attributes.mk" clean

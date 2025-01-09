@@ -1,0 +1,68 @@
+Compilers have certain keywords (called attributes) that define/alter how they work
+    Not a part of the C++ language
+    
+    Ex:
+    Making the compiler generate certain types of code
+    Laying out objects in memory in a certain way
+    using conventions for calling functions
+    
+They give extra information to the compiler
+    Not to be used to extend the language or change the meaning of the program
+    
+Can go in front of variables, types, members of structs, classes, etc.
+    For struct, class, and enum, the attribute goes before the type name
+    Ex:
+    struct [[nodiscard]] Test {};
+    
+    
+Goes into two square brackets
+    [[noreturn]]
+    
+    In declarations, attributes go before the entity they apply to
+    [[noreturn]] void server();
+    
+    An attribute can be in a namespace
+        If you're working on the GNU compiler, you can put your directives in their namespace 
+        [[gnu::always_inline]]
+        
+    Attributes can take arguments
+    [[ deprecated ("Use the version 2.0 interface in new code") ]]
+    
+C++11 Attributes:
+[[ noreturn ]] indicates that a function does not return
+    Ex: [[ noreturn ]] void server() {
+            while (true) {
+                ...
+            }
+        }
+    server() runs forever. When it's called from main, normally the compiler has to work in a way that when the call of server ends,
+    the rest of the commands in where server() is called should be executed. 
+    
+alignas() is used for memory allocation
+    alignas(16) char buffer[128]; // aligns buffer on 16-byte boundaries
+    => 8 contiguous byte chains, each containing 16 bytes?
+    
+    not actually an attribute, but can replace "#pragma pack" directives for the variable it's put before.
+    
+    only works if the argument (in this example, 16) is larger than the word size (== (iirc) amount of memory slots required for each var)
+
+[[deprecated]] (C++14 onwards)
+    Causes a compiler warning if the object is used/called
+    Ex:
+    [[deprecated]] void func();
+    
+    func(); // "warning: ..." from compiler
+    
+    Has an optional argument for an explanation string
+    
+C++17 provided [[fallthrough]]
+
+[[nodiscard]] (C++17 onwards)
+    the compiler will give a warning if a nodiscard function is called, and its returned value is ignored
+    
+[[maybe_unused]] (C++17 onwards)
+    put it before variables that may not be used, removes the warning message from compilation
+    
+    
+
+    
