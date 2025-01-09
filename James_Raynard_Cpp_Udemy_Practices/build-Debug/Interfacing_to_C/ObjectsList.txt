@@ -1,0 +1,1 @@
+../build-Debug/Interfacing_to_C/c_func.cpp.o ../build-Debug/Interfacing_to_C/subtract.cpp.o ../build-Debug/Interfacing_to_C/main.cpp.o   

@@ -1,0 +1,80 @@
+Many interfaces are written in C
+    Operating system API's
+    Database API's
+    Third-party libraries and frameworks
+    Languages with "foreign function" interfaces
+    
+C is an almost complete subset of C++
+
+Almost any C program is a legal C++ program
+    C code can use C++ reserved words
+        Ex: class doesn't exist in C, so we can define class as a variable in C
+    C99 introduced some incompatible features
+    
+    Best solution to the incompatibility is to compile both C and C++ code with a C++ compiler
+        May not always be possible if
+            1) C code contains incompatibilities
+            2) C code requires a complex build process
+            3) The C source code is not available
+            
+
+There's no standard on binary interfaces in C or C++
+Interfacing with C at the binary level requires:
+    1) A header file which declares the functions in the C interface
+    2) The compiled binary code for the functions
+        This can be an object file, a static library or DLL/shared object
+    3) C and C++ compilers must be compatible 
+        Same object file format
+        Same function call conversations
+        Same word size (32-bit or 64-bit)
+    
+    If any C++ library features are used, use a C++ compiler to link the binary
+            
+We have to be aware of name mangling
+    In C, a function has the same name in the binary object file as it does in the source code
+    In C++, the compiler "mangles" the name
+        This is required for overloading functions
+    
+    To make C++ binaries compatible with C, we use the extern "C" directive
+        This tells the C++ compiler not to mangle the function name
+    Ex:
+    extern "C" int func(int x);
+    
+    We can declare multiple symbols as extern "C"
+    Ex:
+    extern "C" {
+        int func(int x);
+        double dfunc(double x);
+    }
+    
+    We can also declare all the symbols in an include file as extern "C"
+    Ex:
+    extern "C" { #include "cstuff.h" }
+    
+When writing a C++ function that will be called from C:
+    1) Use built-in types only in the interface
+    2) Can also use pointers and arrays to built-in types
+    3) Or structs which have members of built-in types only
+    4) Put the functions in the global namespace
+        C doesn't have the concept of namespaces
+        
+The interface header will be processed both as C and C++
+    It may contain some things which are not valid C
+        Ex: extern "C" directives
+    We can use the __cplusplus preprocessor symbol
+        Defined by C++ compilers but not by C compilers
+    We use a conditional compilation to hide things from the C compiler
+    Ex:
+    #ifdef __cplusplus
+    extern "C" ... 
+    #else
+    ...
+    #endif
+    
+C does no resource management. It's up to the developer.
+    doesn't have "new" and "delete" keywords
+    has malloc() and free() functions
+    
+    uses raw pointers for resource management
+        no destructors, no RAII, no smart pointers
+        

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Miscellaneous_Features" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Interfacing_to_C" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,19 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Interfacing_to_C.txt"/>
-    <File Name="Member_Function_Pointers.txt"/>
-    <File Name="Callable_Objects.txt"/>
-    <File Name="Bind.txt"/>
-    <File Name="Mathematical_Types.txt"/>
-    <File Name="Unions_Continued.txt"/>
-    <File Name="Unions.txt"/>
-    <File Name="Tuples_in_Cpp17.txt"/>
-    <File Name="Tuples.txt"/>
-    <File Name="Bitsets.txt"/>
-    <File Name="Chrono_Clocks_and_Time_Points.txt"/>
-    <File Name="Chrono_Duration_Types.txt"/>
-    <File Name="Chrono_Library_Introduction.txt"/>
+    <File Name="c_func.cpp"/>
+    <File Name="c_func.h"/>
+    <File Name="subtract.cpp"/>
+    <File Name="subtract.h"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
