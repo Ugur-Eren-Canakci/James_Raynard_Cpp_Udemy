@@ -1,0 +1,27 @@
+In multiple inheritance, it's possible for both parents to have the same base class
+
+class Base {};
+class Left : public Base {};
+class Right : public Base {};
+class Derived : public Left, public Right {};
+
+a Derived object will have two seperate Base parts inside the Left part and the Right part
+    But, Derived is still a Base object
+    => Only one Base part has to exist inside Derived objects
+    
+Solution: make Left and Right use "virtual inheritance"
+class Left : public virtual Base {};
+class Right : public virtual Base {};
+    This makes Base a "virtual base" for Left and Right classes
+    Left and Right will now share a single Base part
+    
+    Derived is defined as usual, as Derived hasn't encountered specific issues with Left and Right
+    
+    Final state:
+    class Base {};
+    class Left : public virtual Base {};
+    class Right : public virtual Base {};
+    class Derived : public Left, public Right {};
+    
+
+    

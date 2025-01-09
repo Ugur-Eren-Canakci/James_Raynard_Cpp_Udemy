@@ -25,6 +25,15 @@ int main() {
     derived.print_base_1();
     derived.print_base_2();
     
+    /*• What effect does the following code have?
+    bool Device::initialize(Params&);
+    void TouchResponder::initialize();
+    Mouse mouse;
+    mouse.initialize();
+    */
+    // compiler error: ambiguous call on initialize
+
+    
     
     return 0;
 }

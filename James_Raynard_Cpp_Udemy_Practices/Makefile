@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Multiple_Inheritance - Debug ]----------"
-	@cd "Multiple_Inheritance" && "$(MAKE)" -f  "Multiple_Inheritance.mk"
+	@echo "----------Building project:[ Virtual_Inheritance - Debug ]----------"
+	@cd "Virtual_Inheritance" && "$(MAKE)" -f  "Virtual_Inheritance.mk"
 clean:
-	@echo "----------Cleaning project:[ Multiple_Inheritance - Debug ]----------"
-	@cd "Multiple_Inheritance" && "$(MAKE)" -f  "Multiple_Inheritance.mk" clean
+	@echo "----------Cleaning project:[ Virtual_Inheritance - Debug ]----------"
+	@cd "Virtual_Inheritance" && "$(MAKE)" -f  "Virtual_Inheritance.mk" clean
