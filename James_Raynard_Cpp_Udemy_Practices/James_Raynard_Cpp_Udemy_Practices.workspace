@@ -108,7 +108,8 @@
   <Project Name="Callable_Objects" Path="Callable_Objects/Callable_Objects.project" Active="No"/>
   <Project Name="Member_Function_Pointers" Path="Member_Function_Pointers/Member_Function_Pointers.project" Active="No"/>
   <Project Name="Interfacing_to_C" Path="Interfacing_to_C/Interfacing_to_C.project" Active="No"/>
-  <Project Name="Assignment_13" Path="Assignment_13/Assignment_13.project" Active="Yes"/>
+  <Project Name="Assignment_13" Path="Assignment_13/Assignment_13.project" Active="No"/>
+  <Project Name="Runtime_Type_Information" Path="Runtime_Type_Information/Runtime_Type_Information.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -221,6 +222,7 @@
       <Project Name="Member_Function_Pointers" ConfigName="Debug"/>
       <Project Name="Interfacing_to_C" ConfigName="Debug"/>
       <Project Name="Assignment_13" ConfigName="Debug"/>
+      <Project Name="Runtime_Type_Information" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -333,6 +335,7 @@
       <Project Name="Member_Function_Pointers" ConfigName="Release"/>
       <Project Name="Interfacing_to_C" ConfigName="Release"/>
       <Project Name="Assignment_13" ConfigName="Release"/>
+      <Project Name="Runtime_Type_Information" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

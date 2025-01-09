@@ -1,0 +1,58 @@
+RTTI relates to the dynamic type of the object
+    std::typeid, typeinfo, dynamic_cast
+    
+std::typeid() returns information about the dynamic type of its argument
+    defined in <typeinfo>
+    mainly used in comparisons
+    Ex:
+    Circle d;
+    Shape* pShape = &d;
+    
+    if (typeid(*pShape) == typeid(Circle)) {...}
+    else {...}
+    
+std::type_info is a class defined in <typeinfo>
+    std::typeid() returns a type_info object
+    
+    it contains info about the dynamic type of an object
+    
+    type_info::name() returns a C-style string
+        unique for each type
+        the contents of the string is compiler-specific
+        generally not useful
+        
+    type_info::hash_code() returns a unique number for each dynamic type
+    
+dynamic_cast converts pointer to Base into a pointer to Derived
+    also applies to references
+    
+    allows us to check at runtime whether a Base-to-Derived conversion is possible
+    
+    only works if the dynamic type of the Base object is Derived
+    
+    if it fails, returns a nullptr
+        on references, throws std::bad_cast when failure
+        
+    often misused to avoid writing virtual functions
+    
+    one legitimate use is for calling a member function that only exists in the Derived class
+    Ex:
+    (assume pShape points to a Circle)
+    Circle *pCircle = dynamic_cast<Circle*>(pShape);
+    
+    if (pCircle) { // dynamic_cast can return a nullptr when it cannot cast the type in the parameter, so this check is crucial
+        ...
+        pCircle->circle_func();
+    }
+    else {
+        ...
+    }
+    Ex:
+    (assume rShape is a reference to a Circle object)
+    try {
+        rCircle = dynamic_cast<Circle&>(rShape);
+        rCircle->circle_func();
+    }
+    catch (const std::exception& e) {
+        ...
+    }
