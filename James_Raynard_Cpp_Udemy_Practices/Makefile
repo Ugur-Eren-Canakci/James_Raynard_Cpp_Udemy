@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Virtual_Inheritance - Debug ]----------"
-	@cd "Virtual_Inheritance" && "$(MAKE)" -f  "Virtual_Inheritance.mk"
+	@echo "----------Building project:[ Inline_Namespaces - Debug ]----------"
+	@cd "Inline_Namespaces" && "$(MAKE)" -f  "Inline_Namespaces.mk"
 clean:
-	@echo "----------Cleaning project:[ Virtual_Inheritance - Debug ]----------"
-	@cd "Virtual_Inheritance" && "$(MAKE)" -f  "Virtual_Inheritance.mk" clean
+	@echo "----------Cleaning project:[ Inline_Namespaces - Debug ]----------"
+	@cd "Inline_Namespaces" && "$(MAKE)" -f  "Inline_Namespaces.mk" clean

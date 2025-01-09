@@ -111,7 +111,8 @@
   <Project Name="Assignment_13" Path="Assignment_13/Assignment_13.project" Active="No"/>
   <Project Name="Runtime_Type_Information" Path="Runtime_Type_Information/Runtime_Type_Information.project" Active="No"/>
   <Project Name="Multiple_Inheritance" Path="Multiple_Inheritance/Multiple_Inheritance.project" Active="No"/>
-  <Project Name="Virtual_Inheritance" Path="Virtual_Inheritance/Virtual_Inheritance.project" Active="Yes"/>
+  <Project Name="Virtual_Inheritance" Path="Virtual_Inheritance/Virtual_Inheritance.project" Active="No"/>
+  <Project Name="Inline_Namespaces" Path="Inline_Namespaces/Inline_Namespaces.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -227,6 +228,7 @@
       <Project Name="Runtime_Type_Information" ConfigName="Debug"/>
       <Project Name="Multiple_Inheritance" ConfigName="Debug"/>
       <Project Name="Virtual_Inheritance" ConfigName="Debug"/>
+      <Project Name="Inline_Namespaces" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -342,6 +344,7 @@
       <Project Name="Runtime_Type_Information" ConfigName="Release"/>
       <Project Name="Multiple_Inheritance" ConfigName="Release"/>
       <Project Name="Virtual_Inheritance" ConfigName="Release"/>
+      <Project Name="Inline_Namespaces" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -1,0 +1,64 @@
+Inside namespaces you can define other newspaces
+Ex:
+std, std::literals, std::placeholders, ...
+
+you can also set an inner namespace to be "inline"
+    this results in whatever you defined in the inner namespace to be "part of" the outer namespace as well?
+    
+Ex:
+namespace A {
+    inline namespace B {
+        int x;
+    }
+    // x;
+}
+
+A::x = 5; // compiles with no errors
+
+C++ Standard Library uses inline namespaces
+
+Inline namespaces are useful for working with different versions of code
+    One namespace might have further functionality for specific classes than others
+    
+    We put the code for the current version in an inline namespace
+        Without any scope operators, we get the current version of the code
+    
+    When a new version comes up, we make that namespace inline and change the previously used inline namespace to not-inline(i.e. nested)
+    
+    Code that doesn't use scope operators will automatically start using the new inline version of the code
+    
+Ex:
+(inside Version1.h)
+inline namespace version1 {
+    class Refrigerator {
+        ...
+    };
+}
+
+(inside Version2.h)
+namespace version2 {
+    class Refrigerator {
+        ...
+    };
+    ...
+}
+
+(inside main)
+
+namespace product { // "product" namespace takes on the namespaces inside Version1.h and Version2.h with the include statements below:
+    #include "Version1.h"
+    #include "Version2.h"
+    
+    ...
+}
+
+using namespace product;
+
+int main() {
+    Refrigerator fridge;
+}
+    -> version1 namespace is inline inside product
+    -> "using namespace product" allows us to not call "product::" when we define objects from the classes defined in the product namespace
+    => the definition of Refrigerator comes from Version1.h
+    
+    
