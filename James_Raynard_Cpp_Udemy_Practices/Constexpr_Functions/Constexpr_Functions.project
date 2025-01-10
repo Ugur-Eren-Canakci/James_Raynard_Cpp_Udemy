@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Compile_time_Programming" Version="11000" InternalType="User templates">
+<CodeLite_Project Name="Constexpr_Functions" Version="11000" InternalType="User templates">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -93,9 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Constexpr_Functions.txt"/>
-    <File Name="Constant_Expressions.txt"/>
-    <File Name="General_Notes.txt"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

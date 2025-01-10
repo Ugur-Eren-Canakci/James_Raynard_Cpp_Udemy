@@ -114,7 +114,8 @@
   <Project Name="Virtual_Inheritance" Path="Virtual_Inheritance/Virtual_Inheritance.project" Active="No"/>
   <Project Name="Inline_Namespaces" Path="Inline_Namespaces/Inline_Namespaces.project" Active="No"/>
   <Project Name="Attributes" Path="Attributes/Attributes.project" Active="No"/>
-  <Project Name="Constant_Expressions" Path="Constant_Expressions/Constant_Expressions.project" Active="Yes"/>
+  <Project Name="Constant_Expressions" Path="Constant_Expressions/Constant_Expressions.project" Active="No"/>
+  <Project Name="Constexpr_Functions" Path="Constexpr_Functions/Constexpr_Functions.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -233,6 +234,7 @@
       <Project Name="Inline_Namespaces" ConfigName="Debug"/>
       <Project Name="Attributes" ConfigName="Debug"/>
       <Project Name="Constant_Expressions" ConfigName="Debug"/>
+      <Project Name="Constexpr_Functions" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -351,6 +353,7 @@
       <Project Name="Inline_Namespaces" ConfigName="Release"/>
       <Project Name="Attributes" ConfigName="Release"/>
       <Project Name="Constant_Expressions" ConfigName="Release"/>
+      <Project Name="Constexpr_Functions" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
