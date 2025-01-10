@@ -1,0 +1,51 @@
+Templates are generic
+    When we write a generic function/class, the outcome will be the same for all types we instantiate them with
+    
+Sometimes we want to specialize how the template works for some types
+    Some types might not work with some operations
+    We might want to handle some types differently
+    We want to optimize the code for some types
+    
+    Ex: calling stl algorithms on lists is very time costly, so we might want to utilize list member functions instead 
+    
+Syntax:
+
+    template<typename T>
+    class vector {
+        ...
+    }
+
+    template <>
+    class vector<bool> { // specialization of vector class for bool type
+        ...
+    }
+
+Usually, the specialization follows right after the generic template
+    If specialization comes first, the code will not compile
+    If the generic template is not visible, the code will not compile
+    If the specialization is not visible to the code that uses it, the compiler will instantiate the generic template
+    
+The compile will always choose the most specific alternative which matches
+    Ex: vector<bool> is more specialized than vector<T> with T==bool
+    
+Template specialization requires a single type per parameter
+    Occasionally we may want to have a family of types instead of a single type
+    => partial specialization
+        Only allowed for class and value templates
+        Some limitations on the arguments
+        
+    Ex:
+    template <typename T> 
+    class Vector {
+        ...
+    };
+    
+    template <typename T>
+    class Vector<T*> {
+        ...
+    };
+    ...
+    Vector<int> vec1; // generic Vector class
+    Vector<int *> vec2; // partial specialization of Vector class with pointers
+    
+    
