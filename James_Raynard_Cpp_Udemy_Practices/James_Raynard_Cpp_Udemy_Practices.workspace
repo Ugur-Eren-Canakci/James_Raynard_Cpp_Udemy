@@ -115,7 +115,8 @@
   <Project Name="Inline_Namespaces" Path="Inline_Namespaces/Inline_Namespaces.project" Active="No"/>
   <Project Name="Attributes" Path="Attributes/Attributes.project" Active="No"/>
   <Project Name="Constant_Expressions" Path="Constant_Expressions/Constant_Expressions.project" Active="No"/>
-  <Project Name="Constexpr_Functions" Path="Constexpr_Functions/Constexpr_Functions.project" Active="Yes"/>
+  <Project Name="Constexpr_Functions" Path="Constexpr_Functions/Constexpr_Functions.project" Active="No"/>
+  <Project Name="Classes_and_Templates" Path="Classes_and_Templates/Classes_and_Templates.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -235,6 +236,7 @@
       <Project Name="Attributes" ConfigName="Debug"/>
       <Project Name="Constant_Expressions" ConfigName="Debug"/>
       <Project Name="Constexpr_Functions" ConfigName="Debug"/>
+      <Project Name="Classes_and_Templates" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -354,6 +356,7 @@
       <Project Name="Attributes" ConfigName="Release"/>
       <Project Name="Constant_Expressions" ConfigName="Release"/>
       <Project Name="Constexpr_Functions" ConfigName="Release"/>
+      <Project Name="Classes_and_Templates" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

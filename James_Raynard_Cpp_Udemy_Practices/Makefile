@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Constexpr_Functions - Debug ]----------"
-	@cd "Constexpr_Functions" && "$(MAKE)" -f  "Constexpr_Functions.mk"
+	@echo "----------Building project:[ Classes_and_Templates - Debug ]----------"
+	@cd "Classes_and_Templates" && "$(MAKE)" -f  "Classes_and_Templates.mk"
 clean:
-	@echo "----------Cleaning project:[ Constexpr_Functions - Debug ]----------"
-	@cd "Constexpr_Functions" && "$(MAKE)" -f  "Constexpr_Functions.mk" clean
+	@echo "----------Cleaning project:[ Classes_and_Templates - Debug ]----------"
+	@cd "Classes_and_Templates" && "$(MAKE)" -f  "Classes_and_Templates.mk" clean

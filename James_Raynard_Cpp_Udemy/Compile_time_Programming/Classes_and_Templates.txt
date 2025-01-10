@@ -1,0 +1,34 @@
+Template classes work very much like other classes
+    Friend functions and classes
+    Static members
+    Member functions with default arguments
+    etc.
+    
+Template classes can be part of inheritance hierarchies
+    Base or derived class
+
+Template classes can be composed
+
+A templated member function of a class is called a "member template"
+    The class doesn't have to be templated to have a member template
+    A member template can have different parameters from the class
+    
+A member template cannot be virtual
+
+Generic lambda expressions (that can take "auto" arguments) are implemented as functors with member templates
+    Ex:
+    auto lambda = [] (auto x, auto y) { return x+y; }; implemented as:
+    class compiler_generated_class_name {
+    public:
+        template <typename T>
+        T operator() (T x, T y) { return x+y; }
+    };
+    
+C++20 introduces "concepts"
+    they allow us to express constraints for templates as part of the template definition
+        clearer code which expresses the programmer's intentions
+        compiler errors will clearly state why the code did not compile
+        
+    
+    
+    

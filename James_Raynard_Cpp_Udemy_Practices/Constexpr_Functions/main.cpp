@@ -92,6 +92,15 @@ int main() {
     
     //Why is this useful?
     //avoids the need to write an otherwise identical version of variables
-    // Ex: say
+    // Ex: circle_circumference() takes a double and returns a double by multiplying the argument with 2*3.14
+    
+    //What does it mean for a member function to be
+    //• const
+    //• constexpr
+    // when const, a member function cannot change the objects it's called from
+    // when constexpr, it takes constexpr arguments and returns constexpr values
+    
+    
+    
 	return 0;
 }
