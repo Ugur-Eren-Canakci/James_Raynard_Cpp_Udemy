@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\James_Raynard_Cpp_Udemy_Practices.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\James_Raynard_Cpp_Udemy_Practices.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Classes_and_Templates\main.cpp" Name="FileName"/>
-      <int Value="22" Name="FirstVisibleLine"/>
-      <int Value="38" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -14,6 +14,13 @@
       <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Template_Specialization\main.cpp" Name="FileName"/>
       <int Value="24" Name="FirstVisibleLine"/>
       <int Value="37" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\ugur_\Desktop\Self Studies\Cpp\James_Raynard_Cpp_Udemy\James_Raynard_Cpp_Udemy_Practices\Variadic_Templates\main.cpp" Name="FileName"/>
+      <int Value="63" Name="FirstVisibleLine"/>
+      <int Value="74" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

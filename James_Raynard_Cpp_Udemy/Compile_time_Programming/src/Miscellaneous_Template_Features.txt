@@ -1,0 +1,38 @@
+assert()
+    inherited from C
+        comes in <cassert>
+        
+    checks its argument. if the argument is zero, it calls std::abort(). Otherwise, the program continues normal execution
+    
+    Useful for checking invariants
+    
+    can be disabled by "#define NDEBUG"
+    
+static_assert()
+    came with C++11
+    
+    takes a constant bool expression and a string literal
+    
+    the bool expression is checked during compilation
+    
+    if bool expression returns false, the compilation stops and the string literal will be used in the error message
+    
+    otherwise, compilation continues normally
+    
+    mainly used in template metaprogramming
+    
+    Ex:
+    static_assert(sizeof(int*)==8, "This program requires a 64-bit compiler");
+    
+Default template parameters
+    We can write a template class which has default parameters
+    Ex:
+    template<typename T = int>
+    class ...
+    
+    If we're not using the default parameter, we instantiate as usual
+    Otherwise, we don't plug in a typename into arrow brackets, as the default type will come from the definition
+    
+    C++11 onwards, you can write a template function with default parameters 
+    
+    
