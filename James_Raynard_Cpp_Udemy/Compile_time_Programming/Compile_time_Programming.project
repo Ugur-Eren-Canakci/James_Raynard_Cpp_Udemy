@@ -93,6 +93,20 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="extern_templates_instructor_files">
+      <File Name="src/extern_templates_instructor_files/manual2.cc"/>
+      <File Name="src/extern_templates_instructor_files/manual1.cc"/>
+      <File Name="src/extern_templates_instructor_files/manual.h"/>
+      <File Name="src/extern_templates_instructor_files/extern_template2.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_template1.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_template_impls.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_template.h"/>
+      <File Name="src/extern_templates_instructor_files/extern_int2.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_int1.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_int_impls.cc"/>
+      <File Name="src/extern_templates_instructor_files/extern_int.h"/>
+    </VirtualDirectory>
+    <File Name="Extern_Templates.txt"/>
     <File Name="Template_Specialization.txt"/>
     <File Name="Classes_and_Templates.txt"/>
     <File Name="Constexpr_Functions.txt"/>
