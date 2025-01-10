@@ -1,0 +1,62 @@
+We're writing code which will be executed by the compiler during the compilation, not by the program at run time
+    None of the code will appear in the program, only the outcomes of it
+        Program has instant access to the results, and doesn't need to perform any calculations itself
+        
+Compile-time programming is possible in C   
+    Uses pre-processor macro functions
+        (It's essentially copy and paste with substitution)
+        No type information
+        Doesn't understand C++ syntax
+        Error prone
+    
+    Ex:
+    #define Max(x,y) ((x) > (y) ? (x) : (y)) 
+    // anytime Max(x,y) appears, it's replaced by ((x) > (y) ? (x) : (y))
+    // Max(++a, b) is replaced by ((++a) > (b) ? (++a) : (b)), so ++a is called twice, incrementing a twice.
+    
+
+C++ has templates
+    intended to support generic programming
+        the compiler takes in the parameters and generates appropriate code for that parameter
+    
+    later discovered to provide a Turing-complete language.
+    
+        template parameters can represent state variables
+        
+        recursive instantation can simulate loops
+        
+        template specializations to implement control flow
+        
+        Integer operations to calculate results
+        
+    mainly done by library developers 
+        
+    Making decisions at compile time for efficiency and/or portability
+        e.g. use of hardware-specific features
+        
+    Domain-specific programming
+        e.g. customized language
+        
+    Expressing complex software patterns and concepts
+    
+    mostly uses class templates rather than functions
+    
+    conventions:
+        members that represent numeric results or other values are named "value"
+        members that represent types are named "type"
+        
+    use of "type traits" to get information about the properties of types
+        e.g. std::is_arithmetic<T>::value returns true if T is an arithmetic type, and returns false otherwise
+        e.g. std::is_floating_point<T>::value ...
+        e.g. std::is_class<T>::value ...
+        e.g. std::is_pointer<T>::value ...
+        
+With compile-time programming, until C++11, our only option was to use templates
+    Clumsy and verbose syntax
+    Logical operations are complicated
+    Incomprehensible error messages
+    No debugger support
+C++11 provides constant expressions
+    the compiler executes normal C++ code
+    understandable error messages
+    

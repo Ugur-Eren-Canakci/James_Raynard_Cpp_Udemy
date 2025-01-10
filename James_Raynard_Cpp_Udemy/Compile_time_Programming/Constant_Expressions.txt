@@ -1,0 +1,39 @@
+A constexpr has a value that's evaluated at compile time and cannot be changed
+    literals are constant expressions
+    A value computed from literals are constant expressions
+    A value computed from other constant expressions are constant expressions
+    Ex:
+    const int i{42}, j{99}; // constant expressions
+    i+j; // constant expression
+    
+The dimension of an array must be a constant expression
+    Ex:
+    const int i{42}, j{99}; // constant expressions
+    int arr[i+j]; // OK
+    
+    Ex:
+    int i{42}, j{99}; // not constant expressions
+    int arr[i+j]; // Not OK (unless using g++ with the "-pedantic" option)
+    
+"const" keyword
+    present in all versions of C++
+    
+    a const variable cannot be modified after it has been initialized
+    
+    We can initialize a const variable from a constant expression
+    or from a value which is only known at runtime
+    
+"constexpr" keyword
+    C++11 onwards
+    
+    indicates that a variable is a constant expression
+    
+    a constexpr variable is:
+        evaluated at compile time
+        cannot be modified
+        
+
+    
+    
+    
+    
