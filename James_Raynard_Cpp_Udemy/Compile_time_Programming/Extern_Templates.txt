@@ -1,0 +1,70 @@
+Assume we have some code like:
+// In Header.h
+template <typename T> void func(arg<T>) {...}
+
+// In file_001.cc
+func(string_1);
+
+// In file_002.cc
+func(string_2);
+
+The compiler will instantiate a seperate func(string) in every file "file_nnn.cc"
+    => Every "file_nnn.o" will contain the binary for func(string) 
+        However, the linker will remove the duplicate definitions from the executable
+        
+    This "template bloat" increases the object file size and compile time
+        Can be a serious problem in large projects
+        
+"extern" was inherited from C
+    turns the definition of an uninitialized variable into a declaration
+        i.e. tells the compiler that the definition is not in the current file, but in another file
+    used to make a global variable accessible across source files
+    
+    Ex:
+    //source1.cc
+    extern int meaning_of_life; // declaration of meaning_of_life
+    meaning_of_life = 42;
+    
+    //source2.cc
+    extern int meaning_of_life; // declaration of meaning_of_life
+    std::cout << meaning_of_life;
+    
+    //source_impl.cc
+    int meaning_of_life; // definition of meaning_of_life
+    
+Explanation of the instructor's showcase:
+    Files that should compile together are:
+        extern_int.h
+        int_impl.cc
+        int1.cpp
+        int2.cpp
+        
+        extern_int.h contains:
+            extern int meaning_of_life; // declaration
+            void func(); // declaration
+            
+        int1.cpp contains:
+            #include "extern_int.h"
+            void func() { // this function will know that meaning_of_life is defined somewhere else
+                meaning_of_life = 42;
+            }
+        
+        int2.cpp contains:
+            #include <iostream>
+            #include "extern_int.h"
+            int main() {
+                func();
+                std::cout << meaning_of_life << std::endl; 
+            }
+        
+        int_impl.cc contains:
+            #include "extern_int.h"
+            int meaning_of_life; // definition
+        
+
+In C++11 you can apply extern to templates as well
+    Declare the instantiation as an "extern template"
+    
+    There must be exactly one file where the function is instantiated
+    
+    

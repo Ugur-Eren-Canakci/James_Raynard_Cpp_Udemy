@@ -1,0 +1,96 @@
+A variadic function can take any number of arguments
+
+C++11 introduced variadic template functions
+    The list of template parameter types is written as "typename... T"
+    
+    The list of function parameter types is written as "T..."
+    Ex:
+    template <typename... Args> // Args is a list of template parameter types 
+    void func(Args... args); // args is a list of arguments whose type matches Args
+    
+    "..." lists are known as "parameter packs"
+    
+The compiler will deduce the number of arguments and their types from the calls
+Ex:
+template <typename... Args>
+void func(Args... args);
+
+func("hello"); -> instantiated as "void func(std::string)"
+func(42, 0.0, "text"); -> instantiated as "void func(int, double, std::string)"
+
+Parameter packs are only available at compile time
+    We can do three things with parameter packs:
+        use "sizeof...()" to get the number of elements
+        use "make_tuple()" to store them in an std::tuple
+        iterate over the elements, using template recursion        
+Ex: (sizeof...)
+template <typename... Args>
+void func(Args... args) {
+    std::cout << "Compiler has deduced call with " << sizeof...(args) << " argument(s)" << std::endl;
+}
+
+int main() {
+    int i{42};
+    double d{0.0};
+    std::string s{"text"};
+    
+    func(s); // Compiler has deduced call with 1 argument(s)
+    func(i,d,s); // Compiler has deduced call with 3 argument(s)
+}
+
+Ex: (make_tuple())
+template <typename... Args>
+void func(Args... args) {
+    auto arg_tuple = std::make_tuple(args...);
+    auto first = std::get<0>(arg_tuple);
+    std::cout << "First argument is " << first << std::endl;
+}
+
+int main() {
+    int i{42};
+    double d{0.0};
+    std::string s{"text"};
+    
+    func(s); // First argument is text
+    func(i,d,s); // First argument is 42
+}
+
+
+We can have recursive template function calls
+Ex:
+    template<typename T, typename U, typename V>
+    void func(T t, U u, V v) {
+        func(u,v)
+    }
+
+    template<typename U, typename V>
+    void func(U u, V v) {
+        func(v)
+    }
+
+    template<typename V>
+    void func(V v) {
+        //End of recursion
+    }
+
+We can process a variadic template's pack by making recursive callls
+Each call removes the first element off the list
+Ex:
+    template <typename T, typename... Args>
+    void func(T t, Args... args) {
+        // any commands needed before the recursion call
+        func(args...);
+    }
+    ***************
+    To terminate the recursion, we write another template with a single argument
+        This will be passed the final element in the list
+    ***************
+Ex:
+    template <typename T>
+    void func(T t) {
+        // last step of the recursion operations
+    }
+    
+    These two examples have to go together
+    
+    

@@ -117,7 +117,8 @@
   <Project Name="Constant_Expressions" Path="Constant_Expressions/Constant_Expressions.project" Active="No"/>
   <Project Name="Constexpr_Functions" Path="Constexpr_Functions/Constexpr_Functions.project" Active="No"/>
   <Project Name="Classes_and_Templates" Path="Classes_and_Templates/Classes_and_Templates.project" Active="No"/>
-  <Project Name="Template_Specialization" Path="Template_Specialization/Template_Specialization.project" Active="Yes"/>
+  <Project Name="Template_Specialization" Path="Template_Specialization/Template_Specialization.project" Active="No"/>
+  <Project Name="Variadic_Templates" Path="Variadic_Templates/Variadic_Templates.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -239,6 +240,7 @@
       <Project Name="Constexpr_Functions" ConfigName="Debug"/>
       <Project Name="Classes_and_Templates" ConfigName="Debug"/>
       <Project Name="Template_Specialization" ConfigName="Debug"/>
+      <Project Name="Variadic_Templates" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -360,6 +362,7 @@
       <Project Name="Constexpr_Functions" ConfigName="Release"/>
       <Project Name="Classes_and_Templates" ConfigName="Release"/>
       <Project Name="Template_Specialization" ConfigName="Release"/>
+      <Project Name="Variadic_Templates" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
