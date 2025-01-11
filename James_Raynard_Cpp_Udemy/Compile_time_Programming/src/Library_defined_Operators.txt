@@ -1,0 +1,45 @@
+C++11 defines some generic operator classes in <functional>
+    e.g. less<Type> operator calls operator< of Type
+    
+    Arithmetic operators:
+        plus, minus, multiplies, divides, modulus, negate
+        
+    Relational operators:
+        equal_to, not_equal_to, greater, greater_equal, less, less_equal
+    
+    Logical operators:
+        logical_and, logical_or, logical_not
+        
+    Bitwise operators:
+        bit_and, bit_xor 
+        bit_not (C++14 onwards)
+ 
+    These are all functor classes 
+    => we need to create an object and call operator() on them
+    Ex:
+    less() (t1, t2); -> calls operator<(t1, t2)
+    
+We can use these operators to write generic functions with default comparisons
+    Similar to algorithms (e.g. std::sort)
+    
+    Ex:
+    template <typename T, typename Func>
+    bool compare(const T& t1, const T& t2, Func f) {
+        return f(t1, t2);
+    }
+    
+        We then make Func a default template argument
+            Also make the function we want as default argument of f
+        Ex:
+        template <typename T, typename Func = std::less<T>>
+        bool compare(const T& t1, const T& t2, Func f = Func()) {
+            return f(t1, t2);
+        } 
+        -> f is now a Func functor object, so it is able to call operator()
+        -> Func is std::less<T> by default. Recall that both have to be callable objects, as we invoke operator() from 
+            whichever callable Func object we pass into the template parameter.
+        -> If we call compare(t1, t2), then the program will call Func::operator()(t1, t2) where Func = std::less<T>
+        -> If we call compare(t1, t2, [] () {/*...*/}), then the program will call Func(t1,t2) where 
+            Func = compiler_generated_functor_name::operator()(t1,t2)
+            
+        

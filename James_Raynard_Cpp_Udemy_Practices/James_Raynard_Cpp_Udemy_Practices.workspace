@@ -119,7 +119,8 @@
   <Project Name="Classes_and_Templates" Path="Classes_and_Templates/Classes_and_Templates.project" Active="No"/>
   <Project Name="Template_Specialization" Path="Template_Specialization/Template_Specialization.project" Active="No"/>
   <Project Name="Variadic_Templates" Path="Variadic_Templates/Variadic_Templates.project" Active="No"/>
-  <Project Name="Miscellaneous_Template_Features" Path="Miscellaneous_Template_Features/Miscellaneous_Template_Features.project" Active="Yes"/>
+  <Project Name="Miscellaneous_Template_Features" Path="Miscellaneous_Template_Features/Miscellaneous_Template_Features.project" Active="No"/>
+  <Project Name="Library_defined_Operators" Path="Library_defined_Operators/Library_defined_Operators.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -243,6 +244,7 @@
       <Project Name="Template_Specialization" ConfigName="Debug"/>
       <Project Name="Variadic_Templates" ConfigName="Debug"/>
       <Project Name="Miscellaneous_Template_Features" ConfigName="Debug"/>
+      <Project Name="Library_defined_Operators" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -366,6 +368,7 @@
       <Project Name="Template_Specialization" ConfigName="Release"/>
       <Project Name="Variadic_Templates" ConfigName="Release"/>
       <Project Name="Miscellaneous_Template_Features" ConfigName="Release"/>
+      <Project Name="Library_defined_Operators" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

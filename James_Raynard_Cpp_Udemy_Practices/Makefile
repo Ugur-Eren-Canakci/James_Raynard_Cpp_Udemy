@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Miscellaneous_Template_Features - Debug ]----------"
-	@cd "Miscellaneous_Template_Features" && "$(MAKE)" -f  "Miscellaneous_Template_Features.mk"
+	@echo "----------Building project:[ Library_defined_Operators - Debug ]----------"
+	@cd "Library_defined_Operators" && "$(MAKE)" -f  "Library_defined_Operators.mk"
 clean:
-	@echo "----------Cleaning project:[ Miscellaneous_Template_Features - Debug ]----------"
-	@cd "Miscellaneous_Template_Features" && "$(MAKE)" -f  "Miscellaneous_Template_Features.mk" clean
+	@echo "----------Cleaning project:[ Library_defined_Operators - Debug ]----------"
+	@cd "Library_defined_Operators" && "$(MAKE)" -f  "Library_defined_Operators.mk" clean

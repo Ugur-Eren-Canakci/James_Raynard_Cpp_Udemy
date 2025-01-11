@@ -96,4 +96,6 @@
     <File Name="c_file.c"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

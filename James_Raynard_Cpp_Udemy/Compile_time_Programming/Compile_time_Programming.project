@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/Library_defined_Operators.txt"/>
     <File Name="src/Miscellaneous_Template_Features.txt"/>
     <File Name="src/Variadic_Templates.txt"/>
     <VirtualDirectory Name="extern_templates_instructor_files">
