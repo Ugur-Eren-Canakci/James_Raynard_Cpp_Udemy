@@ -1,0 +1,98 @@
+"constexpr if" was added in C++17
+
+allows conditionals to be evaluated at compile time
+
+can be used for conditional compilation
+    only the "true" branch will be compiled into the program
+    "false" branch will be ignored by the compiler
+    
+Ex:
+if constexpr (a<b)
+    ...
+else
+    ...
+    
+C++ has preprocessor directives which can be used for conditional compilation
+    #if and #ifdef conditionally include or exclude code from compilation
+    
+C++ preprocessor directives have a bunch of drawbacks
+    Simple text-based substitution
+    No understanding of types or C++ syntax
+    Arguments are not evaluated (operator precedence, side effects)
+    
+constexpr if's are executed during compilation process
+    has access to all the compiler's internal data
+        in particular, type information
+        
+Ex:
+template <typename T>
+std::string get_string(const T& arg) {
+    if (std::is_same_v<std::string, T>) 
+        return arg;
+    else
+        return std::to_string(arg);
+}
+
+int main() {
+    ...
+}
+    The code above will NOT compile:
+        when we have an "if" statement in the header, C++ says that all branches must compile,
+        even if they're never taken
+        std::is_same_v<std::string, T> is a compile-time expression
+            => the compiler knows that if we have a string argument for T, "else" part will never be executed
+        std::to_string doesn't have an overload for std::string arguments, so the "else" part produces an error when an std::string
+        is passed into it
+        
+    Solution:
+    template <typename T>
+    std::string get_string(const T& arg) {
+        if constexpr (std::is_same_v<std::string, T>) 
+            return arg;
+        else
+            return std::to_string(arg);
+    }
+        
+    with constexpr placed after "if", the conditional expression is evaluated at compile-time
+    
+    if you call get_string with a std::string in main or some other function, the compiler will 
+    generate"get_string(const std::string& arg)" with the help of the constexpr if, and the code it generates will be:
+        std::string get_string(const std::string& arg) {
+            return arg;
+        }
+    then this code will be called whenever "get_string(string_argument)" appears in the code
+    if you call get_string with a type that's not an std::string, then the compiler will generate 
+    "get_string(const non_string_arg)", and the code it generates will be:
+        std::string get_string(const non_string_arg& arg) {
+            return std::to_string(arg);
+        }
+    then this code will be called whenever "get_string(non_string_arg)" appears in the code
+    
+same thing could be constructed with template specializations as well
+Ex:
+template <typename T>
+std::string get_string(const T& arg) {
+    return std::to_string(arg);
+}
+
+template <>
+std::string get_string(const std::string& arg) {
+    return arg;
+}
+
+But, things get very very complicated with this
+
+Advantages of constexpr if:
+    Template specialization requires multiple functions which need to be in a specific order
+        Only suitable for simple conditionals
+            
+        SFINAE(Substitution Failure is Not An Error)
+        std::enable_if
+            complex and obscure code
+            hard to maintain
+        
+    constexpr if
+        single function with normal-looking code
+        
+    
+    

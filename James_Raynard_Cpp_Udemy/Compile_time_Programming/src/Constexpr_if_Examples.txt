@@ -1,0 +1,32 @@
+Recall:
+    if constexpr (/*expr*/)
+        ...
+    else
+        ...
+        
+    the compiler ignores paths which are not taken
+    
+Ex: Fibonacci recursion as a compile-time function
+version 1 (with no constexpr)
+template <int N>
+int fibonacci() {
+    return fibonacci<N-1>() + fibonacci<N-2>();
+}
+
+template <>
+int fibonacci<1>() {
+    return 1;
+}
+
+template <>
+int fibonacci<0>() {
+    return 0;
+}
+
+version 2 (with constexpr)
+template <int N>
+constexpr int fibonacci() {
+    if constexpr (N > 1) 
+        return fibonacci<N-1>() + fibonacci<N-2>();
+    return N;
+}

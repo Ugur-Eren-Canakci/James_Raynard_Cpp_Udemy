@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Library_defined_Operators - Debug ]----------"
-	@cd "Library_defined_Operators" && "$(MAKE)" -f  "Library_defined_Operators.mk"
+	@echo "----------Building project:[ Constexpr_if_Examples - Debug ]----------"
+	@cd "Constexpr_if_Examples" && "$(MAKE)" -f  "Constexpr_if_Examples.mk"
 clean:
-	@echo "----------Cleaning project:[ Library_defined_Operators - Debug ]----------"
-	@cd "Library_defined_Operators" && "$(MAKE)" -f  "Library_defined_Operators.mk" clean
+	@echo "----------Cleaning project:[ Constexpr_if_Examples - Debug ]----------"
+	@cd "Constexpr_if_Examples" && "$(MAKE)" -f  "Constexpr_if_Examples.mk" clean
