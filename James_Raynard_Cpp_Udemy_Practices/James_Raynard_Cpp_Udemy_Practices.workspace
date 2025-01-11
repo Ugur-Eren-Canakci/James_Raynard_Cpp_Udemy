@@ -121,7 +121,8 @@
   <Project Name="Variadic_Templates" Path="Variadic_Templates/Variadic_Templates.project" Active="No"/>
   <Project Name="Miscellaneous_Template_Features" Path="Miscellaneous_Template_Features/Miscellaneous_Template_Features.project" Active="No"/>
   <Project Name="Library_defined_Operators" Path="Library_defined_Operators/Library_defined_Operators.project" Active="No"/>
-  <Project Name="Constexpr_if_Examples" Path="Constexpr_if_Examples/Constexpr_if_Examples.project" Active="Yes"/>
+  <Project Name="Constexpr_if_Examples" Path="Constexpr_if_Examples/Constexpr_if_Examples.project" Active="No"/>
+  <Project Name="decltype_keyword" Path="decltype_keyword/decltype_keyword.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -247,6 +248,7 @@
       <Project Name="Miscellaneous_Template_Features" ConfigName="Debug"/>
       <Project Name="Library_defined_Operators" ConfigName="Debug"/>
       <Project Name="Constexpr_if_Examples" ConfigName="Debug"/>
+      <Project Name="decltype_keyword" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -372,6 +374,7 @@
       <Project Name="Miscellaneous_Template_Features" ConfigName="Release"/>
       <Project Name="Library_defined_Operators" ConfigName="Release"/>
       <Project Name="Constexpr_if_Examples" ConfigName="Release"/>
+      <Project Name="decltype_keyword" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -1,0 +1,60 @@
+Consider a unique_ptr with custom deleter
+    we wanted a template parameter to have the same type as a lambda expression
+    
+decltype was added in C++11
+    can only be used in compile-time
+    gives the type of its argument
+        the argument must be an expression or an object
+    
+    some compilers have a non-standard extension "typeof", which is similar
+    
+    doesn't evaluate its argument
+    doesn't cause any code to be executed
+    the compiler will replace decltype with the type that the argument would return
+    
+    unlike auto, decltype will retain const, reference, etc.
+    
+Ex:
+int main() {
+    const int x{42};
+    auto y = x;
+    decltype(x) z{0};
+}
+    y will be an int
+    z will be a const int
+    
+    
+decltype with named variable:
+    result is the type that the variable is declared as
+        int x;
+        decltype(x) y; -> y is an int
+        
+decltype with lvalue expression:
+    the result is an lvalue reference to the expression's deduced type
+        decltype(x+y) z; -> z is an int&
+        decltype((x)) z; -> z is an int&
+        
+decltype with prvalue:
+    the result is the argument's deduced type
+        decltype(2) z; -> z is an int
+        
+decltype with xvalue:
+    the result is an rvalue reference to the argument's deduced type
+        decltype(Test()) z; -> z is a Test&& 
+        
+C++14 onwards, we can use "auto" as the argument to decltype
+    decltype(auto) c = a;
+    
+decltype is mainly used in compile-time programming
+Ex:
+template <typename U, typename V>
+auto add(T t, U u) -> decltype(t+u) { //C++11 requires the return type
+    return t+u;
+}
+
+it can also be used with C++14's generic lambdas
+Ex:
+auto make_vector = [] (auto x, size_t n) {
+    return std::vector<decltype(x)>(x,n);
+}
+
