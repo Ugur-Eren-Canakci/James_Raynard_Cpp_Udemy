@@ -1,0 +1,5 @@
+Will be implemented as a sprite that can move between updates
+
+Since there will be several moving objects, we will add a moving_entity subclass to represent them
+    Will have an sf::Vector2f member which represents the velocity of the entity
+    

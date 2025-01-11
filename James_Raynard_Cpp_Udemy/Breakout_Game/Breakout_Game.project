@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/Ball.txt"/>
     <File Name="src/Sprite.txt"/>
     <File Name="src/Random_Walk.txt"/>
     <File Name="src/Basic_Window.txt"/>
