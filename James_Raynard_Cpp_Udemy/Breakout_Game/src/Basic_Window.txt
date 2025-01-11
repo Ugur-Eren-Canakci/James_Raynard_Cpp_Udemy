@@ -1,0 +1,26 @@
+SFML defines Basic Window classes in <SFML/Graphics.hpp>
+
+These are in the "sf" namespace
+
+sf::Window
+    Class which represents a window on the screen
+    
+sf::RenderWindow
+    subclass of sf::Window
+    supports rendering
+        Can be used for 2-dim drawing
+    
+sf::Event
+    Union which contains a user interaction event
+    
+RenderWindow member functions:
+    clear()
+        clears the window
+        
+    draw()
+        draws in the mirror's memory buffer
+        
+    display()
+        makes the contents of the memory buffer appear on the display
+        
+        

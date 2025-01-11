@@ -1,0 +1,28 @@
+SFML has two vector classes:
+    sf::Vector2
+        represents a 2-dim vector
+        members x and y can be accessed directly
+        supports arithmetic operations, == and !=
+        template class
+    sf::Vector2f
+        Alias for sf::Vector2<float> instantiation
+        SFML uses float internally
+        
+sf::Texture represents an image
+    The image has been loaded into the graphics card
+    It can be drawn on a render target
+    The drawing is done inside the graphics card
+    
+    Mainly useful for things which you're going to be displaying very frequently
+    
+sf::Shape represents a pre-defined texture
+    Abstract base class
+    Can be drawn on a render target
+    Has an associated "texture rectangle"
+    All transformations are relative to "the origin" of the Shape
+        By default, top left-hand corner of the texture rectangle
+    
+sf::CircleShape
+    subclass of sf::Shape, sf::ConvexShape and sf::rectangleShape
+    
+    

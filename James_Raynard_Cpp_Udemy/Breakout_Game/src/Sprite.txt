@@ -1,0 +1,35 @@
+a texture is an image loaded to the graphics card
+
+sf::Sprite represents a texture associated with a rectangle
+    similar to sf::Shape but we provide our own image
+    
+    represents a group of pixels as a single graphical entity
+    
+    this entity floats over the display like a ghost
+    
+    the name "sprite" is an archaic name for ghost
+    
+to create a sprite, we need a texture first.
+    sf::Texture texture;
+    
+    use loadFromFile() texture member function to load a texture into the graphics card:
+    texture.loadFromFile("picture.jpg"); (returns bool, so check)
+        this will fail if:
+            1) the image file is not valid
+            2) The image file is not in the expected directory
+            
+    then use setTexture() sprite member function to associate a texture argument with the sprite object:
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+    
+In the game we will create several sprites, to represent the different entities within the game
+    we're going to use an inheritance hierarchy to organize these
+    
+    abstract base class: entity
+        will represent all sprites
+        
+        
+    
+    
+    
+    

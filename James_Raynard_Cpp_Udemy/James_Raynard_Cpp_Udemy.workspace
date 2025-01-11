@@ -15,7 +15,8 @@
   <Project Name="Move_Semantics" Path="Move_Semantics/Move_Semantics.project" Active="No"/>
   <Project Name="Smart_Pointers" Path="Smart_Pointers/Smart_Pointers.project" Active="No"/>
   <Project Name="Miscellaneous_Features" Path="Miscellaneous_Features/Miscellaneous_Features.project" Active="No"/>
-  <Project Name="Compile_time_Programming" Path="Compile_time_Programming/Compile_time_Programming.project" Active="Yes"/>
+  <Project Name="Compile_time_Programming" Path="Compile_time_Programming/Compile_time_Programming.project" Active="No"/>
+  <Project Name="Breakout_Game" Path="Breakout_Game/Breakout_Game.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -35,6 +36,7 @@
       <Project Name="Smart_Pointers" ConfigName="Debug"/>
       <Project Name="Miscellaneous_Features" ConfigName="Debug"/>
       <Project Name="Compile_time_Programming" ConfigName="Debug"/>
+      <Project Name="Breakout_Game" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -54,6 +56,7 @@
       <Project Name="Smart_Pointers" ConfigName="Release"/>
       <Project Name="Miscellaneous_Features" ConfigName="Release"/>
       <Project Name="Compile_time_Programming" ConfigName="Release"/>
+      <Project Name="Breakout_Game" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
