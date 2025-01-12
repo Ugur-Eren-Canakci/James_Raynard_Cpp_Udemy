@@ -1,0 +1,11 @@
+We need to detect and resolve collisions between entities
+
+void handle_collision(ball &b, const paddle& p);
+    makes the ball bounce off the paddle
+    an overload will make the ball destroy a brick
+    
+bool is_interacting(const entity& e1,const entity& e2); 
+    returns true if e1's bounding box overlaps with e2's
+    
+These two will be non-member functions
+    In C++ we write functions as member functions only if the function is part of the class interface

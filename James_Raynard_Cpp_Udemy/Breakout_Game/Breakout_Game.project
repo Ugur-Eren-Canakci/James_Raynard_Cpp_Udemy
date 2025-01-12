@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/Ball_Paddle_Interaction.txt"/>
     <File Name="src/Bouncing_Ball.txt"/>
     <File Name="src/Ball.txt"/>
     <File Name="src/Sprite.txt"/>
