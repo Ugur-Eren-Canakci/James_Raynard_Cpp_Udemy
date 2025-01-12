@@ -1,0 +1,45 @@
+When the ball hits a brick, 
+    1) the brick is destroyed
+        i.e. deleted from the vector 
+    2) the ball bounces back off
+    
+we will:
+    1) add move_down() member function to moving_entity
+    2) Add a member to store the "destroyed" state
+    3) add getter and setter for the destroyed member
+    4) add functions to get the edges of the sprite
+    
+brick and ball collision:
+    handle_interaction overload to handle collision of bricks and the ball
+    
+    the collision can occur on all 4 sides
+    
+    we also need to consider the ball's direction of travel
+    
+overlaps
+    
+    left overlap = ball right - brick left
+                 = (ball origin + ball width) - (brick origin)
+    
+    right overlap = brick right - ball left 
+                 = (brick origin + brick width) - (ball origin)  
+    
+    top overlap = ball bottom - brick top
+                 = (ball origin + ball width) - (brick origin)
+    
+    bottom overlap = ball top - brick bottom
+                 = (ball origin) - (brick origin + brick width)
+                 
+    left overlap < right overlap => collision on left
+    right overlap < left overlap => collision on right
+    top overlap < bottom overlap => collision on top
+    bottom overlap < top overlap => collision on bottom
+    
+    yet, it's possible to hit two edges at the same time
+        closer to left than top/bottom => move left
+        closer to right than top/bottom => move right 
+        closer to top than left/right => move up
+        closer to bottom than left/right => move down
+        
+        
+    
