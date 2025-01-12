@@ -1,0 +1,15 @@
+We need to make the ball bounce when it hits an obstruction
+
+add getter functions to return:
+    the current position of the ball
+    its centre
+    its bounding rectangle
+    
+we add these member functions to the entity class
+    we will need these features for detecting collisions with the bricks
+        bricks are not of moving_entity type, so this is the reason we add the getters to the entity
+        
+    SFML has some functions for detecting collisions
+        these use the bounding rectangles
+        
+        
