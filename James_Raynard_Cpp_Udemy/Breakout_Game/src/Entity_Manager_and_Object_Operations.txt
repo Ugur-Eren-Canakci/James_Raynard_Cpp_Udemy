@@ -1,0 +1,38 @@
+entity_manager::get_all()
+    returns all the entities of a given type
+        get_all<brick>(); // returns all the pointers to bricks inside a vector<entity*>  
+    
+    1) find the hash code of the entity type
+    2) look up the hash code in grouped_entities map
+    3) return the corresponding vector of aliases
+    
+the current problem is handling interactions
+    solution: 
+    template <typename T, typename Func>
+    entity_manager::apply_all<T>(Func func) {
+        for (auto& el: entity_manager::get_all<T>()) {
+            func(*(dynamic_cast<T>(el)));
+        }
+    }
+    // Func will be a lambda expression that takes in a variable in the scope by reference
+    Ex:
+    manager.apply_all<ball>([this](auto& the_ball) {
+        manager.apply_all<brick>([&the_ball] (auto& the_brick) {
+            handle_interaction(the_ball,the_brick);
+            });
+        });
+        
+
+
+When we have templates, we need to think about how we are going to organize the code
+    In this case, we have member templates which are going to be called from the game manager, 
+    but not from anywhere else
+        => simplest way to do this will be to write the member template definitions inline in the game manager header
+        above the definition of the game manager class
+        => the compiler will always be able to see the member template definitions, when it has to instantiate them
+        
+        
+        
+    
+    
+    
