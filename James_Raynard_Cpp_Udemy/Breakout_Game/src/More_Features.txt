@@ -1,0 +1,26 @@
+sf::Text
+    represents a graphical text
+        can be drawn on a render target
+        
+    has an associated sf::Font object
+        functionality quite similar to sprites and textures
+        
+        use loadFromFile to load a font
+        Ex:
+        sf::Font verdana;
+        verdana.loadFromFile("path/to/font/verdana.ttf")
+            fails if the font is not available on the system or is not in the directory
+        sf::Text text;
+        text.setFont(verdana);
+        text.setString("hello");
+        
+We will add a member for the number of "lives" the player has
+    Each time the ball hits the bottom of the window, the player loses a life
+    When the player has no life left, the game is over
+    If the player survives long enough to destroy all the bricks, they win the game
+    
+We add more values to the game state
+    enum class game_state {paused, game_over, running, player_wins};
+
+We add text objects to display messages
+    
