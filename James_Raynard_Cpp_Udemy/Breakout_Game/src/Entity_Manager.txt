@@ -1,0 +1,54 @@
+We're going to take all the code related to entities out of the game loop, and put it into its own class
+    So if the game loop needs to do anything which involves entities, it will now call a member function of the entity manager
+    
+The idea is to simplify the game loop, and also provide better abstraction
+    If we want to change the game by creating more entity objects or even adding new types of entities, this should make it easier to do so.
+    
+
+entity_manager will use polymorphism
+    store entities as pointers to base class
+    call virtual functions through pointer to base
+    
+    it will provide an interface for performing operations on entities
+        operations on all entities in the game
+        operations on all entities of a given type
+        
+entity_manager class will create all the entities in the game
+    the manager will scan through all the entities on each update
+        it will delete any entities which have been destroyed in the game
+        
+    the class will have two data members and these provide different views of the entities.
+        all_entities:
+            stores all the entities in the game as an std::vector<std::unique_ptr<entity>>
+        grouped entities:
+            stores all the entities in the game as an std::map
+            the key depends on the entity type
+            the value is an std::vector<entity*> with the same type
+                these pointers are aliases to the entity objects
+                
+    all_entities will have unique pointers, which will destroy the pointed objects when destroyed
+    grouped_entities will have vectors of raw pointers to the same objects
+        => when an object is deleted, we have to delete the raw pointers in grouped_entities first, 
+            then all_entities counterpart will be destroyed
+    
+
+entity_manager member functions:
+    create()
+        creates an entity object
+        adds it to all_entities and grouped_entities
+        
+    refresh() 
+        re-draw all the entities
+    
+    clear() 
+        destroy all the entities
+        
+    get_all()
+        return all the entities of a given type
+    
+    apply_all()
+        call a function for every entity of a given type
+        
+    update()
+    
+    draw()

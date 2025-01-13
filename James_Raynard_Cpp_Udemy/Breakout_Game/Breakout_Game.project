@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/Entity_Manager.txt"/>
     <File Name="src/Game_Manager.txt"/>
     <File Name="src/Ball_Interaction_with_Bricks.txt"/>
     <File Name="src/Bricks.txt"/>
