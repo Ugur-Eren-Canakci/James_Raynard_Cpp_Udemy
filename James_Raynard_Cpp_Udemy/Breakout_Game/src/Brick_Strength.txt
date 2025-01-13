@@ -1,0 +1,17 @@
+sf::Color
+    The components are 8-bit unsigned integers 
+    They define the contribution each component makes to the result
+    0 defines none, 255 defines max
+    sf::Color(255,0,0) => red
+    
+    has a fourth argument that defaults to 255 and goes down to 0
+        called alpha
+        decides the opaqueness of the color, i.e. how much of the background it shows
+        
+    
+handle_interaction(ball&, brick&) will change as we will not destroy bricks immediately
+    if strength > 1 strength--;
+    else is_destroyed = true;
+    
+brick::update() will also change
+    will set the color of the brick depending on its strength
