@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/Conclusion.txt"/>
     <File Name="src/More_Features.txt"/>
     <File Name="src/Brick_Strength.txt"/>
     <File Name="src/Entity_Manager_and_Object_Operations.txt"/>
