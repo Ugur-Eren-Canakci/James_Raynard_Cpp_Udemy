@@ -1,0 +1,28 @@
+We need to refactor the code 
+    main() is too long (after adding ball and brick interactions)
+        ideally shouldn't be longer than one screen
+        
+        
+=> we start by moving the code from main() into a new class
+    new class called "game"
+        data members will be:
+            game window
+            the ball
+            the vector of bricks
+            the paddle
+            the background
+            
+        member functions will be:
+            constructor to initialize entities
+            run() to perform the game loop
+            reset() to re-initialize the entities
+            
+        we will also add a feature to allow the user to pause the game
+            while the game is paused, the entities are still redrawn
+                however, they are not updated
+                
+            will be managed by an enum class
+                enum class game_state {paused, running}
+        we also allow the user to restart the game
+        
+        
