@@ -1,0 +1,33 @@
+The game code is modular, and easy to understand (except for the entity_manager)
+
+Adding a new entity type to the game is straightforward
+    Derive a class from entity or moving_entity
+    Load its image file in the constructor
+    Override update()
+    Add data members and member functions
+    Create and register objects in game_manager::reset()
+    Add collision handling code to game loop if required
+    
+Room for improvement?
+    Further code refactoring
+    Fix some minor ball/paddle interaction issues
+    Adding levels with faster ball, tougher bricks, etc
+    Make damaged bricks appear cracked
+    Randomize brick strengths, reflection angles etc. to add variety
+    Add sound effects
+    
+This code is good for:
+    Implementing simple games
+    Prototyping
+    
+Not suitable for performance-critical games
+    vector reallocation
+    virtual function calls
+    run-time type info
+    inheritance trees can become comples
+    poor cache locality when iterating
+
+Entity Component System Architecture (ECS)
+    Used in game frameworks
+    
+    
